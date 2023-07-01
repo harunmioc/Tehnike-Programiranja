@@ -1,3 +1,11 @@
+/*Napravite funkciju “Polinom” koja kao parametar prima vektor realnih brojeva koji predstavljaju
+koeficijente nekog polinoma (prvi element vektora je slobodni član, drugi element je član uz prvi
+stepen promjenljive polinoma, i tako dalje ka rastućim stepenima promjenljive polinoma), a koja kao
+rezultat vraća funkciju koja računa vrijednost tog polinoma u tački koja se zadaje kao argument te
+funkcije. */
+
+
+
 #include <iostream>
 #include <vector>
 #include <functional>
