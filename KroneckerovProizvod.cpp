@@ -23,17 +23,6 @@ kreiranog Kroneckerovog proizvoda na ekran, i na kraju osloboditi svu alociranu 
 #include <type_traits>
 #include <vector>
 
-#include <algorithm>
-#include <cctype>
-#include <cmath>
-#include <deque>
-#include <functional>
-#include <iostream>
-#include <stack>
-#include <string>
-#include <type_traits>
-#include <vector>
-
 template <typename T> void OslobodiMemoriju(T **matrica, size_t m) {
   delete[] matrica[0];
   delete[] matrica;
