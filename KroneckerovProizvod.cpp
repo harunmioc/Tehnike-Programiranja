@@ -23,6 +23,22 @@ kreiranog Kroneckerovog proizvoda na ekran, i na kraju osloboditi svu alociranu 
 #include <type_traits>
 #include <vector>
 
+#include <algorithm>
+#include <cctype>
+#include <cmath>
+#include <deque>
+#include <functional>
+#include <iostream>
+#include <stack>
+#include <string>
+#include <type_traits>
+#include <vector>
+
+template <typename T> void OslobodiMemoriju(T **matrica, size_t m) {
+  delete[] matrica[0];
+  delete[] matrica;
+}
+
 template <typename Tip1, typename Tip2>
 auto KroneckerovProizvod(Tip1 &blok1, Tip2 &blok2) {
   using TipEl = std::remove_reference_t<decltype(blok1[0], blok2[0])>;
@@ -30,8 +46,10 @@ auto KroneckerovProizvod(Tip1 &blok1, Tip2 &blok2) {
   TipEl **elementi = nullptr;
   try {
     elementi = new TipEl *[blok1.size()];
-    for (int i = 0; i < blok1.size(); i++)
-      elementi[i] = new TipEl[blok2.size()];
+    elementi[0] = new TipEl[blok1.size() * blok2.size()];
+
+    for (int i = 1; i < blok1.size(); i++)
+      elementi[i] = elementi[i - 1] + blok2.size();
 
     for (int i = 0; i < blok1.size(); i++) {
       for (int j = 0; j < blok2.size(); j++) {
@@ -39,19 +57,10 @@ auto KroneckerovProizvod(Tip1 &blok1, Tip2 &blok2) {
       }
     }
   } catch (...) {
-    for (int i = 0; i < blok2.size(); i++)
-      delete[] elementi[i];
-    delete[] elementi;
+    OslobodiMemoriju(elementi, blok1.size());
     throw std::logic_error("Alokacija nije uspjela");
   }
   return elementi;
-}
-
-template <typename T> void OslobodiMemoriju(T **matrica, size_t m) {
-  for (size_t i = 0; i < m; i++) {
-    delete[] matrica[i];
-  }
-  delete[] matrica;
 }
 
 int main() {
@@ -60,19 +69,17 @@ int main() {
   std::deque<double> vektor2 = {0.5, 1.5, 2.5};
 
   decltype(KroneckerovProizvod(vektor1, vektor2)) mat = nullptr;
-  try {
-    auto mat = KroneckerovProizvod(vektor1, vektor2);
+
+    mat = KroneckerovProizvod(vektor1, vektor2);
     for (size_t i = 0; i < vektor1.size(); i++) {
       for (size_t j = 0; j < vektor2.size(); j++) {
         std::cout << mat[i][j] << ",  ";
       }
       std::cout << std::endl;
     }
-  } catch (...) {
+    
     OslobodiMemoriju(mat, vektor1.size());
-  }
 
-  OslobodiMemoriju(mat, vektor1.size());
 
   return 0;
 }
