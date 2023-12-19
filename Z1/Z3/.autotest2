@@ -1,0 +1,338 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 1, Zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "input_file": "stderr.txt",
+            "fast": true
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2021\/2022 godina\n\/\/ Zadaca 01 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 01, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3 3\n-100\nL"
+                },
+                "expect": [
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana spiralna matrica:\n -100  -93  -94\n  -99  -92  -95\n  -98  -97  -96",
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana lijeva spiralna matrica:\n -100  -93  -94\n  -99  -92  -95\n  -98  -97  -96"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 01 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "0 100\n100\nL"
+                },
+                "expect": [
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana spiralna matrica:",
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana lijeva spiralna matrica:"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 01 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "100 0\n100\nD"
+                },
+                "expect": [
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana spiralna matrica:",
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana desna spiralna matrica:"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 01 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "0 0\n100\nL"
+                },
+                "expect": [
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana spiralna matrica:",
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana lijeva spiralna matrica:"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 01 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3 3\n92\nD"
+                },
+                "expect": [
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana spiralna matrica:\n  92  93  94\n  99 100  95\n  98  97  96",
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana desna spiralna matrica:\n  92  93  94\n  99 100  95\n  98  97  96"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 01 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3 3\n-8\nL"
+                },
+                "expect": [
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana spiralna matrica:\n -8 -1 -2\n -7  0 -3\n -6 -5 -4",
+                    "Unesite broj redova i kolona matrice: Unesite pocetnu vrijednost: Unesite L za lijevu, a D za desnu spiralnu matricu:\nKreirana lijeva spiralna matrica:\n -8 -1 -2\n -7  0 -3\n -6 -5 -4"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 01 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n\n#include <limits>",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "int a = std::numeric_limits<int>::max()-9;\nstd::vector<std::vector<int>> mat {\n                { a+1 , a+2 , a+3 },\n                { a+8 , a+9 , a+4 },\n                { a+7 , a+6 , a+5 }\n            };\n\nif (DaLiJeSpiralnaMatrica (mat))\n{\n    std::cout <<\"Jeste spiralna.\"<<std::endl;;\n}\nelse\n{\n    std::cout <<\"Nije spiralna.\"<<std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 01 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n\n#include <limits>\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "int a = std::numeric_limits<int>::max()-8;\nstd::vector<std::vector<int>> mat {\n                { a+1 , a+2 , a+3 },\n                { a+8 , a+9 , a+4 },\n                { a+7 , a+6 , a+5 }\n            };\n\nif (DaLiJeSpiralnaMatrica (mat))\n{\n    std::cout <<\"Jeste spiralna.\"<<std::endl;;\n}\nelse\n{\n    std::cout <<\"Nije spiralna.\"<<std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Nije spiralna.\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 10,
+            "name": "Test 10",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 01 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "int a = -108;\nstd::vector<std::vector<int>> mat {\n                { a+1 , a+2 , a+3 },\n                { a+8 , a+9 , a+4 },\n                { a+7 , a+6 , a+5 }\n            };\n\nif (DaLiJeSpiralnaMatrica (mat))\n{\n    std::cout <<\"Jeste spiralna.\"<<std::endl;;\n}\nelse\n{\n    std::cout <<\"Nije spiralna.\"<<std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Jeste spiralna.\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 11,
+            "name": "Test 11",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 01 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "int a = 92;\nstd::vector<std::vector<int>> mat {\n                { a+1 , a+2  , a+3 },\n                { a+9 , a+10 , a+11, a+4 },\n                { a+8 , a+7  , a+6, a+5 }\n            };\n\nif (DaLiJeSpiralnaMatrica (mat))\n{\n    std::cout <<\"Jeste spiralna.\"<<std::endl;;\n}\nelse\n{\n    std::cout <<\"Nije spiralna.\"<<std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Nije spiralna.\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 12,
+            "name": "Test 12",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 01 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "int a = 92;\nstd::vector<std::vector<int>> mat {\n                { a+1 , a+9  , a+8 },\n                { a+2 , a+10 , a+11, a+7 },\n                { a+3 , a+4  , a+5,  a+6 }\n            };\n\nif (DaLiJeSpiralnaMatrica (mat))\n{\n    std::cout <<\"Jeste spiralna.\"<<std::endl;;\n}\nelse\n{\n    std::cout <<\"Nije spiralna.\"<<std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Nije spiralna.\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

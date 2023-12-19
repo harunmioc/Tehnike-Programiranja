@@ -1,0 +1,181 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-89-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "2": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj redova i kolona matrice: Unesite elemente matrice: Unesite red filtriranja:\nMatrica nakon filtriranja:\n   2.00   2.50   2.67   2.83   2.83   3.25\n   2.17   2.67   3.11   3.22   3.00   3.00\n   2.50   2.89   3.56   3.78   3.44   3.17\n   2.50   2.78   3.44   3.67   3.33   3.00\n   2.50   2.67   3.17   3.50   3.33   3.25",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj redova i kolona matrice: Unesite elemente matrice: Unesite red filtriranja:\nGRESKA: Neispravan red filtriranja!",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "4": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj redova i kolona matrice: Unesite elemente matrice: Unesite red filtriranja:\nMatrica nakon filtriranja:\n   6.56   6.08   6.08   3.67\n  13.83  17.94  17.94  20.17\n  13.83  17.94  17.94  20.17\n  17.78  23.08  23.08  25.89",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "5": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Red filtriranja 2:\n  12.89  12.08  14.60  15.27  18.42  22.67\n  23.25  88.69  74.75  73.25  88.44 110.00\n  24.40  76.50  65.68  66.24  77.00  95.20\n  23.33  75.50  64.72  65.92  76.60  94.67\n  26.50  91.62  78.65  76.80  88.94 109.83\n  28.44 116.25  95.87  96.47 111.42 137.67\n\nRed filtriranja 3:\n  88.69  74.75  66.62  66.62  73.25  88.44\n  76.50  65.68  59.80  59.80  66.24  77.00\n  64.17  55.23  50.42  50.42  55.87  64.92\n  64.17  55.23  50.42  50.42  55.87  64.92\n  75.50  64.72  59.00  59.00  65.92  76.60\n  91.62  78.65  68.17  68.17  76.80  88.94",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "6": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Red filtriranja 1:\n    0.14    1.82    3.35    4.08   16.19   23.25\n    9.28    6.56    0.79    8.08   17.61   27.22\n   -8.05  -14.03 -135.70 -124.74 -105.84   25.89\n    6.69   -6.88 -135.44 -127.53 -110.52   24.89\n   -2.69  -11.98 -134.37 -132.40 -117.95   12.98\n   17.22    9.20    3.61   -0.09    9.08   20.72",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1680396137
+}

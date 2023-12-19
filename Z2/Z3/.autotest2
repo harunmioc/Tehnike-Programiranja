@@ -1,0 +1,452 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 2, Zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2 3 2\na11 a12 a13 a21 a22 a23\nb11 b12 b21 b22 b31 b32"
+                },
+                "expect": [
+                    "Unesite broj redova prve matrice: Unesite broj kolona prve matrice, ujedno broj redova druge matrice: Unesite broj kolona druge matrice:\nUnesite elemente prve matrice:\nUnesite elemente druge matrice:\n\nMatricni proizvod:\na11*b11+a12*b21+a13*b31  a11*b12+a12*b22+a13*b32\na21*b11+a22*b21+a23*b31  a21*b12+a22*b22+a23*b32"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "int f1 (int x, int y)\n{\n    return x+y;\n}\n\nint f2 (int x, int y)\n{\n    return x*y;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": " std::vector<std::vector<int>> A {\n                { 1 , 0 , 0 },\n                { 0 , 1 , 0 },\n                { 0 , 0 , 1 }\n            };\n\n  std::vector<std::vector<int>> B {\n                { 1 , 2 , 3 },\n                { 4 , 5 , 6 },\n                { 7 , 8 , 9 }\n            };\n\n  auto C = GeneraliziraniMatricniProizvod(A, B, f1, f2);\n\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<<std::setprecision(5)<<std::fixed<< x << \"  \";\n    std::cout << std::endl;\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1  2  3\n4  5  6\n7  8  9"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "float f1 (float x, float y)\n{\n    return x+y;\n}\n\nfloat f2 (float x, float y)\n{\n    return x*y;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "  std::vector<std::vector<float>> A {\n                { 1.01 , 0 , 0 },\n                { 0 , 1.01 , 0 },\n                { 0 , 0 , 1.01 }\n            };\n\n  std::vector<std::vector<float>> B {\n                { 1 , 2 , 3 },\n                { 4 , 5 , 6 },\n                { 7 , 8 , 9 }\n            };\n\n  auto C = GeneraliziraniMatricniProizvod(B, A, f1, f2);\n\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<< x << \"  \";\n    std::cout << std::endl;\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1.01  2.02  3.03\n4.04  5.05  6.06\n7.07  8.08  9.09"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "float f1 (float x, float y)\n{\n    return x+y;\n}\n\nfloat f2 (int x, int y)\n{\n    return x*y;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": " std::vector<std::vector<int>> A {\n                { 1 , 0 , 0 },\n                { 0 , 1 , 0 },\n                { 0 , 0 , 1 }\n            };\n\n  std::vector<std::vector<int>> B {\n                { 1 , 2 , 3 },\n                { 4 , 5 , 6 },\n                { 7 , 8 , 9 }\n            };\n\n  auto C = GeneraliziraniMatricniProizvod(B, A, f1, f2);\n\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<<std::setprecision(5)<<std::fixed<< x << \"  \";\n    std::cout << std::endl;\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1.00000  2.00000  3.00000\n4.00000  5.00000  6.00000\n7.00000  8.00000  9.00000"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "  std::vector<std::vector<int>> A {\n                { 1 , 2 , 3 },\n                { 2 , 1 , 2 },\n                { 3 , 2 , 1 }\n            };\n\n  std::vector<std::vector<int>> B {\n                { 1 , 2 , 3 },\n                { 4 , 5 , 6 },\n                { 7 , 8 , 9 }\n            };\n\n  auto C = GeneraliziraniMatricniProizvod(A, B,\n            [](int x, int y) { return x + y; },\n            [](int x, int y) { return x * y; });\n\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<<std::setprecision(5)<<std::fixed<< x << \"  \";\n    std::cout << std::endl;\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "30  36  42\n20  25  30\n18  24  30"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "  std::vector<std::vector<int>> A {\n                { 1 , 2 , 3 },\n                { 2 , 1 , 2 },\n                { 3 , 2 , 1 }\n            };\n\n  std::vector<std::vector<int>> B {\n                { 1 , 2 , 3 },\n                { 4 , 5 , 6 },\n                { 7 , 8 , 9 }\n            };\n\n  auto C = GeneraliziraniMatricniProizvod(A, B,\n            [](std::string x, std::string y) { return x +\"+\"+y; },\n            [](int x, int y) { return std::to_string(x) +\"*\"+std::to_string(y); });\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<< x << \"  \";\n    std::cout << std::endl;\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1*1+2*4+3*7  1*2+2*5+3*8  1*3+2*6+3*9\n2*1+1*4+2*7  2*2+1*5+2*8  2*3+1*6+2*9\n3*1+2*4+1*7  3*2+2*5+1*8  3*3+2*6+1*9"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "float f1 (float x, float y)\n{\n    return x+y;\n}\n\nfloat f2 (float x, float y)\n{\n    if (y!=0)\n        return x\/y;\n    throw \"ne moze se dijeliti sa 0\";\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": " std::vector<std::vector<float>> A {\n                { 1 , 2 , 3 },\n                { 3 , 5 , 6 },\n                { 7 , 8 , 9 }\n            };\n\n  std::vector<std::vector<float>> B {\n                { 10 , 9 , 8 },\n                { 0 ,  6 , 5 },\n                { 4 ,  3 , 2 }\n            };\n  std::vector<std::vector<float>> C;\n  try{\n  C = GeneraliziraniMatricniProizvod(A, B, f1, f2);\n  }\n  catch(std::runtime_error e)\n  {\n    std::cout << e.what() << std::endl;\n  }\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<< x << \"  \";\n    std::cout << std::endl;\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Neocekivani problemi pri racunanju\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "float f1 (float x, float y)\n{\n    return x+y;\n}\n\nfloat f2 (float x, float y)\n{\n    if (y!=0)\n        return x\/y;\n    throw \"ne moze se dijeliti sa 0\";\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "  std::vector<std::vector<float>> A {\n                { 1 , 2 , 3 },\n                { 3  },\n                { 7 , 8  }\n            };\n\n  std::vector<std::vector<float>> B {\n                { 10 , 9 , 8 },\n                { 3 ,  6 , 5 },\n                { 4 ,  3 , 2 }\n            };\n  std::vector<std::vector<float>> C;\n  try{\n  C = GeneraliziraniMatricniProizvod(A, B, f1, f2);\n  }\n  catch(std::domain_error e)\n  {\n    std::cout << e.what() << std::endl;\n  }\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<< x << \"  \";\n    std::cout << std::endl;\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Matrice nisu saglasne za mnozenje\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 10,
+            "name": "Test 10",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "std::string f1 (std::string x, std::string y)\n{\n    if (x>y)\n        return x+y;\n    return y+x;\n}\n\nstd::string f2 (std::string x, std::string y)\n{\n    if (x>y)\n        return x+\",\"+y;\n    return y+\",\"+x;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "  std::vector<std::vector<std::string>> A {\n                { \"a1\" , \"a2\" , \"a3\" },\n                { \"a4\" , \"a5\" , \"a6\" },\n                { \"a7\" , \"a8\" , \"a9\" }\n            };\n\n  std::vector<std::vector<std::string>> B {\n                { \"b10\" , \"b9\" , \"b8\" },\n                { \"b7\" ,  \"b6\" , \"b5\" },\n                { \"b4\" ,  \"b3\" , \"b2\" }\n            };\n\n  auto C = GeneraliziraniMatricniProizvod(A, B, f2, f1);\n\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<< x << \"  \";\n    std::cout << std::endl;\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "b7a2,b10a1,b4a3  b9a1,b6a2,b3a3  b8a1,b5a2,b2a3\nb7a5,b10a4,b4a6  b9a4,b6a5,b3a6  b8a4,b5a5,b2a6\nb7a8,b10a7,b4a9  b9a7,b6a8,b3a9  b8a7,b5a8,b2a9"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 11,
+            "name": "Test 11",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "std::string f1 (std::string x, std::string y)\n{\n    if (x>y)\n        return x+\", \"+y;\n    return y+\", \"+x;\n}\n\nstd::string f2 (float x, float y)\n{\n    std::stringstream stream;\n    stream << std::fixed << std::setprecision(2) << x<<\".\"<<y;\n    std::string s = stream.str();\n    return s;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": " std::vector<std::vector<float>> A {\n                { 1 , 2 , 3 },\n                { 4 , 5 , 6 },\n                { 7 , 8 , 9 }\n            };\n\n  std::vector<std::vector<double>> B {\n                { 10 , 9 , 8 },\n                { 7 ,  6 , 5 },\n                { 4 ,  3 , 2 }\n            };\n\n  auto C = GeneraliziraniMatricniProizvod(A, B, f1, f2);\n\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<< x << \"  \";\n    std::cout << std::endl;\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "3.00.4.00, 2.00.7.00, 1.00.10.00  3.00.3.00, 2.00.6.00, 1.00.9.00  3.00.2.00, 2.00.5.00, 1.00.8.00\n6.00.4.00, 5.00.7.00, 4.00.10.00  6.00.3.00, 5.00.6.00, 4.00.9.00  6.00.2.00, 5.00.5.00, 4.00.8.00\n9.00.4.00, 8.00.7.00, 7.00.10.00  9.00.3.00, 8.00.6.00, 7.00.9.00  9.00.2.00, 8.00.5.00, 7.00.8.00"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 12,
+            "name": "Test 12",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "std::string f1 (std::string x, std::string y)\n{\n    if (x>y)\n        return x+\", \"+y;\n    return y+\", \"+x;\n}\n\nstd::string f2 (int x, int y)\n{\n    std::stringstream stream;\n    stream << std::fixed << std::setprecision(2) << x<<\".\"<<y;\n    std::string s = stream.str();\n    return s;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "  std::vector<std::vector<float>> A {\n                { 1 , 2 , 3 },\n                { 4 , 5 , 6 },\n                { 7 , 8 , 9 }\n            };\n\n  std::vector<std::vector<double>> B {\n                { 10 , 9 , 8 },\n                { 7 ,  6 , 5 },\n                { 4 ,  3 , 2 }\n            };\n\n  auto C = GeneraliziraniMatricniProizvod(A, B, f1, f2);\n\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<< x << \"  \";\n    std::cout << std::endl;\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "3.4, 2.7, 1.10  3.3, 2.6, 1.9  3.2, 2.5, 1.8\n6.4, 5.7, 4.10  6.3, 5.6, 4.9  6.2, 5.5, 4.8\n9.4, 8.7, 7.10  9.3, 8.6, 7.9  9.2, 8.5, 7.8"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 13,
+            "name": "Test 13",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();\nstd::cout<<\"_____\";",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5 0 0\n"
+                },
+                "expect": [
+                    "Unesite broj redova prve matrice: Unesite broj kolona prve matrice, ujedno broj redova druge matrice: Unesite broj kolona druge matrice:\nUnesite elemente prve matrice:\nUnesite elemente druge matrice:\n\nMatricni proizvod:\n\n\n\n\n\n_____"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 14,
+            "name": "Test 14",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "  std::vector<std::vector<float>> A {\n                { },\n                { },\n                { }\n            };\n\n  std::vector<std::vector<float>> B { };\n\n  auto C = GeneraliziraniMatricniProizvod(A, B,\n    [](int x, int y) { return x + y; },\n    [](int x, int y) { return x + y; });\n  std::cout<<\"Pocetak ispisa:\"<<std::endl;\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<< x << \"  \";\n    std::cout << std::endl;\n  }\n  std::cout<<\"Kraj ispisa!\"<<std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Pocetak ispisa:\n\n\n\nKraj ispisa!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 15,
+            "name": "Test 15",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 02 - Zadatak 03\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 03, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------\n#include <iomanip>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "  std::vector<std::vector<int>> A {\n                { 1 , 2 , 3 },\n                { 2 , 1 , 2 },\n                { 3 , 2 , 1 }\n            };\n\n  std::vector<std::vector<int>> B {\n                { 1 , 2 , 3 },\n                { 4 , 5 , 6 },\n                { 7 , 8 , 9 }\n            };\n\n  auto C = GeneraliziraniMatricniProizvod(A, B,\n     [](int &x, int& y) -> int & { return x; },\n     [](int &x, int& y) -> int & { return y; });\n  std::cout<<\"Pocetak ispisa:\"<<std::endl;\n  for(auto &red : C) {\n    for(auto &x : red)\n      std::cout << std::left<< x << \"  \";\n    std::cout << std::endl;\n  }\n  std::cout<<\"Kraj ispisa!\"<<std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Pocetak ispisa:\n1  2  3\n1  2  3\n1  2  3\nKraj ispisa!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

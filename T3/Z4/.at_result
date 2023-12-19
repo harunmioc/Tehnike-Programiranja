@@ -1,0 +1,189 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9prim2",
+        "os": "Linux 5.13.0-39-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[memcheck]": "valgrind-3.15.0",
+        "profile[sgcheck]": "valgrind-3.15.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3186": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Koliko zelite unijeti elemenata: Unesite elemente: -312,73,0,-26,15\n5555555,9,11111,-333,142,18,23",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==1350426== Memcheck, a memory error detector\n==1350426== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==1350426== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==1350426== Command: outputZpcRam\n==1350426==\n====START_TEST_4329====Koliko zelite unijeti elemenata: Unesite elemente: -312,73,0,-26,15\n5555555,9,11111,-333,142,18,23====END_TEST_4329======1350426==\n==1350426== HEAP SUMMARY:\n==1350426==     in use at exit: 0 bytes in 0 blocks\n==1350426==   total heap usage: 15 allocs, 15 frees, 84,800 bytes allocated\n==1350426==\n==1350426== All heap blocks were freed -- no leaks are possible\n==1350426==\n==1350426== For lists of detected and suppressed errors, rerun with: -s\n==1350426== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 5,
+                    "output": "==1350438== exp-sgcheck, a stack and global array overrun detector\n==1350438== NOTE: This is an Experimental-Class Valgrind Tool\n==1350438== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==1350438== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==1350438== Command: outputZpcRam\n==1350438==\n--1350438-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350438-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350438-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350438-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350438-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350438-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350438-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350438-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_4329====Koliko zelite unijeti elemenata: Unesite elemente: -312,73,0,-26,15\n5555555,9,11111,-333,142,18,23====END_TEST_4329======1350438==\n==1350438== For lists of detected and suppressed errors, rerun with: -s\n==1350438== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3187": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Koliko zelite unijeti elemenata: Unesite elemente: 0,-17,112,73,24\n_",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==1350505== Memcheck, a memory error detector\n==1350505== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==1350505== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==1350505== Command: outputpgPbdl\n==1350505==\n====START_TEST_9094====Koliko zelite unijeti elemenata: Unesite elemente: 0,-17,112,73,24\n_====END_TEST_9094======1350505==\n==1350505== HEAP SUMMARY:\n==1350505==     in use at exit: 0 bytes in 0 blocks\n==1350505==   total heap usage: 14 allocs, 14 frees, 84,288 bytes allocated\n==1350505==\n==1350505== All heap blocks were freed -- no leaks are possible\n==1350505==\n==1350505== For lists of detected and suppressed errors, rerun with: -s\n==1350505== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 6,
+                    "output": "==1350517== exp-sgcheck, a stack and global array overrun detector\n==1350517== NOTE: This is an Experimental-Class Valgrind Tool\n==1350517== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==1350517== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==1350517== Command: outputpgPbdl\n==1350517==\n--1350517-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350517-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350517-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350517-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350517-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350517-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350517-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350517-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_9094====Koliko zelite unijeti elemenata: Unesite elemente: 0,-17,112,73,24\n_====END_TEST_9094======1350517==\n==1350517== For lists of detected and suppressed errors, rerun with: -s\n==1350517== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3188": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Koliko zelite unijeti elemenata: Unesite elemente: \n32,45,111,-23,32",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==1350598== Memcheck, a memory error detector\n==1350598== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==1350598== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==1350598== Command: outputU7RYEk\n==1350598==\n====START_TEST_3740====Koliko zelite unijeti elemenata: Unesite elemente:\n32,45,111,-23,32====END_TEST_3740======1350598==\n==1350598== HEAP SUMMARY:\n==1350598==     in use at exit: 0 bytes in 0 blocks\n==1350598==   total heap usage: 14 allocs, 14 frees, 84,288 bytes allocated\n==1350598==\n==1350598== All heap blocks were freed -- no leaks are possible\n==1350598==\n==1350598== For lists of detected and suppressed errors, rerun with: -s\n==1350598== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 5,
+                    "output": "==1350610== exp-sgcheck, a stack and global array overrun detector\n==1350610== NOTE: This is an Experimental-Class Valgrind Tool\n==1350610== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==1350610== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==1350610== Command: outputU7RYEk\n==1350610==\n--1350610-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350610-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350610-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350610-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350610-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350610-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350610-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350610-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_3740====Koliko zelite unijeti elemenata: Unesite elemente:\n32,45,111,-23,32====END_TEST_3740======1350610==\n==1350610== For lists of detected and suppressed errors, rerun with: -s\n==1350610== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3240": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "2147483647 2",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==1350681== Memcheck, a memory error detector\n==1350681== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==1350681== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==1350681== Command: outputS4ec6l\n==1350681==\n====START_TEST_7264====2147483647 2 ====END_TEST_7264======1350681==\n==1350681== HEAP SUMMARY:\n==1350681==     in use at exit: 0 bytes in 0 blocks\n==1350681==   total heap usage: 11 allocs, 11 frees, 79,616 bytes allocated\n==1350681==\n==1350681== All heap blocks were freed -- no leaks are possible\n==1350681==\n==1350681== For lists of detected and suppressed errors, rerun with: -s\n==1350681== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 6,
+                    "output": "==1350697== exp-sgcheck, a stack and global array overrun detector\n==1350697== NOTE: This is an Experimental-Class Valgrind Tool\n==1350697== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==1350697== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==1350697== Command: outputS4ec6l\n==1350697==\n--1350697-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350697-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350697-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350697-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350697-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350697-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350697-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--1350697-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_7264====2147483647 2 ====END_TEST_7264======1350697==\n==1350697== For lists of detected and suppressed errors, rerun with: -s\n==1350697== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1679223641
+}

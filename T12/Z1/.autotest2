@@ -1,0 +1,117 @@
+{
+    "id": 8621,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 12, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3753,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1 testiranje konstruktora  \n  Sat s1(20, 4, 39);\n  std::cout << s1 << std::endl;\n  Sat s2(25, 150, 290);\n  std::cout << s2 << std::endl;\n  Sat s3;\n  std::cout << s3 << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "20:04:39\n03:34:50\n00:00:00"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3754,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2 testiranje operatora ++ i --,  \n  Sat s1(10, 4, 39);\n  std::cout << s1 << std::endl;\n  Sat s2(26, 160, 290);\n  std::cout << s2 << std::endl;\n  ++s1;\n  std::cout << s1 << std::endl;\n  std::cout << ++s1 << std::endl;\n  s1++;\n  std::cout << s1 << std::endl;\n  std::cout << s1++ << std::endl;\n  std::cout << s1 << std::endl;\n  --s1;\n  std::cout << s1 << std::endl;\n  std::cout << --s1 << std::endl;\n  s1--;\n  std::cout << s1 << std::endl;\n  std::cout << s1-- << std::endl;\n  std::cout << s1 << std::endl;\n  (--(++(++(++(++s1)))));\n  std::cout << s1 << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "10:04:39\n04:44:50\n10:04:40\n10:04:41\n10:04:42\n10:04:42\n10:04:43\n10:04:42\n10:04:41\n10:04:40\n10:04:40\n10:04:39\n10:04:42"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3755,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  \/\/AT3 testiranje operatora += i -=\n  Sat s1(11, 4, 39);\n  std::cout << s1 << std::endl;\n  s1 += 25000;\n  std::cout << s1 << std::endl;\n  s1 -= 25000;\n  std::cout << s1 << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "11:04:39\n18:01:19\n11:04:39"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3756,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  \/\/AT 4 testiranje operatora +, - i +=\n  Sat s1(11, 4, 39);\n  std::cout << s1 << std::endl;\n  Sat s2(25, 150, 1000);\n  std::cout << s2 << std::endl;\n  std::cout << s1 - s2 << std::endl;\n  std::cout << s1 + 100 << std::endl;\n  std::cout << s1 << std::endl;        \n  std::cout << s1 - 100 << std::endl;\n  std::cout << s1 << std::endl;\n  s2 = s1 += 100; \n  std::cout << s2 << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "11:04:39\n03:46:40\n26279\n11:06:19\n11:04:39\n11:02:59\n11:04:39\n11:06:19"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

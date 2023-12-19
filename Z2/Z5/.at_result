@@ -1,0 +1,66 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-137-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "1": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:28:53: error: invalid types ‘short int[int]’ for array subscript\n   28 |      for(int j = 0; j <= i; j++) std::cout << c[i][j] << \" \";\n      |                                                     ^\nmain.cpp:31:16: error: type ‘short int’ argument given to ‘delete’, expected pointer\n   31 |    delete[] c[0]; delete[] c;\n      |                ^\nmain.cpp:31:28: error: type ‘class __gnu_cxx::__normal_iterator<short int*, std::vector<short int> >’ argument given to ‘delete’, expected pointer\n   31 |    delete[] c[0]; delete[] c;\n      |                            ^\nmain.cpp:33:30: warning: catching polymorphic type ‘class std::logic_error’ by value [-Wcatch-value=]\n   33 |      catch (std::logic_error err) {\n      |                              ^~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "53",
+                            "message": "invalid types 'short int[int]' for array subscript",
+                            "code": "for(int j = 0; j <= i; j++) std::cout << c[i][j] << \" \";"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 12,
+                            "col": "16",
+                            "message": "type 'short int' argument given to 'delete', expected pointer",
+                            "code": "delete[] c[0]; delete[] c;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 12,
+                            "col": "28",
+                            "message": "type 'class __gnu_cxx::__normal_iterator<short int*, std::vector<short int> >' argument given to 'delete', expected pointer",
+                            "code": "delete[] c[0]; delete[] c;"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "TEST_CODE",
+                            "line": 14,
+                            "col": "30",
+                            "message": "catching polymorphic type 'class std::logic_error' by value",
+                            "code": "catch (std::logic_error err) {"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "time": 1681758850
+}

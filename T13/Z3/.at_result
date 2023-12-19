@@ -1,0 +1,214 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9prim2",
+        "os": "Linux 5.15.0-58-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3807": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Student master studija Ibro Ibric, sa brojem indeksa 3124,\nzavrsio bachelor studij godine 2015,ima prosjek 9.5.\nStudent bachelor studija Pero Peric, sa brojem indeksa 1243,\nima prosjek 8.\nStudent bachelor studija Meho Mehic, sa brojem indeksa 3412,\nima prosjek 8.\nStudent sa zadanim brojem indeksa ne postoji",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3808": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Student master studija Ibro Ibric, sa brojem indeksa 3124,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nStudent sa zadanim brojem indeksa ne postoji",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3809": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "KOPIRAJUCI KONSTRUKTOR\nOriginal prije promjene\n---------------------\nStudent bachelor studija Pero Peric, sa brojem indeksa 1243,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 3124,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nStudent bachelor studija Meho Mehic, sa brojem indeksa 3412,\nima prosjek 5.\nKopija prije promjene\n---------------------\nStudent bachelor studija Pero Peric, sa brojem indeksa 1243,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 3124,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nStudent bachelor studija Meho Mehic, sa brojem indeksa 3412,\nima prosjek 5.\nOriginal poslije promjene\n---------------------\nStudent bachelor studija Pero Peric, sa brojem indeksa 1243,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 3124,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nStudent bachelor studija Meho Mehic, sa brojem indeksa 3412,\nima prosjek 5.\nKopija poslije promjene\n---------------------\nStudent bachelor studija Pero Peric, sa brojem indeksa 1243,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 3124,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nStudent bachelor studija Meho Mehic, sa brojem indeksa 3412,\nima prosjek 5.\nStudent bachelor studija Djuro Djuric, sa brojem indeksa 9876,\nima prosjek 5.\nPOMIJERAJUCI KONSTRUKTOR\nOriginal prije promjene\n---------------------\nKopija prije promjene\n---------------------\nStudent bachelor studija Pero Peric, sa brojem indeksa 1243,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 3124,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nStudent bachelor studija Meho Mehic, sa brojem indeksa 3412,\nima prosjek 5.\nOriginal poslije promjene\n---------------------\nKopija poslije promjene\n---------------------\nStudent bachelor studija Pero Peric, sa brojem indeksa 1243,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 3124,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nStudent bachelor studija Meho Mehic, sa brojem indeksa 3412,\nima prosjek 5.\nStudent bachelor studija Djuro Djuric, sa brojem indeksa 9999,\nima prosjek 5.",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3810": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Student bachelor studija Pero Peric, sa brojem indeksa 1243,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 3124,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nStudent bachelor studija Meho Mehic, sa brojem indeksa 3412,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 3124,\nzavrsio bachelor studij godine 2015,ima prosjek 5.",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3816": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "KOPIRAJUCI OPERATOR DODJELE - manji većem\nOriginal prije promjene:\n----------------------\nStudent bachelor studija Meho Mehic, sa brojem indeksa 1111,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 2222,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nKopija prije promjene:\n----------------------\nStudent bachelor studija Meho Mehic, sa brojem indeksa 1111,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 2222,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nOriginal nakon promjene:\n----------------------\nStudent bachelor studija Meho Mehic, sa brojem indeksa 1111,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 2222,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nKopija nakon promjene:\n----------------------\nStudent master studija Ibro Ibric, sa brojem indeksa 2222,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nKOPIRAJUCI OPERATOR DODJELE - veći manjem\nOriginal prije promjene:\n----------------------\nStudent bachelor studija Meho Mehic, sa brojem indeksa 1111,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 2222,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nKopija prije promjene:\n----------------------\nStudent bachelor studija Meho Mehic, sa brojem indeksa 1111,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 2222,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nOriginal nakon promjene:\n----------------------\nStudent bachelor studija Meho Mehic, sa brojem indeksa 1111,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 2222,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nKopija nakon promjene:\n----------------------\nStudent master studija Ibro Ibric, sa brojem indeksa 2222,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\n\n\nPOMIJERAJUCI OPERATOR DODJELE - manji većem",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "71234": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Student bachelor studija Pero Peric, sa brojem indeksa 1243,\nima prosjek 5.\nStudent master studija Ibro Ibric, sa brojem indeksa 3124,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nStudent bachelor studija Meho Mehic, sa brojem indeksa 3412,\nima prosjek 5.\nStudent sa zadanim brojem indeksa vec postoji",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1687471768
+}

@@ -1,0 +1,238 @@
+{
+    "id": 8564,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 6, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 3445,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 3408,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT1 testiranje na negativan broj redova\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "-10"
+                },
+                "expect": [
+                    "Koliko zelite redova: Izuzetak: Broj redova mora biti pozitivan"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3409,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT2 testiranje na broj redova jednak nuli\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "0\n"
+                },
+                "expect": [
+                    "Koliko zelite redova: Izuzetak: Broj redova mora biti pozitivan"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3410,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT3 testiranje funkcije na broj redova jednak jedan\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1"
+                },
+                "expect": [
+                    "Koliko zelite redova: 1 "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3411,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4 testiranje na broj redova jednak 10\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10"
+                },
+                "expect": [
+                    "Koliko zelite redova: 1 \n2 1 2 \n3 2 1 2 3 \n4 3 2 1 2 3 4 \n5 4 3 2 1 2 3 4 5 \n6 5 4 3 2 1 2 3 4 5 6 \n7 6 5 4 3 2 1 2 3 4 5 6 7 \n8 7 6 5 4 3 2 1 2 3 4 5 6 7 8 \n9 8 7 6 5 4 3 2 1 2 3 4 5 6 7 8 9 \n10 9 8 7 6 5 4 3 2 1 2 3 4 5 6 7 8 9 10 "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3412,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT5 testiranje neuspje\u0161nog alociranja memorije\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1000000"
+                },
+                "expect": [
+                    "Koliko zelite redova: Izuzetak: Nedovoljno memorije!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3413,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT 6 direktno testiranje funkcije na poslan negativan broj redova\ntry {\n    int **m(KreirajTrougao(0));\n  }\n  catch(std::domain_error e) {\n    std::cout << \"Izuzetak: \" << e.what();\n  }\n  catch(...) {\n    std::cout << \"Pogre\u0161an izuzetak!\";\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Broj redova mora biti pozitivan"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3414,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT7 testiranje da li je memorija alocirana kontinualno\n    int **m(KreirajTrougao(10));\n    int *p(m[0]);\n    for(int i = 0; i < 100; i++) std::cout << *p++ << \" \";\n    delete[] m[0]; delete[] m;\n\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 2 1 2 3 2 1 2 3 4 3 2 1 2 3 4 5 4 3 2 1 2 3 4 5 6 5 4 3 2 1 2 3 4 5 6 7 6 5 4 3 2 1 2 3 4 5 6 7 8 7 6 5 4 3 2 1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1 2 3 4 5 6 7 8 9 10 9 8 7 6 5 4 3 2 1 2 3 4 5 6 7 8 9 10 "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3443,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT8 provjera da li se memorija pravilno alocira\ntry {\n    int **m(KreirajTrougao(5));\n    for(int i = 0; i < 5; i++) {\n      for(int j = 0; j < 2 * i + 1; j++) std::cout << m[i][j] << \" \";\n      std::cout << std::endl;\n    }\n    delete[] m[0]; delete[] m;\n    std::cout << \"New pozvan \" << brojac_new << \" puta,  delete [] pozvan \" << brojac_deleteniz << \" puta, a alocirano ukupno \" << alocirano << \" bajta i to redom: \";\n    for (int i=0; i<brojac_new;i++) std::cout << alokacije[i] << \" \";\n  }\n    catch(std::domain_error e) {\n    std::cout << \"Izuzetak: \" << e.what();\n  }\n  catch(std::bad_alloc) {\n    std::cout << \"Izuzetak: Nedovoljno memorije!\";\n  }\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <vector>\nstatic size_t alocirano(0);\nstatic int brojac_new(0);\nstatic int brojac_deleteniz(0);\nstatic size_t alokacije[20];\n\nvoid *operator new[] (size_t vel)\n{\nalokacije[brojac_new]=vel;\n    brojac_new++;\n    alocirano+=vel;   \n    return std::malloc (vel);\n}\n\nvoid operator delete [] ( void* ptr) {\n  brojac_deleteniz++;\n  free(ptr);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 \n2 1 2 \n3 2 1 2 3 \n4 3 2 1 2 3 4 \n5 4 3 2 1 2 3 4 5 \nNew pozvan 2 puta,  delete [] pozvan 2 puta, a alocirano ukupno 140 bajta i to redom: 40 100",
+                    "1 \n2 1 2 \n3 2 1 2 3 \n4 3 2 1 2 3 4 \n5 4 3 2 1 2 3 4 5 \nNew pozvan 2 puta,  delete [] pozvan 2 puta, a alocirano ukupno 120 bajta i to redom: 20 100"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3444,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT9 provjera da li se o\u010disti sme\u0107e iza neuspje\u0161ne alokacije\n try {\n    int **m(KreirajTrougao(5));\n    for(int i = 0; i < 5; i++) {\n      for(int j = 0; j < 2 * i + 1; j++) std::cout << m[i][j] << \" \";\n      std::cout << std::endl;\n    }\n        delete[] m[0]; delete[] m;\n    std::cout << \"New pozvan \" << brojac_new << \" puta,  delete [] pozvan \" << brojac_deleteniz << \" puta, a alocirano ukupno \" << alocirano << \" bajta i to redom: \";\n    for (int i=0; i<brojac_new;i++) std::cout << alokacije[i] << \" \";\n  }\n    catch(std::domain_error e) {\n    std::cout << \"Izuzetak: \" << e.what();\n  }\n  catch(std::bad_alloc) {\nstd::cout << \"New pozvan \" << brojac_new << \" puta,  delete [] pozvan \" << brojac_deleteniz << \" puta, a alocirano ukupno \" << alocirano << \" bajta i to redom: \";\n    for (int i=0; i<brojac_new;i++) std::cout << alokacije[i] << \" \";\n    std::cout << \"Izuzetak: Nedovoljno memorije!\";\n  }",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <vector>\nstatic size_t alocirano(0);\nstatic int brojac_new(0);\nstatic int brojac_deleteniz(0);\nstatic size_t alokacije[20];\nconst size_t RAM = 30 * sizeof(int);\n\nvoid *operator new[] (size_t vel)\n{\n    if (RAM < alocirano+vel) throw std::bad_alloc();\n    alokacije[brojac_new]=vel;\n    brojac_new++;\n    alocirano+=vel;   \n    return std::malloc (vel);\n}\n\nvoid operator delete [] ( void* ptr) {\n  brojac_deleteniz++;\n  free(ptr);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "New pozvan 1 puta,  delete [] pozvan 1 puta, a alocirano ukupno 40 bajta i to redom: 40 Izuzetak: Nedovoljno memorije!",
+                    "New pozvan 1 puta,  delete [] pozvan 1 puta, a alocirano ukupno 20 bajta i to redom: 20 Izuzetak: Nedovoljno memorije!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

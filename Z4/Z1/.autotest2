@@ -1,0 +1,180 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 4, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "0"
+                },
+                "expect": [
+                    "Unesite broj krugova: \nUneseni broj nije prirodan!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2\n1.13 -\n1.13 -2.16\n2\n2.16 -1.13\n-4\n2.26 -1.13\n4\n1 1\n0\n"
+                },
+                "expect": [
+                    "Unesite broj krugova: Unesite centar 1. kruga: Neispravne koordinate centra! Pokusajte ponovo:\n\nUnesite centar 1. kruga: Unesite poluprecnik 1. kruga: Unesite centar 2. kruga: Unesite poluprecnik 2. kruga: Neispravan poluprecnik! Pokusajte ponovo:\n\nUnesite centar 2. kruga: Unesite poluprecnik 2. kruga: Unesite parametre translacije (delta_x,delta_y): Unesite ugao rotacije oko tacke (0,0) u stepenima: Parametri krugova nakon obavljene transformacije su:\n{(2.13,-1.16),2}\n{(3.26,-0.13),4}\nKrug sa najvecim obimom je: {(3.26,-0.13),4}\nNe postoje krugovi koji se presjecaju!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3\n0 0\n1\n2 2\n2\n1 2\n3\n1 1\n45\n"
+                },
+                "expect": [
+                    "Unesite broj krugova: Unesite centar 1. kruga: Unesite poluprecnik 1. kruga: Unesite centar 2. kruga: Unesite poluprecnik 2. kruga: Unesite centar 3. kruga: Unesite poluprecnik 3. kruga: Unesite parametre translacije (delta_x,delta_y): Unesite ugao rotacije oko tacke (0,0) u stepenima: Parametri krugova nakon obavljene transformacije su:\n{(1.11022e-16,1.41421),1}\n{(4.44089e-16,4.24264),2}\n{(-0.707107,3.53553),3}\nKrug sa najvecim obimom je: {(-0.707107,3.53553),3}\nPresjecaju se krugovi:\n{(1.11022e-16,1.41421),1} i {(4.44089e-16,4.24264),2}\nPresjecaju se krugovi:\n{(1.11022e-16,1.41421),1} i {(-0.707107,3.53553),3}\nPresjecaju se krugovi:\n{(4.44089e-16,4.24264),2} i {(-0.707107,3.53553),3}"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "int broj_izuzetaka{0};\n    try{\n        Krug k1(2);\n    }\n    catch(std::domain_error i){\n        std::cout<<i.what()<<std::endl;\n        broj_izuzetaka++;\n    }\n    try{\n        Krug k1(-3);\n    }\n    catch(std::domain_error i){\n        std::cout<<i.what()<<std::endl;\n        broj_izuzetaka++;\n    }\n    try{\n        Krug k1(std::make_pair(-1, -1), 1);\n    }\n    catch(std::domain_error i){\n        std::cout<<i.what()<<std::endl;\n        broj_izuzetaka++;\n    }\n    try{\n        Krug k1(std::make_pair(0, 50), -50);\n    }\n    catch(std::domain_error i){\n        std::cout<<i.what()<<std::endl;\n        broj_izuzetaka++;\n    }\n    try{\n        Krug k1(0);\n    }\n    catch(std::domain_error i){\n        std::cout<<i.what()<<std::endl;\n        broj_izuzetaka++;\n    }\n    try{\n        Krug k1(std::make_pair(0, 0), 0);\n    }\n    catch(std::domain_error i){\n        std::cout<<i.what()<<std::endl;\n        broj_izuzetaka++;\n    }\n    if(broj_izuzetaka==2) std::cout<<\"Odlicno! Ocekivani broj izuzetaka jeste \"<<broj_izuzetaka<<\"!\";\n    else std::cout<<\"Ne valja! Ocekivani broj izuzetaka nije \"<<broj_izuzetaka<<\"!\";",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Nedozvoljen poluprecnik\nNedozvoljen poluprecnik\nOdlicno! Ocekivani broj izuzetaka jeste 2!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::vector<Krug> krugovi{Krug(1), Krug({-1,1}, 2), Krug({1, 1}, 1)};\n    int broj_presjecanja{0};\n    for(int i=0; i<krugovi.size(); i++)\n        for(int j=i; j<krugovi.size(); j++)\n            if(Krug::DaLiSeSijeku(krugovi.at(i), krugovi.at(j))) broj_presjecanja++;\n    std::cout<<\"Na pocetku se presjeca \"<<broj_presjecanja<<\" krugova.\"<<std::endl;\n    std::cout<<\"Novi parametri krugova 1 i 2 su: \\n\";\n    krugovi.at(0).Transliraj(-2, 0).Rotiraj({-1,0}, 180).Ispisi();\n    std::cout<<std::endl;\n    krugovi.at(1).Rotiraj(90).Transliraj(0, -1).Ispisi();\n    broj_presjecanja=0;\n    for(int i=0; i<krugovi.size(); i++)\n        for(int j=i; j<krugovi.size(); j++)\n            if(Krug::DaLiSeSijeku(krugovi.at(i), krugovi.at(j))) broj_presjecanja++;\n    std::cout<<\"\\nNa kraju se presjeca \"<<broj_presjecanja<<\" krugova.\"<<std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Na pocetku se presjeca 3 krugova.\nNovi parametri krugova 1 i 2 su:\n{(-0.40154,0.801153),1}\n{(-0.445923,-2.34207),2}\nNa kraju se presjeca 1 krugova."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

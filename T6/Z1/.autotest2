@@ -1,0 +1,314 @@
+{
+    "id": 8561,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 6, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 3417,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 3380,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT1: Slanje negativnog n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "-10"
+                },
+                "expect": [
+                    "Koliko zelite elemenata: Izuzetak: Broj elemenata mora biti pozitivan"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3383,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT2 : testiranje slanja nule\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "0\n"
+                },
+                "expect": [
+                    "Koliko zelite elemenata: Izuzetak: Broj elemenata mora biti pozitivan"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3384,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT3 : testiranje prekoracenja opsega\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "100000000"
+                },
+                "expect": [
+                    "Koliko zelite elemenata: Izuzetak: Prekoracen dozvoljeni opseg"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3385,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT4 : primjer koji testira funkciju GenerirajStepeneDvojke na integer\n\n    int *p(GenerirajStepeneDvojke<int>(10));\n    for(int i = 0; i < 10; i++) std::cout << p[i] << \" \";\n    delete [] p;\n   ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 2 4 8 16 32 64 128 256 512"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3386,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ testiranje funkcije na double tip podataka\n double *p(GenerirajStepeneDvojke<double>(12));\n for(int i = 0; i < 12; i++) std::cout << p[i] << \" \";\n delete [] p;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 2 4 8 16 32 64 128 256 512 1024 2048"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3387,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/testiranje funkcije na tip unsigned int\nunsigned int *p(GenerirajStepeneDvojke<unsigned int>(8));\n    for(int i = 0; i < 8; i++) std::cout << p[i] << \" \";\n    delete [] p;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 2 4 8 16 32 64 128"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3388,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT7 testiranje grani\u010dne vrijednost long double koja izaziva overflow\ntry {\n    long double *p(GenerirajStepeneDvojke<long double>(16385));\n    for(int i = 0; i < 11; i++) std::cout << p[i] << \" \";\n    delete [] p;\n}\n  catch(std::overflow_error e) {\n    std::cout << \"Izuzetak: \" << e.what();\n  }\n  catch(...) {\n    std::cout << \"Pogre\u0161an izuzetak!\";\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Prekoracen dozvoljeni opseg"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3389,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT8 testiranje granicne vrijednosti long double koja ne izaziva overflow\n\n    long double *p(GenerirajStepeneDvojke<long double>(16384));\n    for(int i = 0; i < 20; i++) std::cout << p[i] << \" \";\n    delete [] p;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384 32768 65536 131072 262144 524288"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3390,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT9 testiranje rubnog slu\u010daja integera koji izaziva overflow\ntry {\n int  *p(GenerirajStepeneDvojke<int>(32));\n for(int i = 0; i < 32; i++) std::cout << p[i] << \" \";\n delete [] p;\n}\n  catch(std::overflow_error e) {\n    std::cout << \"Izuzetak: \" << e.what();\n  }\n  catch(...) {\n    std::cout << \"Pogre\u0161an izuzetak!\";\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Prekoracen dozvoljeni opseg"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3391,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT 10 testiranje grani\u010dne vrijednosti floata koja ne izaziva overflow\n float  *p(GenerirajStepeneDvojke<float>(128));\n for(int i = 0; i < 20; i++) std::cout << p[i] << \" \";\n delete [] p;\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384 32768 65536 131072 262144 524288"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3392,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT11 testiranje da li se stepeni ispisuju egzaktno, a ne aproksimativno\n_main();\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "30"
+                },
+                "expect": [
+                    "Koliko zelite elemenata: 1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384 32768 65536 131072 262144 524288 1048576 2097152 4194304 8388608 16777216 33554432 67108864 134217728 268435456 536870912"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3393,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT12 testiranje grani\u010dne vrijednosti double koja izaziva overflow \ntry {\n double  *p(GenerirajStepeneDvojke<double>(1025));\n for(int i = 0; i < 25; i++) std::cout << p[i] << \" \";\n delete [] p;\n }\n  catch(std::overflow_error e) {\n    std::cout << \"Izuzetak: \" << e.what();\n  }\n  catch(...) {\n   std::cout << \"Pogre\u0161an izuzetak!\";\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Prekoracen dozvoljeni opseg"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3415,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT13 direktno testiranje funkcije na poslano n jednako nuli\n  try {\n  int  *p(GenerirajStepeneDvojke<int>(0));\n  }\n  catch(std::domain_error e) {\n    std::cout << \"Izuzetak: \" << e.what();\n  }\n  catch(...) {\n    std::cout << \"Pogre\u0161an izuzetak!\";\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Broj elemenata mora biti pozitivan"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3416,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT13 direktno testiranje funkcije na poslan negativan n\n  try {\n  int  *p(GenerirajStepeneDvojke<int>(-5));\n  }\n  catch(std::domain_error e) {\n    std::cout << \"Izuzetak: \" << e.what();\n  }\n  catch(...) {\n    std::cout << \"Pogre\u0161an izuzetak!\";\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Broj elemenata mora biti pozitivan"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

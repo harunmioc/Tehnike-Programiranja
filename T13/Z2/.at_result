@@ -1,0 +1,190 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9prim2",
+        "os": "Linux 5.15.0-58-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3803": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Paja Patak 4312 4 7.5\nStudent master studija Paja Patak, sa brojem indeksa 4312,\nzavrsio bachelor studij godine 2015,ima prosjek 7.5.\nNeispravna ocjena\nNeispravna ocjena\nPaja Patak 4312 0 5\nStudent master studija Paja Patak, sa brojem indeksa 4312,\nzavrsio bachelor studij godine 2015,ima prosjek 5.",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3804": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Dusko Dugousko 1234 4 7.5\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 7.5.\nPaja Patak 4312 4 7.5\nStudent master studija Paja Patak, sa brojem indeksa 4312,\nzavrsio bachelor studij godine 2015,ima prosjek 7.5.",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3805": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Originalni student:\n-----------------\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 7.5.\nKopija student:\n-----------------\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 7.5.\nOriginalni student nakon izmjene:\n-----------------\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 8.\nKopija student:\n-----------------\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 7.5.",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3806": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "main.cpp: In member function ‘virtual ApstraktniStudent* Medjed::DajKopiju() const’:\nmain.cpp:111:41: warning: no return statement in function returning non-void [-Wreturn-type]\n  111 |   ApstraktniStudent *DajKopiju() const {};\n      |                                         ^",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "41",
+                            "message": "no return statement in function returning non-void",
+                            "code": "ApstraktniStudent *DajKopiju() const {};"
+                        }
+                    ]
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "Pozvan ispravan destruktor!",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "71234": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Dusko Dugousko 1234 4 7.5\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 7.5.\nNeispravna ocjena\nNeispravna ocjena\nDusko Dugousko 1234 0 5\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 5.",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1686293956
+}

@@ -1,0 +1,334 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 4, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "    Videoteka V;\n    V.RegistrirajNovogKorisnika(123,\"N N\", \"Nedodjija BB\",\"000\/000-000\");\n    V.RegistrirajNovogKorisnika(124,\"D D\", \"Nedodjija BB\",\"000\/000-001\");\n    V.IzlistajKorisnike();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Clanski broj: 123\nIme i prezime: N N\nAdresa: Nedodjija BB\nTelefon: 000\/000-000\n\nClanski broj: 124\nIme i prezime: D D\nAdresa: Nedodjija BB\nTelefon: 000\/000-001"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "    Videoteka V;\n    V.RegistrirajNoviFilm(1,true, \"12 Angry Men\", \"krimi\/drama\", 1957);\n    std::cout<<\"----------Najbolji film----------\"<<std::endl;\n    V.IzlistajFilmove();\n\n    Videoteka V1;\n    V1.RegistrirajNoviFilm(1,true, \"The Naked Gun: From the Files of Police Squad!\", \"komedija\/akcija\", 1988);\n    V1.RegistrirajNoviFilm(2,true, \"Airplane!\", \"komedija\", 1980);\n    V1.RegistrirajNoviFilm(3,true, \"Mossad\", \"akcija\/komedija\", 2019);\n    V1.RegistrirajNoviFilm(4,true, \"Adam's Apples\", \"komedija\/krimi\/drama\", 2005);\n    V1.RegistrirajNoviFilm(5,true, \"The Green Butchers\", \"komedija\/drama\", 2003);\n    V1.RegistrirajNoviFilm(6,true, \"Snatch\", \"komedija\/krimi\", 2000);\n    V1.RegistrirajNoviFilm(7,true, \"Lock, Stock and Two Smoking Barrels\", \"akcija\/komedija\/krimi\", 1998);\n    V1.RegistrirajNoviFilm(8,true, \"Pulp Fiction\", \"krimi\/komedija\", 1994);\n    V1.RegistrirajNoviFilm(9,true, \"Burn After Reading\", \"komedija\/krimi\/drama\", 2008);\n    V1.RegistrirajNoviFilm(10,true, \"The Men Who Stare at Goats\", \"komedija\/ratni\", 2009);\n    std::cout<<\"----------Luckasti filmovi----------\"<<std::endl;\n    V1.IzlistajFilmove();\n\n    Videoteka V2;\n    V2.RegistrirajNoviFilm(1,true, \"Se7en\", \"krimi\/drama\/misterija\", 1995);\n    V2.RegistrirajNoviFilm(2,true, \"Fight club\", \"drama\", 1999);\n    V2.RegistrirajNoviFilm(3,true, \"The Hunt\", \"drama\", 2012);\n    V2.RegistrirajNoviFilm(4,true, \"American Psycho\", \"krimi\/drama\/horror\", 2000);\n    V2.RegistrirajNoviFilm(5,true, \"Hereditary\", \"drama\/horor\/misterija\", 2018);\n    V2.RegistrirajNoviFilm(6,true, \"The VVitch\", \"drama\/fantazija\/horor\", 2015);\n    V2.RegistrirajNoviFilm(7,true, \"2001: A Space Odyssey\", \"avantura\/sci-fi\", 1968);\n    V2.RegistrirajNoviFilm(8,true, \"Dark City\", \"fantazija\/misterija\/sci-fi\", 1998);\n    V2.RegistrirajNoviFilm(9,true, \"The Green Mile\", \"krimi\/drama\/fantazija\", 1999);\n    V2.RegistrirajNoviFilm(10,true, \"Brazil\", \"drama\/sci-fi\", 1985);\n    V2.RegistrirajNoviFilm(11,true, \"Sunshine\", \"sci-fi\/triler\", 2007);\n    V2.RegistrirajNoviFilm(12,true, \"12 Monkeys\", \"misterija\/sci-fi\/triler\", 1995);\n    V2.RegistrirajNoviFilm(13,true, \"The Thirteenth Floor\", \"misterija\/sci-fi\/triler\", 1999);\n    V2.RegistrirajNoviFilm(14,true, \"Pan's Labyrinth\", \"drama\/fantazija\/ratni\", 2006);\n    std::cout<<\"----------Ozbiljni filmovi----------\"<<std::endl;\n    V2.IzlistajFilmove();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "----------Najbolji film----------\nEvidencijski broj: 1\nMedij: DVD\nNaziv filma: 12 Angry Men\nZanr: krimi\/drama\nGodina produkcije: 1957\n\n----------Luckasti filmovi----------\nEvidencijski broj: 1\nMedij: DVD\nNaziv filma: The Naked Gun: From the Files of Police Squad!\nZanr: komedija\/akcija\nGodina produkcije: 1988\n\nEvidencijski broj: 2\nMedij: DVD\nNaziv filma: Airplane!\nZanr: komedija\nGodina produkcije: 1980\n\nEvidencijski broj: 3\nMedij: DVD\nNaziv filma: Mossad\nZanr: akcija\/komedija\nGodina produkcije: 2019\n\nEvidencijski broj: 4\nMedij: DVD\nNaziv filma: Adam's Apples\nZanr: komedija\/krimi\/drama\nGodina produkcije: 2005\n\nEvidencijski broj: 5\nMedij: DVD\nNaziv filma: The Green Butchers\nZanr: komedija\/drama\nGodina produkcije: 2003\n\nEvidencijski broj: 6\nMedij: DVD\nNaziv filma: Snatch\nZanr: komedija\/krimi\nGodina produkcije: 2000\n\nEvidencijski broj: 7\nMedij: DVD\nNaziv filma: Lock, Stock and Two Smoking Barrels\nZanr: akcija\/komedija\/krimi\nGodina produkcije: 1998\n\nEvidencijski broj: 8\nMedij: DVD\nNaziv filma: Pulp Fiction\nZanr: krimi\/komedija\nGodina produkcije: 1994\n\nEvidencijski broj: 9\nMedij: DVD\nNaziv filma: Burn After Reading\nZanr: komedija\/krimi\/drama\nGodina produkcije: 2008\n\nEvidencijski broj: 10\nMedij: DVD\nNaziv filma: The Men Who Stare at Goats\nZanr: komedija\/ratni\nGodina produkcije: 2009\n\n----------Ozbiljni filmovi----------\nEvidencijski broj: 1\nMedij: DVD\nNaziv filma: Se7en\nZanr: krimi\/drama\/misterija\nGodina produkcije: 1995\n\nEvidencijski broj: 2\nMedij: DVD\nNaziv filma: Fight club\nZanr: drama\nGodina produkcije: 1999\n\nEvidencijski broj: 3\nMedij: DVD\nNaziv filma: The Hunt\nZanr: drama\nGodina produkcije: 2012\n\nEvidencijski broj: 4\nMedij: DVD\nNaziv filma: American Psycho\nZanr: krimi\/drama\/horror\nGodina produkcije: 2000\n\nEvidencijski broj: 5\nMedij: DVD\nNaziv filma: Hereditary\nZanr: drama\/horor\/misterija\nGodina produkcije: 2018\n\nEvidencijski broj: 6\nMedij: DVD\nNaziv filma: The VVitch\nZanr: drama\/fantazija\/horor\nGodina produkcije: 2015\n\nEvidencijski broj: 7\nMedij: DVD\nNaziv filma: 2001: A Space Odyssey\nZanr: avantura\/sci-fi\nGodina produkcije: 1968\n\nEvidencijski broj: 8\nMedij: DVD\nNaziv filma: Dark City\nZanr: fantazija\/misterija\/sci-fi\nGodina produkcije: 1998\n\nEvidencijski broj: 9\nMedij: DVD\nNaziv filma: The Green Mile\nZanr: krimi\/drama\/fantazija\nGodina produkcije: 1999\n\nEvidencijski broj: 10\nMedij: DVD\nNaziv filma: Brazil\nZanr: drama\/sci-fi\nGodina produkcije: 1985\n\nEvidencijski broj: 11\nMedij: DVD\nNaziv filma: Sunshine\nZanr: sci-fi\/triler\nGodina produkcije: 2007\n\nEvidencijski broj: 12\nMedij: DVD\nNaziv filma: 12 Monkeys\nZanr: misterija\/sci-fi\/triler\nGodina produkcije: 1995\n\nEvidencijski broj: 13\nMedij: DVD\nNaziv filma: The Thirteenth Floor\nZanr: misterija\/sci-fi\/triler\nGodina produkcije: 1999\n\nEvidencijski broj: 14\nMedij: DVD\nNaziv filma: Pan's Labyrinth\nZanr: drama\/fantazija\/ratni\nGodina produkcije: 2006"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "    Videoteka V;\n    V.RegistrirajNovogKorisnika(123,\"N N\", \"Nedodjija BB\",\"000\/000-000\");\n    V.RegistrirajNovogKorisnika(124,\"D D\", \"Nedodjija BB\",\"000\/000-001\");\n    V.RegistrirajNoviFilm(123,true, \"Terminator 3\", \"akcija\", 2003);\n    V.RegistrirajNoviFilm(124,0,\"Terminator\", \"akcija\",1984);\n    try\n    {\n        V.ZaduziFilm(123, 123);\n    }\n    catch(std::logic_error e)\n    {\n        std::cout<<e.what()<<std::endl;\n    }\n    V.IzlistajFilmove();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Evidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\nZaduzen kod korisnika: N N (123)\n\nEvidencijski broj: 124\nMedij: Video traka\nNaziv filma: Terminator\nZanr: akcija\nGodina produkcije: 1984"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "    Videoteka V;\n    V.RegistrirajNovogKorisnika(123,\"N N\", \"Nedodjija BB\",\"000\/000-000\");\n    V.RegistrirajNovogKorisnika(124,\"D D\", \"Nedodjija BB\",\"000\/000-001\");\n    V.RegistrirajNoviFilm(123,true, \"Terminator 3\", \"akcija\", 2003);\n    V.RegistrirajNoviFilm(124,0,\"Terminator\", \"akcija\",1984);\n    try\n    {\n        V.ZaduziFilm(123, 123);\n    }\n    catch(std::logic_error e)\n    {\n        std::cout<<e.what()<<std::endl;\n    }\n    V.PrikaziZaduzenja(123);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Evidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "    Videoteka V;\n    V.RegistrirajNovogKorisnika(123,\"N N\", \"Nedodjija BB\",\"000\/000-000\");\n    try\n    {\n        V.RegistrirajNovogKorisnika(123,\"D D\", \"Nedodjija BB\",\"000\/000-001\");\n    }\n    catch(std::logic_error e)\n    {\n        std::cout<<e.what()<<std::endl;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Vec postoji korisnik s tim clanskim brojem"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "    Videoteka V;\n    V.RegistrirajNoviFilm(123,true, \"Terminator 3\", \"akcija\", 2003);\n    try\n    {\n        V.RegistrirajNoviFilm(123,0,\"Terminator\", \"akcija\",1984);\n    }\n    catch(std::logic_error e)\n    {\n        std::cout<<e.what()<<std::endl;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Film s tim evidencijskim brojem vec postoji"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "    Videoteka V;\n    V.RegistrirajNovogKorisnika(123,\"N N\", \"Nedodjija BB\",\"000\/000-000\");\n    V.RegistrirajNovogKorisnika(124,\"D D\", \"Nedodjija BB\",\"000\/000-001\");\n    V.RegistrirajNoviFilm(123,true, \"Terminator 3\", \"akcija\", 2003);\n    V.RegistrirajNoviFilm(124,0,\"Terminator\", \"akcija\",1984);\n    try\n    {\n        V.ZaduziFilm(123, 123);\n    }\n    catch(std::logic_error e)\n    {\n        std::cout<<e.what()<<std::endl;\n    }\n    try\n    {\n        V.ZaduziFilm(123, 123);\n    }\n    catch(std::logic_error e)\n    {\n        std::cout<<e.what()<<std::endl;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Film vec zaduzen"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "    Videoteka V;\n    V.RegistrirajNovogKorisnika(123,\"N N\", \"Nedodjija BB\",\"000\/000-000\");\n    V.RegistrirajNovogKorisnika(124,\"D D\", \"Nedodjija BB\",\"000\/000-001\");\n    V.RegistrirajNoviFilm(123,true, \"Terminator 3\", \"akcija\", 2003);\n    V.RegistrirajNoviFilm(124,0,\"Terminator\", \"akcija\",1984);\n    try\n    {\n        V.ZaduziFilm(123, 123);\n    }\n    catch(std::logic_error e)\n    {\n        std::cout<<e.what()<<std::endl;\n    }\n    try\n    {\n        V.ZaduziFilm(125, 123);\n    }\n    catch(std::logic_error e)\n    {\n        std::cout<<e.what()<<std::endl;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Film nije nadjen"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 10,
+            "name": "Test 10",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "Videoteka V;\n    V.RegistrirajNovogKorisnika(123,\"N N\", \"Nedodjija BB\",\"000\/000-000\");\n    V.RegistrirajNovogKorisnika(124,\"D D\", \"Nedodjija BB\",\"000\/000-001\");\n    V.RegistrirajNoviFilm(123,true, \"Terminator 3\", \"akcija\", 2003);\n    V.RegistrirajNoviFilm(124,0,\"Terminator\", \"akcija\",1984);\n    try\n    {\n        V.ZaduziFilm(123, 123);\n    }\n    catch(std::logic_error e)\n    {\n        std::cout<<e.what()<<std::endl;\n    }\n    try\n    {\n        V.NadjiFilm(123).Ispisi();\n        V.NadjiKorisnika(123).Ispisi();\n        V.NadjiFilm(125).Ispisi();\n    }\n    catch(std::logic_error e)\n    {\n        std::cout<<e.what()<<std::endl;\n    }\n    try\n    {\n        V.NadjiKorisnika(125).Ispisi();\n    }\n    catch(std::logic_error e)\n    {\n        std::cout<<e.what()<<std::endl;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Evidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\nClanski broj: 123\nIme i prezime: N N\nAdresa: Nedodjija BB\nTelefon: 000\/000-000\nFilm nije nadjen\nKorisnik nije nadjen"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 11,
+            "name": "Test 11",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "Videoteka V;\n        V.RegistrirajNovogKorisnika(123,\"N N\", \"Nedodjija BB\",\"000\/000-000\");\n        V.RegistrirajNovogKorisnika(124,\"D D\", \"Nedodjija BB\",\"000\/000-001\");\n        V.RegistrirajNoviFilm(123,true, \"Terminator 3\", \"akcija\", 2003);\n        V.RegistrirajNoviFilm(124,0,\"Terminator\", \"akcija\",1984);\n        try\n        {\n            V.ZaduziFilm(123, 123);\n        }\n        catch(std::logic_error e)\n        {\n            std::cout<<e.what()<<std::endl;\n        }\n\n        if(true)\n        {\n            std::cout<<\"V3\"<<std::endl;\n            Videoteka V3(V);\n            V3.RazduziFilm(123);\n            V3.IzlistajFilmove();\n            try\n            {\n                V3.NadjiFilm(123).RazduziFilm();\n            }\n            catch(std::logic_error e)\n            {\n                std::cout<<e.what()<<std::endl;\n            }\n        }\n        std::cout<<\"V\"<<std::endl;\n        V.IzlistajFilmove();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "V3\nEvidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\n\nEvidencijski broj: 124\nMedij: Video traka\nNaziv filma: Terminator\nZanr: akcija\nGodina produkcije: 1984\n\nV\nEvidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\nZaduzen kod korisnika: N N (123)\n\nEvidencijski broj: 124\nMedij: Video traka\nNaziv filma: Terminator\nZanr: akcija\nGodina produkcije: 1984"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 12,
+            "name": "Test 12",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "    Videoteka V2;\n    if(true)\n    {\n        Videoteka V;\n        V.RegistrirajNovogKorisnika(123,\"N N\", \"Nedodjija BB\",\"000\/000-000\");\n        V.RegistrirajNovogKorisnika(124,\"D D\", \"Nedodjija BB\",\"000\/000-001\");\n        V.RegistrirajNoviFilm(123,true, \"Terminator 3\", \"akcija\", 2003);\n        V.RegistrirajNoviFilm(124,0,\"Terminator\", \"akcija\",1984);\n        try\n        {\n            V.ZaduziFilm(123, 123);\n        }\n        catch(std::logic_error e)\n        {\n            std::cout<<e.what()<<std::endl;\n        }\n        V2 = std::move(V);\n        try\n        {\n            V.RazduziFilm(123);\n        }\n        catch(std::logic_error e)\n        {\n            std::cout<<e.what()<<std::endl;\n        }\n    }\n    std::cout<<\"V2\"<<std::endl;\n    V2.IzlistajFilmove();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Film nije nadjen\nV2\nEvidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\nZaduzen kod korisnika: N N (123)\n\nEvidencijski broj: 124\nMedij: Video traka\nNaziv filma: Terminator\nZanr: akcija\nGodina produkcije: 1984"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 13,
+            "name": "Test 13",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 04 - Zadatak 04\n\/\/ Odgovorni asistent: Tarik Pozderac - tpozderac1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 04, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "    Videoteka V;\n    V.RegistrirajNovogKorisnika(123,\"N N\", \"Nedodjija BB\",\"000\/000-000\");\n    V.RegistrirajNovogKorisnika(124,\"D D\", \"Nedodjija BB\",\"000\/000-001\");\n    V.RegistrirajNoviFilm(123,true, \"Terminator 3\", \"akcija\", 2003);\n    V.RegistrirajNoviFilm(124,0,\"Terminator\", \"akcija\",1984);\n    V.ZaduziFilm(123,123);\n\n    const Videoteka V2 = V;\n    const Film F = V.NadjiFilm(123);\n    const Korisnik K = V.NadjiKorisnika(123);\n\n    std::cout<<\"Filmovi:\"<<std::endl;\n    V2.IzlistajFilmove();\n    std::cout<<\"Korisnici:\"<<std::endl;\n    V2.IzlistajKorisnike();\n    std::cout<<\"Zaduzenja korisnika 123:\"<<std::endl;\n    V2.PrikaziZaduzenja(123);\n\n    std::cout<<\"Film:\"<<std::endl;\n    std::cout<<\"Ev. broj: \"<<F.DajEvidencijskiBroj()<<std::endl;\n    std::cout<<\"God. prod: \"<<F.DajGodinuProdukcije()<<std::endl;\n    std::cout<<\"Naziv: \"<<F.DajNaziv()<<std::endl;\n    std::cout<<\"Da li je DVD: \"<<F.DaLiJeDVD()<<std::endl;\n    std::cout<<\"Da li je zaduzen: \"<<F.DaLiJeZaduzen()<<std::endl;\n\n    std::cout<<\"Korisnik:\"<<std::endl;\n    std::cout<<\"Adresa: \"<<K.DajAdresu()<<std::endl;\n    std::cout<<\"Cl. broj: \"<<K.DajClanskiBroj()<<std::endl;\n    std::cout<<\"Ime i prezime: \"<<K.DajImeIPrezime()<<std::endl;\n    std::cout<<\"Telefon: \"<<K.DajTelefon()<<std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Filmovi:\nEvidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\nZaduzen kod korisnika: N N (123)\n\nEvidencijski broj: 124\nMedij: Video traka\nNaziv filma: Terminator\nZanr: akcija\nGodina produkcije: 1984\n\nKorisnici:\nClanski broj: 123\nIme i prezime: N N\nAdresa: Nedodjija BB\nTelefon: 000\/000-000\n\nClanski broj: 124\nIme i prezime: D D\nAdresa: Nedodjija BB\nTelefon: 000\/000-001\n\nZaduzenja korisnika 123:\nEvidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\n\nFilm:\nEv. broj: 123\nGod. prod: 2003\nNaziv: Terminator 3\nDa li je DVD: 1\nDa li je zaduzen: 1\nKorisnik:\nAdresa: Nedodjija BB\nCl. broj: 123\nIme i prezime: N N\nTelefon: 000\/000-000"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

@@ -1,0 +1,230 @@
+{
+    "id": 8556,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 5, Zadatak 6",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3358,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: testira primjer iz postavke\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define deque !zabranjeno!!",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n25 -174 2316 1111 99 0 -345 614 -1111 22222\n2316"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Niz sortiran po sumi cifara glasi: 0 -1111 1111 25 22222 614 -345 -174 2316 99\nUnesite broj koji trazite: Trazeni broj nalazi se na poziciji 8"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3359,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: testira skoro sortiran primjer\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define deque !zabranjeno!!",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n10 100 1000 20 200 2000 110 1100 -97 88\n88"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Niz sortiran po sumi cifara glasi: 10 100 1000 20 110 200 1100 2000 -97 88 \nUnesite broj koji trazite: Trazeni broj nalazi se na poziciji 9"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3360,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: testira obrnuto sortirani niz\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define deque !zabranjeno!!",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n558 99 -99 44 -17 -112 -11 100 10 1\n-11\n"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Niz sortiran po sumi cifara glasi: 1 10 100 -11 -112 -17 44 -99 99 558\nUnesite broj koji trazite: Trazeni broj nalazi se na poziciji 3"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3361,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: testira sortirani niz\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define deque !zabranjeno!!",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n1 10 100 -11 -112 -17 44 -99 99 558\n-11"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Niz sortiran po sumi cifara glasi: 1 10 100 -11 -112 -17 44 -99 99 558\nUnesite broj koji trazite: Trazeni broj nalazi se na poziciji 3"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3362,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: primjer koji ispituje da li program sortira vrijednosti koje\n\/\/imaju istu sumu cifara i jedna do druge su, ali su po vrijednosti nesortirane\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define deque !zabranjeno!!",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5\n125 44 -99 99 1\n1"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Niz sortiran po sumi cifara glasi: 1 44 125 -99 99\nUnesite broj koji trazite: Trazeni broj nalazi se na poziciji 0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3375,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6: primjer koji ispituje pretragu pozicije broja koji se ne nalazi u sortiranom nizu\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define deque !zabranjeno!!",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5\n125 44 -99 99 1\n65"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Niz sortiran po sumi cifara glasi: 1 44 125 -99 99\nUnesite broj koji trazite: Trazeni broj ne nalazi se u nizu!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

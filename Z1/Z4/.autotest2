@@ -1,0 +1,258 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 1, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "input_file": "stderr.txt",
+            "fast": true
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/Ako sumnjate na gresku u testovima, javite na mail kerim.hodzic@etf.unsa.ba\n\/\/AT1 primjer iz postavke\n\n_main();"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "On je potpuni idiot, stoga ga treba dobro namlatiti!\nkreten idiot ubiti namlatiti crncuga ."
+                },
+                "expect": [
+                    "Unesite recenicu:\nUnesite zabranjene rijeci (. za kraj):\nCenzurisana recenica: On je potpuni *****, stoga ga treba dobro *********!\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT 2 primjer iz postavke\n_main();"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "I corava koka gvozdena vrata otvara...\nxyz 2+3=5 ##$-- ."
+                },
+                "expect": [
+                    "Unesite recenicu:\nUnesite zabranjene rijeci (. za kraj):\nGRESKA: Nelegalne zabranjene rijeci!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "try {\n    std::string a= Cenzura(\"Obratiti paznju na postavku zadataka prije nego posaljete mail da je test pogresan\", { \"###################\", \"plugh\" });\n    std::cout << \"Cenzurisana recenica: \" << a;\n  }\n  catch(std::logic_error e) {\n    std::cout << e.what();\n  }"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Neispravna rije\u010d"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4 kombinacije rijeci i malih i velikih slova\n_main();"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Strogo je zabranjeno koristiti zabranjene rijeci\nSTROG ZABRANJENE RIJEC ."
+                },
+                "expect": [
+                    "Unesite recenicu:\nUnesite zabranjene rijeci (. za kraj):\nCenzurisana recenica: Strogo je zabranjeno koristiti ********** rijeci"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5 kombinacije rijeci i malih i velikih slova\n_main();"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "ova zadaca iz TPa je Teska teska TESKA tesKA\nTESKA ."
+                },
+                "expect": [
+                    "Unesite recenicu:\nUnesite zabranjene rijeci (. za kraj):\nCenzurisana recenica: ova zadaca iz TPa je ***** ***** ***** *****"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6 kombinacije rijeci i malih i velikih slova\n_main();"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "VOLIMO volimo Volimo VolimO TP\nVOLIM vol T P V O L I M ."
+                },
+                "expect": [
+                    "Unesite recenicu:\nUnesite zabranjene rijeci (. za kraj):\nCenzurisana recenica: VOLIMO volimo Volimo VolimO TP"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "try {\n    std::string a= Cenzura(\"Na primjer, ukoliko je zabranjena rije\u010d zadana kao \u201cidiot\u201d, treba prepoznati tu zabranjenu rije\u010d bez obzira da li je ona napisana kao \u201cidiot\u201d, \u201cIdiot\u201d ili \u201cIDIOT\u201d. Tako\u0111er, prepoznaju se samo kompletne rijeci, ali ne i dijelovi.\", { \"kud\", \"idiot\", \"idijot\", \"idi\"});\n    std::cout << \"Cenzurisana recenica: \" << a;\n  }\n  catch(std::logic_error e) {\n    std::cout << e.what();\n  }"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Cenzurisana recenica: Na primjer, ukoliko je zabranjena rije\u010d zadana kao \u201c*****\u201d, treba prepoznati tu zabranjenu rije\u010d bez obzira da li je ona napisana kao \u201c*****\u201d, \u201c*****\u201d ili \u201c*****\u201d. Tako\u0111er, prepoznaju se samo kompletne rijeci, ali ne i dijelovi."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "try {\n    std::string a= Cenzura(\"U novinarstvu se \u010desto koristi cenzurisanje teksta, u kojem se dijelovi teksta koji su iz bilo kojeg razloga neprikladni sakrivaju od \u010ditatelja tako \u0161to se precrtaju.\", { \"CENZURISANJE\",\"Sakrivaju\", \"PrEcRtAjU\", \"idijot\", \"idi\"});\n    std::cout << \"Cenzurisana recenica: \" << a;\n  }\n  catch(std::logic_error e) {\n    std::cout << e.what();\n  }\n"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Cenzurisana recenica: U novinarstvu se \u010desto koristi ************ teksta, u kojem se dijelovi teksta koji su iz bilo kojeg razloga neprikladni ********* od \u010ditatelja tako \u0161to se *********."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 10,
+            "name": "Test 10",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "try {\n    std::string a= Cenzura(\"Za potrebe digitalne obrade slika i op\u0107enito za potrebe pamcenja slika u ra\u010dunarskoj memoriji, slika se naj\u010de\u0161\u0107e posmatra kao da je sastavljena od vrlo sitnih nedjeljivih kvadrati\u0107a, nazvanih pikseli.\", { \"PIKSELI\",\"sitni\", \"pamcenja\", \"nazvani\", \"posmatra\"});\n    std::cout << \"Cenzurisana recenica: \" << a;\n  }\n  catch(std::logic_error e) {\n    std::cout << e.what();\n  }\n"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Cenzurisana recenica: Za potrebe digitalne obrade slika i op\u0107enito za potrebe ******** slika u ra\u010dunarskoj memoriji, slika se naj\u010de\u0161\u0107e ******** kao da je sastavljena od vrlo sitnih nedjeljivih kvadrati\u0107a, nazvanih *******."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 11,
+            "name": "Test 11",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    try {\n    std::string a= Cenzura(\"Napisanu funkciju \u201cMultiplikativniDigitalniKorijen\u201d trebate iskoristiti kao potprogram unutar funkcije nazvane \u201cRazvrstajBrojeve\u201d.\", { \"Korijen\",\"san\", \"nazvan\", \"iSKOristiti\", \"posmatra\"});\n    std::cout << \"Cenzurisana recenica: \" << a;\n  }\n  catch(std::logic_error e) {\n    std::cout << e.what();\n  }"
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Cenzurisana recenica: Napisanu funkciju \u201cMultiplikativniDigitalniKorijen\u201d trebate *********** kao potprogram unutar funkcije nazvane \u201cRazvrstajBrojeve\u201d."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

@@ -1,0 +1,380 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 1, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "input_file": "stderr.txt",
+            "fast": true
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "long long int n{123};\nstd::vector<int> baze{10, 20, 30, 40, 50, 60, 70, 80, 90, 100};\nfor(int i=0; i<baze.size(); i++){\n     std::cout<<\"MultiplikativniDigitalniKorijen(\"<<n<<\",\"<<baze.at(i)<< \") = \"<<MultiplikativniDigitalniKorijen(n, baze.at(i))<<std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "111 121 131 141 151 161 171 181 191 .\n"
+                },
+                "expect": [
+                    "Unesite brojeve (bilo koji ne-broj oznacava kraj):\nRezultati razvrstavanja po multiplikativnom digitalnom korijenu:\n1: 111\n2: 121\n3: 131\n4: 141\n5: 151\n6: 161\n7: 171\n8: 181\n9: 191"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "18 16 14 12 122 241 216 1281.15 y\n"
+                },
+                "expect": [
+                    "Unesite brojeve (bilo koji ne-broj oznacava kraj): \nRezultati razvrstavanja po multiplikativnom digitalnom korijenu:\n2: 12 216\n4: 14 122\n6: 16 1281\n8: 18 241"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "     !\n"
+                },
+                "expect": [
+                    "Unesite brojeve (bilo koji ne-broj oznacava kraj): \nRezultati razvrstavanja po multiplikativnom digitalnom korijenu:"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "-2 -13 -411 531 624 -721 826 924 .\n"
+                },
+                "expect": [
+                    "Unesite brojeve (bilo koji ne-broj oznacava kraj): \nNije podrzano razvrstavanje negativnih brojeva!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <climits>",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "long long int nv=LLONG_MAX;\nstd::vector<long long int> v{nv, nv\/2, nv\/3, nv\/4, nv\/7, nv\/9};\nstd::vector<int> b{1211111, 1411111, 1711111, 1811111, 1911111, 11011111};\nfor(int i=0; i<v.size(); i++){\n     std::cout<<\"MultiplikativniDigitalniKorijen(\"<<v.at(i)<<\",\"<<b.at(b.size()-1-i)<< \") = \"<<MultiplikativniDigitalniKorijen(v.at(i), b.at(b.size()-1-i))<<std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "MultiplikativniDigitalniKorijen(9223372036854775807,11011111) = 9615125\nMultiplikativniDigitalniKorijen(4611686018427387903,1911111) = 1688985\nMultiplikativniDigitalniKorijen(3074457345618258602,1811111) = 301855\nMultiplikativniDigitalniKorijen(2305843009213693951,1711111) = 1472225\nMultiplikativniDigitalniKorijen(1317624576693539401,1411111) = 368524\nMultiplikativniDigitalniKorijen(1024819115206086200,1211111) = 1159752"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "try{\n     long long int v{121};\n     std::vector<int> b{5, 4, 3, 2, 1, 0, -1};\n     for(int i=0; i<b.size(); i++){\n          std::cout << MultiplikativniDigitalniKorijen(v, b.at(i)) << \" \";\n      }\n}\ncatch(std::domain_error i){\n     std::cout << \"\\n\"<<i.what() << std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "3 2 1 0 \nNeispravna baza"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::vector<long long int> v{-19, -17, -15, -13, 0, 3, 5, 7, 9};\ntry{\n     std::cout << \"Rezultati razvrstavanja po multiplikativnom digitalnom korijenu:\\n\";\n     auto rezultat = RazvrstajBrojeve(v, TretmanNegativnih::IgnorirajZnak);\n     for(int i = 0; i < 10; i++) {\n          if(rezultat.at(i).size() != 0) {\n               std::cout << i << \": \";\n               for(auto x : rezultat.at(i)) std::cout << x << \" \";\n               std::cout << std::endl;\n          }\n     }\n}\ncatch(std::domain_error i){\n     std::cout<<i.what();\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Rezultati razvrstavanja po multiplikativnom digitalnom korijenu:\n0: 0\n3: 13 3\n5: 15 5\n7: 17 7\n9: 19 9"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::vector<long long int> v{-19, -17, -15, -13, 0, 3, 5, 7, 9};\ntry{\n     std::cout << \"Rezultati razvrstavanja po multiplikativnom digitalnom korijenu:\\n\";\n     auto rezultat = RazvrstajBrojeve(v, TretmanNegativnih::PrijaviGresku);\n     for(int i = 0; i < 10; i++) {\n          if(rezultat.at(i).size() != 0) {\n               std::cout << i << \": \";\n               for(auto x : rezultat.at(i)) std::cout << x << \" \";\n               std::cout << std::endl;\n          }\n     }\n}\ncatch(std::domain_error i){\n     std::cout<<i.what();\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Rezultati razvrstavanja po multiplikativnom digitalnom korijenu:\nNije predvidjeno razvrstavanje negativnih brojeva"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 10,
+            "name": "Test 10",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "long long int n{123};\nstd::vector<int> baze{10, 20, 30, 40, 50, 60, 70, 80, 90, 100};\nfor(int i=0; i<baze.size(); i++){\n     std::cout<<\"MultiplikativniDigitalniKorijen(\"<<n<<\",\"<<baze.at(i)<< \") = \"<<MultiplikativniDigitalniKorijen(n, baze.at(i))<<std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "MultiplikativniDigitalniKorijen(123,10) = 6\nMultiplikativniDigitalniKorijen(123,20) = 18\nMultiplikativniDigitalniKorijen(123,30) = 12\nMultiplikativniDigitalniKorijen(123,40) = 9\nMultiplikativniDigitalniKorijen(123,50) = 46\nMultiplikativniDigitalniKorijen(123,60) = 6\nMultiplikativniDigitalniKorijen(123,70) = 53\nMultiplikativniDigitalniKorijen(123,80) = 43\nMultiplikativniDigitalniKorijen(123,90) = 33\nMultiplikativniDigitalniKorijen(123,100) = 23"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 11,
+            "name": "Test 11",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "int b{123456789};\nstd::vector<long long int> v{123456790, 123456799, 123456899, 123457899, 123467899, 123567899, 124567899, 134567899};\nfor(int i=0; i<v.size(); i++){\n     std::cout<<\"MultiplikativniDigitalniKorijen(\"<<v.at(i)<<\",\"<<b<< \") = \"<<MultiplikativniDigitalniKorijen(v.at(i), b)<<std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "MultiplikativniDigitalniKorijen(123456790,123456789) = 1\nMultiplikativniDigitalniKorijen(123456799,123456789) = 10\nMultiplikativniDigitalniKorijen(123456899,123456789) = 110\nMultiplikativniDigitalniKorijen(123457899,123456789) = 1110\nMultiplikativniDigitalniKorijen(123467899,123456789) = 11110\nMultiplikativniDigitalniKorijen(123567899,123456789) = 111110\nMultiplikativniDigitalniKorijen(124567899,123456789) = 1111110\nMultiplikativniDigitalniKorijen(134567899,123456789) = 11111110"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 12,
+            "name": "Test 12",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 1 - Zadatak 1\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "long long int n{987654321};\nstd::vector<int> baze{123456789, 12345678, 1234567, 123456, 12345, 1234, 123, 12, 1};\ntry{\n     for(int i=0; i<baze.size(); i++){\n          std::cout<<\"MultiplikativniDigitalniKorijen(\"<<n<<\",\"<<baze.at(i)<< \") = \"<<MultiplikativniDigitalniKorijen(n, baze.at(i))<<std::endl;\n     }\n}\ncatch(std::domain_error i){\n     std::cout<<i.what()<<std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "MultiplikativniDigitalniKorijen(987654321,123456789) = 72\nMultiplikativniDigitalniKorijen(987654321,12345678) = 6480\nMultiplikativniDigitalniKorijen(987654321,1234567) = 576800\nMultiplikativniDigitalniKorijen(987654321,123456) = 9408\nMultiplikativniDigitalniKorijen(987654321,12345) = 8235\nMultiplikativniDigitalniKorijen(987654321,1234) = 1044\nMultiplikativniDigitalniKorijen(987654321,123) = 33\nMultiplikativniDigitalniKorijen(987654321,12) = 0\nMultiplikativniDigitalniKorijen(987654321,1) = Neispravna baza"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

@@ -1,0 +1,218 @@
+{
+    "id": 8562,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 6, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 3442,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 3395,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT1 testiranje maina koji sadr\u017ei vector double-ova\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10 2.5 -7 3.12 6 4 0 -1.111 4 2 7.39\n"
+                },
+                "expect": [
+                    "Koliko zelite elemenata: Unesite elemente: Kreirani niz: 7.39 2 4 -1.111 0 4 6 3.12 -7 2.5"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3396,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "above_main",
+                    "code": "namespace std {\n    template <class T>\n    class Testni_vektor : public std::vector<T> {\n        public:\n        using std::vector<T>::vector; \/\/naslijedi sve konstuktore iz std::vector (C++11 i dalje)\n       \n       Testni_vektor(int n)\n        {\n            if (n > 10000)\n            {\n                throw std::bad_alloc();\n            }\n        }\n\n        void resize( size_t n )\n        {\n            if (n > 10000)\n            {\n                throw std::bad_alloc();\n            }\n        }\n    };\n}\n#define vector Testni_vektor",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT2 testiranje hvatanja izuzetka u slu\u010daju nedostatka memorije\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2000000000"
+                },
+                "expect": [
+                    "Koliko zelite elemenata: Nedovoljno memorije!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3397,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT3 testiranje funkcije na vektor stringova\nstd::vector<std::string> v = {\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\"};\nstd::string *p(KreirajIzvrnutiNiz(v.begin(), v.end()));\nfor(int i = 0; i < v.size(); i++) std::cout << p[i] << \" \";\ndelete [] p;\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Sunday Saturday Friday Thursday Wednesday Tuesday Monday"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3399,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT4 testiranje da li funkcija prima parametre koji mogu koristiti samo operacije navedene u postavci zadatka\nstd::forward_list<int> l{1,2,3,4,5};\nint *p(KreirajIzvrnutiNiz(l.begin(), l.end()));\nfor(int i = 0; i < 5; i++) std::cout << p[i] << \" \";\ndelete [] p;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <forward_list>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "5 4 3 2 1"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3400,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT5 testiranje da li je mogu\u0107e funkciji poslati vektor elemenata koje nije mogu\u0107e sabirati\n\nstd::vector<std::vector<int>> v{{1,2},{3,4},{5,6}};\nstd::vector<int> *p = KreirajIzvrnutiNiz(v.begin(), v.end());\ndelete [] p;\nstd::cout << \"Svaka \u010dast\";\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Svaka \u010dast"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3401,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT6 testiranje da li funkcija ispravno radi nad vektorom integera\n    \n    std::vector<int> v { 21,34,23,67,98, };\n    int *p(KreirajIzvrnutiNiz(v.begin(), v.end()));\n    for(int i = 0; i < 5; i++) std::cout << p[i] << \" \";\n    delete [] p;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "98 67 23 34 21"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3433,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT7 provjera bacanja izuzetka iz funkcije\n try {\n    std::vector<double> v {1,2,3,4,5};\n    double *p(KreirajIzvrnutiNiz(v.begin(), v.end()));\n    for(int i = 0; i < 5; i++) std::cout << p[i] << \" \";\n    delete [] p;\n    std::cout << \"New pozvan \" << brojac_new << \" puta,  delete [] pozvan \" << brojac_deleteniz << \" puta, a alocirano ukupno \" << alocirano << \" bajta i to redom: \";\n    for (int i=0; i<brojac_new;i++) std::cout << alokacije[i] << \" \";\n  }\n  catch(std::bad_alloc) {\n    std::cout << \"Nedovoljno memorije!\";\n  }\n  catch(...) {\n    std::cout << \"Greska\";\n  }",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "static size_t alocirano(0);\nstatic int brojac_new(0);\nstatic int brojac_deleteniz(0);\nstatic size_t alokacije[10];\nconst size_t RAM = 4 * sizeof(double);\n\nvoid *operator new[] (size_t vel)\n{\n    if (RAM < alocirano+vel) throw std::bad_alloc();\n    alokacije[brojac_new]=vel;\n    brojac_new++;\n    alocirano+=vel;   \n    return std::malloc (vel);\n}\n\nvoid operator delete [] ( void* ptr) {\n  brojac_deleteniz++;\n  free(ptr);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Nedovoljno memorije!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3441,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT8 provjera da li se pravilno alocira memorija\ntry {\n    std::vector<double> v {1,2,3,4,5};\n    double *p(KreirajIzvrnutiNiz(v.begin(), v.end()));\n    for(int i = 0; i < 5; i++) std::cout << p[i] << \" \";\n    delete [] p;\n    std::cout << \"New pozvan \" << brojac_new << \" puta,  delete [] pozvan \" << brojac_deleteniz << \" puta, a alocirano ukupno \" << alocirano << \" bajta i to redom: \";\n    for (int i=0; i<brojac_new;i++) std::cout << alokacije[i] << \" \";\n  }\n  catch(std::bad_alloc) {\n    std::cout << \"Nedovoljno memorije!\";\n  }\n  catch(...) {\n    std::cout << \"Greska\";\n  }",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "static size_t alocirano(0);\nstatic int brojac_new(0);\nstatic int brojac_deleteniz(0);\nstatic size_t alokacije[10];\nconst size_t RAM = 5 * sizeof(double);\n\nvoid *operator new[] (size_t vel)\n{\n    if (RAM < alocirano+vel) throw std::bad_alloc();\n    alokacije[brojac_new]=vel;\n    brojac_new++;\n    alocirano+=vel;   \n    return std::malloc (vel);\n}\n\nvoid operator delete [] ( void* ptr) {\n  brojac_deleteniz++;\n  free(ptr);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "5 4 3 2 1 New pozvan 1 puta,  delete [] pozvan 1 puta, a alocirano ukupno 40 bajta i to redom: 40"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

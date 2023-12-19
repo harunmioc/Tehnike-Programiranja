@@ -1,0 +1,252 @@
+{
+    "id": 8553,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 5, Zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3336,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: testira primjer iz postavke\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n1849 374 3327 -112 12544 -27 -112 998001 -112 49\n"
+                },
+                "expect": [
+                    "Unesite broj elemenata (max. 1000): Unesite elemente: Najveci element niza je 998001 \nNajmanji element niza se pojavljuje 3 puta u nizu\nU nizu ima 4 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je -27\nElementi koji nisu trocifreni su: 1849 3327 12544 -27 998001 49"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3337,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: testira slucaj niza bez trocifrenih brojeva\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5\n1000 1 2123 -12 9 "
+                },
+                "expect": [
+                    "Unesite broj elemenata (max. 1000): Unesite elemente: Najveci element niza je 2123 \nNajmanji element niza se pojavljuje 1 puta u nizu\nU nizu ima 2 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 1\nElementi koji nisu trocifreni su: 1000 1 2123 -12 9 "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3338,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: testira niz bez elemenata koji su potpuni kvadrati\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "6\n12 35 789 99110 205 -111"
+                },
+                "expect": [
+                    "Unesite broj elemenata (max. 1000): Unesite elemente: Najveci element niza je 99110 \nNajmanji element niza se pojavljuje 1 puta u nizu\nU nizu ima 0 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 12\nElementi koji nisu trocifreni su: 12 35 99110"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3339,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: testira niz koji se sastavljen iskljucivo od elemenata koji su potpuni kvadrati\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n1 4 9 16 25 36 49 64 81 100"
+                },
+                "expect": [
+                    "Unesite broj elemenata (max. 1000): Unesite elemente: Najveci element niza je 100 \nNajmanji element niza se pojavljuje 1 puta u nizu\nU nizu ima 10 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 1\nElementi koji nisu trocifreni su: 1 4 9 16 25 36 49 64 81"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3340,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: testira niz koji sadrzi jednu nulu kao element \n\/\/(ispitivanje vrijednosti za koje je definisana funkcija log)\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5 \n1053 0 125 333333 55 "
+                },
+                "expect": [
+                    "Unesite broj elemenata (max. 1000): Unesite elemente: Najveci element niza je 333333 \nNajmanji element niza se pojavljuje 1 puta u nizu\nU nizu ima 1 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 0\nElementi koji nisu trocifreni su: 1053 0 333333 55"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3341,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6: testira niz koji sadrzi sve nule kao elemente \n\/\/(ispitivanje vrijednosti za koje je definisana funkcija log)\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n0 0 0 0 0 0 0 0 0 0"
+                },
+                "expect": [
+                    "Unesite broj elemenata (max. 1000): Unesite elemente: Najveci element niza je 0 \nNajmanji element niza se pojavljuje 10 puta u nizu\nU nizu ima 10 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 0\nElementi koji nisu trocifreni su: 0 0 0 0 0 0 0 0 0 0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3342,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7: testira niz koji sadrzi negativan broj koji je po apsolutnoj vrijednosti potpun kvadrat\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2\n225 -64"
+                },
+                "expect": [
+                    "Unesite broj elemenata (max. 1000): Unesite elemente: Najveci element niza je 225\nNajmanji element niza se pojavljuje 1 puta u nizu\nU nizu ima 1 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je -64\nElementi koji nisu trocifreni su: -64"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3343,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8: testira niz koji sadr\u017ei samo grani\u010dne vrijednosti iz opsega trocifrenih brojeva\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "4\n100 -100 999 -999"
+                },
+                "expect": [
+                    "Unesite broj elemenata (max. 1000): Unesite elemente: Najveci element niza je 999 \nNajmanji element niza se pojavljuje 1 puta u nizu\nU nizu ima 1 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 100\nElementi koji nisu trocifreni su: "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

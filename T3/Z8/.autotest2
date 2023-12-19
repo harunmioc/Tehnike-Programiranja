@@ -1,0 +1,239 @@
+{
+    "id": 8538,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 3, Zadatak 8",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3207,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: Primjer iz postavke\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "4\n   Na     vrh brda    vrba  mrda   "
+                },
+                "expect": [
+                    "Unesite redni broj rijeci: Unesite recenicu: Rijec na poziciji 4 je vrba"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3208,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: Primjer iz postavke\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "6\n   Na     vrh brda    vrba  mrda   "
+                },
+                "expect": [
+                    "Unesite redni broj rijeci: Unesite recenicu: IZUZETAK: Pogresan redni broj rijeci!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3209,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: Na ulazu unesen prazan string\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\n"
+                },
+                "expect": [
+                    "Unesite redni broj rijeci: Unesite recenicu: IZUZETAK: Pogresan redni broj rijeci!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3210,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: Na ulazu unesene razne kombinacije praznih mjesta sa jednom rijeci\nstd::cout << \"'\" << IzdvojiRijec(\" rijec \", 1) << \"'\" << std::endl;\nstd::cout << \"'\" << IzdvojiRijec(\"  rijec  \", 1) << \"'\" << std::endl;\nstd::cout << \"'\" << IzdvojiRijec(\"  rijec\", 1) << \"'\" << std::endl;\nstd::cout << \"'\" << IzdvojiRijec(\"rijec  \", 1) << \"'\" << std::endl;\nstd::cout << \"'\" << IzdvojiRijec(\"               rijec       \", 1) << \"'\" << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'rijec'\n'rijec'\n'rijec'\n'rijec'\n'rijec'"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3211,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: Na ulazu unesene razne kombinacije praznih mjesta sa dvije rijeci\nstd::cout << \"'\" << IzdvojiRijec(\"rijec1 rijec 2\", 1) << \"'\" << std::endl;\nstd::cout << \"'\" << IzdvojiRijec(\" rijec1 rijec2 \", 2) << \"'\" << std::endl;\nstd::cout << \"'\" << IzdvojiRijec(\"  rijec2  rijec1  \", 2) << \"'\" << std::endl;\nstd::cout << \"'\" << IzdvojiRijec(\"           rijec1 rijec2      \", 2) << \"'\" << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'rijec1'\n'rijec2'\n'rijec1'\n'rijec2'"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3212,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: Potraga za rijeci koja je manja ili jednaka nuli\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "-1\n  Na vrh vrbe    brdo    mrda.    "
+                },
+                "expect": [
+                    "Unesite redni broj rijeci: Unesite recenicu: IZUZETAK: Pogresan redni broj rijeci!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3213,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: Recenica sa dvije komplikovane rijeci\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\n Ja.sam\/student#Elektrotehnickog.fakulteta    u   Sarajevu  "
+                },
+                "expect": [
+                    "Unesite redni broj rijeci: Unesite recenicu: Rijec na poziciji 1 je Ja.sam\/student#Elektrotehnickog.fakulteta"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3214,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  \/\/AT8: std::string najcesce kao svoj kraj cuva \\0, kao i C string. \n  \/\/     Ipak, to nije standardom propisano i vrlo je moguce da std::string\n  \/\/     na neki drugi nacin oznacava vlastiti kraj.  Stoga ovo C-ovsko rjesenje\n  \/\/     NIJE VALIDNO: \n  \n  \/\/     char *pok = &s[0]; \n  \/\/     while (*pok!= '\\0') {...}\n  \n  std::string s = \" prva    druga    treca   ovo    se   isto mora  razmatrati  ovo je c++   \";\n  s[24] = '\\0'; \/\/ubacujemo \\0 na sredinu stringa, a trazimo rijec IZA \\0\n  std::cout << \"'\" << IzdvojiRijec (s, 9) << \"'\"; \/\/treba ispisati 'razmatrati'!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "'razmatrati'"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        }
+    ]
+}

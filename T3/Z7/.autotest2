@@ -1,0 +1,219 @@
+{
+    "id": 8537,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 3, Zadatak 7",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3203,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: Primjer iz postavke\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define PascalovTrokut PascalovTrougao",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "7"
+                },
+                "expect": [
+                    "Unesite broj redova: \n  1\n  1  1\n  1  2  1\n  1  3  3  1\n  1  4  6  4  1\n  1  5 10 10  5  1\n  1  6 15 20 15  6  1"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3204,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: Situacija kada je n=0 i kada je n negativan broj\ntry \n{\n   std::cout << PascalovTrokut(0).size();\n   std::cout << std::endl;\n   PascalovTrokut(-1);\n}\ncatch(std::domain_error izuzetak) {\n   std::cout << izuzetak.what() << std::endl;\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define PascalovTrokut PascalovTrougao",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0\nBroj redova ne smije biti negativan"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3205,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: PascalovTrokut za n=10\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define PascalovTrokut PascalovTrougao",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10"
+                },
+                "expect": [
+                    "Unesite broj redova: \n   1\n   1   1\n   1   2   1\n   1   3   3   1\n   1   4   6   4   1\n   1   5  10  10   5   1\n   1   6  15  20  15   6   1\n   1   7  21  35  35  21   7   1\n   1   8  28  56  70  56  28   8   1\n   1   9  36  84 126 126  84  36   9   1"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3206,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: Pascalov trokut za n=1\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define PascalovTrokut PascalovTrougao",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1"
+                },
+                "expect": [
+                    "Unesite broj redova: \n 1"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3207,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5 - testira da li funkcija vra\u0107a grbavu matricu\n  auto a(PascalovTrougao(5));\n  for(auto red : a) {\n    for(int x : red) std::cout << red.size();\n    std::cout << std::endl; }\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define PascalovTrokut PascalovTrougao",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1\n22\n333\n4444\n55555"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3208,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/isto kao 5 \n\n auto a(PascalovTrougao(2));\n  for(auto red : a) {\n    for(int x : red) std::cout << red.size();\n    std::cout << std::endl;\n  }",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define PascalovTrokut PascalovTrougao",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1\n22"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        }
+    ]
+}

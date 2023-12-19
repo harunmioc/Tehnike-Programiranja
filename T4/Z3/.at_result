@@ -1,0 +1,447 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9prim2",
+        "os": "Linux 5.13.0-39-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3256": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:22:1: error: ‘IzdvojiKrajnjeRijeci’ was not declared in this scope\n   22 | IzdvojiKrajnjeRijeci(v, prva, posljednja);\n      | ^~~~~~~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'IzdvojiKrajnjeRijeci' was not declared in this scope",
+                            "code": "IzdvojiKrajnjeRijeci(v, prva, posljednja);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3257": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:21:1: error: ‘ZadrziDuplikate’ was not declared in this scope\n   21 | ZadrziDuplikate(v);\n      | ^~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "1",
+                            "message": "'ZadrziDuplikate' was not declared in this scope",
+                            "code": "ZadrziDuplikate(v);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3258": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:22:1: error: ‘IzdvojiKrajnjeRijeci’ was not declared in this scope\n   22 | IzdvojiKrajnjeRijeci(v, prva, posljednja);\n      | ^~~~~~~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'IzdvojiKrajnjeRijeci' was not declared in this scope",
+                            "code": "IzdvojiKrajnjeRijeci(v, prva, posljednja);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3259": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:22:1: error: ‘IzdvojiKrajnjeRijeci’ was not declared in this scope\n   22 | IzdvojiKrajnjeRijeci(v, prva, posljednja);\n      | ^~~~~~~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'IzdvojiKrajnjeRijeci' was not declared in this scope",
+                            "code": "IzdvojiKrajnjeRijeci(v, prva, posljednja);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3260": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:22:1: error: ‘IzdvojiKrajnjeRijeci’ was not declared in this scope\n   22 | IzdvojiKrajnjeRijeci(v, prva, posljednja);\n      | ^~~~~~~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'IzdvojiKrajnjeRijeci' was not declared in this scope",
+                            "code": "IzdvojiKrajnjeRijeci(v, prva, posljednja);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3261": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:22:1: error: ‘IzdvojiKrajnjeRijeci’ was not declared in this scope\n   22 | IzdvojiKrajnjeRijeci(v, prva, posljednja);\n      | ^~~~~~~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'IzdvojiKrajnjeRijeci' was not declared in this scope",
+                            "code": "IzdvojiKrajnjeRijeci(v, prva, posljednja);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3262": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:22:1: error: ‘IzdvojiKrajnjeRijeci’ was not declared in this scope\n   22 | IzdvojiKrajnjeRijeci(v, prva, posljednja);\n      | ^~~~~~~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'IzdvojiKrajnjeRijeci' was not declared in this scope",
+                            "code": "IzdvojiKrajnjeRijeci(v, prva, posljednja);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3263": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:22:1: error: ‘IzdvojiKrajnjeRijeci’ was not declared in this scope\n   22 | IzdvojiKrajnjeRijeci(v, prva, posljednja);\n      | ^~~~~~~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'IzdvojiKrajnjeRijeci' was not declared in this scope",
+                            "code": "IzdvojiKrajnjeRijeci(v, prva, posljednja);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3264": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:21:1: error: ‘ZadrziDuplikate’ was not declared in this scope\n   21 | ZadrziDuplikate(v);\n      | ^~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "1",
+                            "message": "'ZadrziDuplikate' was not declared in this scope",
+                            "code": "ZadrziDuplikate(v);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3265": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:21:1: error: ‘ZadrziDuplikate’ was not declared in this scope\n   21 | ZadrziDuplikate(v);\n      | ^~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "1",
+                            "message": "'ZadrziDuplikate' was not declared in this scope",
+                            "code": "ZadrziDuplikate(v);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3266": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:21:1: error: ‘ZadrziDuplikate’ was not declared in this scope\n   21 | ZadrziDuplikate(v);\n      | ^~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "1",
+                            "message": "'ZadrziDuplikate' was not declared in this scope",
+                            "code": "ZadrziDuplikate(v);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3267": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:21:1: error: ‘ZadrziDuplikate’ was not declared in this scope\n   21 | ZadrziDuplikate(v);\n      | ^~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "1",
+                            "message": "'ZadrziDuplikate' was not declared in this scope",
+                            "code": "ZadrziDuplikate(v);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3268": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:21:1: error: ‘ZadrziDuplikate’ was not declared in this scope\n   21 | ZadrziDuplikate(v);\n      | ^~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "1",
+                            "message": "'ZadrziDuplikate' was not declared in this scope",
+                            "code": "ZadrziDuplikate(v);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3269": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:21:1: error: ‘ZadrziDuplikate’ was not declared in this scope\n   21 | ZadrziDuplikate(v);\n      | ^~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "1",
+                            "message": "'ZadrziDuplikate' was not declared in this scope",
+                            "code": "ZadrziDuplikate(v);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3270": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:22:1: error: ‘IzdvojiKrajnjeRijeci’ was not declared in this scope\n   22 | IzdvojiKrajnjeRijeci(v, prva, posljednja);\n      | ^~~~~~~~~~~~~~~~~~~~\nmain.cpp:24:1: error: ‘ZadrziDuplikate’ was not declared in this scope\n   24 | ZadrziDuplikate(v);\n      | ^~~~~~~~~~~~~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'IzdvojiKrajnjeRijeci' was not declared in this scope",
+                            "code": "IzdvojiKrajnjeRijeci(v, prva, posljednja);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "1",
+                            "message": "'ZadrziDuplikate' was not declared in this scope",
+                            "code": "ZadrziDuplikate(v);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3295": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 6,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1680220063
+}

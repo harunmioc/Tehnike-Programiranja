@@ -1,0 +1,158 @@
+{
+    "id": 5530,
+    "name": "Tehnike programiranja (2017\/2018), Tutorijal 14, zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 1,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  Liga l (10);\n  l.DodajNoviTim(\"Tim1\"); l.DodajNoviTim(\"Tim2\"); l.DodajNoviTim(\"Tim3\"); l.DodajNoviTim(\"Tim4\");\n\tl.RegistrirajUtakmicu (\"Tim1\", \"Tim4\", 3, 1);\n\tstd::remove (\"liga.txt\");\n\tconst char *c = R\"eon(Tim1\nTim2\n3:2\nTim1\nTim2\n3:2\nTim3\nTim1\n2:1\nTim2\nTim3\n0:1)eon\";\n  std::ofstream (\"liga.txt\") << c;\n\tl.AzurirajIzDatoteke(\"liga.txt\");\n\tl.IspisiTabelu();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <cstdlib>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Tim1                   4   3   0   1  10   7   9\nTim3                   2   2   0   0   3   1   6\nTim4                   1   0   0   1   1   3   0\nTim2                   3   0   0   3   4   7   0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 2,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "        Liga l (7);\n\tl.DodajNoviTim(\"A\"); l.DodajNoviTim(\"B\"); l.DodajNoviTim(\"C\"); \n        l.DodajNoviTim(\"D\"); l.DodajNoviTim(\"E\");\n\tl.RegistrirajUtakmicu(\"A\", \"B\", 1, 2);\n\tl.RegistrirajUtakmicu(\"A\", \"B\", 2, 1);\n\tl.RegistrirajUtakmicu(\"C\", \"B\", 1, 3);\n\tl.RegistrirajUtakmicu(\"E\", \"B\", 4, 3);\n\tl.RegistrirajUtakmicu(\"B\", \"D\", 2, 2);\n\tl.RegistrirajUtakmicu(\"D\", \"A\", 1, 2);\n\tl.IspisiTabelu(); \/\/za vas, radi orijentacije\n\tstd::remove (\"premier.bin\"); \/\/pobrisimo datoteku...\n\tl.SacuvajStanje (\"premier.bin\");\n\tl.DodajNoviTim(\"NoviTim 1\"); \n\tl.DodajNoviTim(\"NoviTim 2\"); \n\tstd::cout << std::string (48, '-') << std::endl;\n\tLiga nova (\"premier.bin\"); \/\/kreiramo novu iz datoteke\n\tnova.IspisiTabelu();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "B                      5   2   1   2  11  10   7\nA                      3   2   0   1   5   4   6\nE                      1   1   0   0   4   3   3\nD                      2   0   1   1   3   4   1\nC                      1   0   0   1   1   3   0\n------------------------------------------------\nB                      5   2   1   2  11  10   7\nA                      3   2   0   1   5   4   6\nE                      1   1   0   0   4   3   3\nD                      2   0   1   1   3   4   1\nC                      1   0   0   1   1   3   0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  Liga ll (1);\n  try {ll.AzurirajIzDatoteke(\"nepostoji.txt\"); std::cout << \"Nije bacen izuzetak!\";}\n  catch (std::logic_error e) {std::cout << \"Izuzetak: \" << e.what();}\n  catch (...) {std::cout << \"Pogresan tip izuzetka!\";}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Datoteka ne postoji"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 4,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    const char *c = R\"eon(Tim1\nsdfdsfdsfdsfdsfdsfdsfdsfdsfdsfsdfdsf)eon\";\n  std::ofstream (\"liga.txt\") << c;\n    Liga ll (1);\n    try {ll.AzurirajIzDatoteke(\"liga.txt\"); std::cout << \"Nije bacen izuzetak!\";}\n    catch (std::logic_error e) {std::cout << \"Izuzetak: \" << e.what();}\n    catch (...) {std::cout << \"Pogresan tip izuzetka!\";}\n  ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Problemi pri citanju datoteke"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 5,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    const char *c = R\"eon(Tim1\nsdfdsfdsfdsfdsfdsfdsfdsfdsfdsfsdfdsf)eon\";\n  std::ofstream (\"liga.txt\") << c;\n    Liga ll (1);\n    try {ll.AzurirajIzDatoteke(\"liga.txt\"); std::cout << \"Nije bacen izuzetak!\";}\n    catch (std::logic_error e) {std::cout << \"Izuzetak: \" << e.what();}\n    catch (...) {std::cout << \"Pogresan tip izuzetka!\";}\n  ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Problemi pri citanju datoteke"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 6,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  {\n    try {Liga l(\"liga.txt.nema\"); std::cout << \"Nije bacen izuzetak!\";}\n    catch (std::logic_error e) {std::cout << \"Izuzetak: \" << e.what();}\n    catch (...) {std::cout << \"Pogresan tip izuzetka!\";}\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Datoteka ne postoji"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

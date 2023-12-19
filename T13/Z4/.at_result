@@ -1,0 +1,412 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9prim2",
+        "os": "Linux 5.15.0-58-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3811": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:17:3: error: ‘StudentBachelor’ was not declared in this scope\n   17 |   StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n      |   ^~~~~~~~~~~~~~~\nmain.cpp:18:3: error: ‘StudentMaster’ was not declared in this scope\n   18 |   StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n      |   ^~~~~~~~~~~~~\nmain.cpp:19:3: error: ‘Student’ was not declared in this scope\n   19 |   Student s1(sb), s2(sm);\n      |   ^~~~~~~\nmain.cpp:20:3: error: ‘s1’ was not declared in this scope; did you mean ‘y1’?\n   20 |   s1.RegistrirajIspit(6); s1.RegistrirajIspit(9);\n      |   ^~\n      |   y1\nmain.cpp:21:3: error: ‘s2’ was not declared in this scope\n   21 |   s2.RegistrirajIspit(8);\n      |   ^~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 5,
+                            "col": "3",
+                            "message": "'StudentBachelor' was not declared in this scope",
+                            "code": "StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'StudentMaster' was not declared in this scope",
+                            "code": "StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'Student' was not declared in this scope",
+                            "code": "Student s1(sb), s2(sm);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "3",
+                            "message": "'s1' was not declared in this scope; did you mean 'y1'?",
+                            "code": "s1.RegistrirajIspit(6); s1.RegistrirajIspit(9);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "3",
+                            "message": "'s2' was not declared in this scope",
+                            "code": "s2.RegistrirajIspit(8);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3812": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:18:3: error: ‘StudentBachelor’ was not declared in this scope\n   18 |   StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n      |   ^~~~~~~~~~~~~~~\nmain.cpp:19:3: error: ‘StudentMaster’ was not declared in this scope\n   19 |   StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n      |   ^~~~~~~~~~~~~\nmain.cpp:20:3: error: ‘Student’ was not declared in this scope\n   20 |   Student s1(sb), s2(sm);\n      |   ^~~~~~~\nmain.cpp:21:16: error: ‘s1’ was not declared in this scope; did you mean ‘y1’?\n   21 |   std::cout << s1.DajIme() << \" \" << s1.DajPrezime() << \" \" << s1.DajBrojIndeksa()\n      |                ^~\n      |                y1\nmain.cpp:23:16: error: ‘s2’ was not declared in this scope\n   23 |   std::cout << s2.DajIme() << \" \" << s2.DajPrezime() << \" \" << s2.DajBrojIndeksa()\n      |                ^~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'StudentBachelor' was not declared in this scope",
+                            "code": "StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'StudentMaster' was not declared in this scope",
+                            "code": "StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "3",
+                            "message": "'Student' was not declared in this scope",
+                            "code": "Student s1(sb), s2(sm);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "16",
+                            "message": "'s1' was not declared in this scope; did you mean 'y1'?",
+                            "code": "std::cout << s1.DajIme() << \" \" << s1.DajPrezime() << \" \" << s1.DajBrojIndeksa()"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 11,
+                            "col": "16",
+                            "message": "'s2' was not declared in this scope",
+                            "code": "std::cout << s2.DajIme() << \" \" << s2.DajPrezime() << \" \" << s2.DajBrojIndeksa()"
+                        }
+                    ]
+                }
+            }
+        },
+        "3813": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:18:3: error: ‘StudentBachelor’ was not declared in this scope\n   18 |   StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n      |   ^~~~~~~~~~~~~~~\nmain.cpp:19:3: error: ‘StudentMaster’ was not declared in this scope\n   19 |   StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n      |   ^~~~~~~~~~~~~\nmain.cpp:20:3: error: ‘Student’ was not declared in this scope\n   20 |   Student s1(sb);\n      |   ^~~~~~~\nmain.cpp:21:3: error: ‘s1’ was not declared in this scope; did you mean ‘y1’?\n   21 |   s1.PonistiOcjene();\n      |   ^~\n      |   y1",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'StudentBachelor' was not declared in this scope",
+                            "code": "StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'StudentMaster' was not declared in this scope",
+                            "code": "StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "3",
+                            "message": "'Student' was not declared in this scope",
+                            "code": "Student s1(sb);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "3",
+                            "message": "'s1' was not declared in this scope; did you mean 'y1'?",
+                            "code": "s1.PonistiOcjene();"
+                        }
+                    ]
+                }
+            }
+        },
+        "3814": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:18:3: error: ‘StudentBachelor’ was not declared in this scope\n   18 |   StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n      |   ^~~~~~~~~~~~~~~\nmain.cpp:19:3: error: ‘StudentMaster’ was not declared in this scope\n   19 |   StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n      |   ^~~~~~~~~~~~~\nmain.cpp:20:3: error: ‘Student’ was not declared in this scope\n   20 |   Student s1(sb); Student s2(sm);\n      |   ^~~~~~~\nmain.cpp:20:26: error: expected ‘;’ before ‘s2’\n   20 |   Student s1(sb); Student s2(sm);\n      |                          ^~~\n      |                          ;\nmain.cpp:21:3: error: ‘s1’ was not declared in this scope; did you mean ‘y1’?\n   21 |   s1 = s2;\n      |   ^~\n      |   y1\nmain.cpp:21:8: error: ‘s2’ was not declared in this scope\n   21 |   s1 = s2;\n      |        ^~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'StudentBachelor' was not declared in this scope",
+                            "code": "StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'StudentMaster' was not declared in this scope",
+                            "code": "StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "3",
+                            "message": "'Student' was not declared in this scope",
+                            "code": "Student s1(sb); Student s2(sm);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "26",
+                            "message": "expected ';' before 's2'",
+                            "code": "Student s1(sb); Student s2(sm);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "3",
+                            "message": "'s1' was not declared in this scope; did you mean 'y1'?",
+                            "code": "s1 = s2;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "8",
+                            "message": "'s2' was not declared in this scope",
+                            "code": "s1 = s2;"
+                        }
+                    ]
+                }
+            }
+        },
+        "3815": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:18:3: error: ‘StudentBachelor’ was not declared in this scope\n   18 |   StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n      |   ^~~~~~~~~~~~~~~\nmain.cpp:19:3: error: ‘StudentMaster’ was not declared in this scope\n   19 |   StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n      |   ^~~~~~~~~~~~~\nmain.cpp:20:3: error: ‘Student’ was not declared in this scope\n   20 |   Student s1(sb); Student s2(sm);\n      |   ^~~~~~~\nmain.cpp:20:26: error: expected ‘;’ before ‘s2’\n   20 |   Student s1(sb); Student s2(sm);\n      |                          ^~~\n      |                          ;\nmain.cpp:21:10: error: expected ‘;’ before ‘s3’\n   21 |   Student s3(sb), s4(sm), s5(s1), s6(std::move(s2));    // Test konstruktora\n      |          ^~~\n      |          ;\nmain.cpp:22:3: error: ‘s3’ was not declared in this scope\n   22 |   s3.IspisiPodatke(); s4.IspisiPodatke();\n      |   ^~\nmain.cpp:22:23: error: ‘s4’ was not declared in this scope\n   22 |   s3.IspisiPodatke(); s4.IspisiPodatke();\n      |                       ^~\nmain.cpp:23:3: error: ‘s5’ was not declared in this scope\n   23 |   s5.IspisiPodatke(); s6.IspisiPodatke();\n      |   ^~\nmain.cpp:23:23: error: ‘s6’ was not declared in this scope\n   23 |   s5.IspisiPodatke(); s6.IspisiPodatke();\n      |                       ^~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'StudentBachelor' was not declared in this scope",
+                            "code": "StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'StudentMaster' was not declared in this scope",
+                            "code": "StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "3",
+                            "message": "'Student' was not declared in this scope",
+                            "code": "Student s1(sb); Student s2(sm);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "26",
+                            "message": "expected ';' before 's2'",
+                            "code": "Student s1(sb); Student s2(sm);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "10",
+                            "message": "expected ';' before 's3'",
+                            "code": "Student s3(sb), s4(sm), s5(s1), s6(std::move(s2));    // Test konstruktora"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "3",
+                            "message": "'s3' was not declared in this scope",
+                            "code": "s3.IspisiPodatke(); s4.IspisiPodatke();"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "23",
+                            "message": "'s4' was not declared in this scope",
+                            "code": "s3.IspisiPodatke(); s4.IspisiPodatke();"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 11,
+                            "col": "3",
+                            "message": "'s5' was not declared in this scope",
+                            "code": "s5.IspisiPodatke(); s6.IspisiPodatke();"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 11,
+                            "col": "23",
+                            "message": "'s6' was not declared in this scope",
+                            "code": "s5.IspisiPodatke(); s6.IspisiPodatke();"
+                        }
+                    ]
+                }
+            }
+        },
+        "71234": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:17:3: error: ‘StudentBachelor’ was not declared in this scope\n   17 |   StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n      |   ^~~~~~~~~~~~~~~\nmain.cpp:18:3: error: ‘StudentMaster’ was not declared in this scope\n   18 |   StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n      |   ^~~~~~~~~~~~~\nmain.cpp:19:3: error: ‘Student’ was not declared in this scope\n   19 |   Student s1, s2;\n      |   ^~~~~~~\nmain.cpp:20:3: error: ‘s1’ was not declared in this scope; did you mean ‘y1’?\n   20 |   s1 = sb;\n      |   ^~\n      |   y1\nmain.cpp:20:8: error: ‘sb’ was not declared in this scope; did you mean ‘fsub’?\n   20 |   s1 = sb;\n      |        ^~\n      |        fsub\nmain.cpp:21:3: error: ‘s2’ was not declared in this scope\n   21 |   s2 = sm;\n      |   ^~\nmain.cpp:21:8: error: ‘sm’ was not declared in this scope; did you mean ‘tm’?\n   21 |   s2 = sm;\n      |        ^~\n      |        tm",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 5,
+                            "col": "3",
+                            "message": "'StudentBachelor' was not declared in this scope",
+                            "code": "StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "3",
+                            "message": "'StudentMaster' was not declared in this scope",
+                            "code": "StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 7,
+                            "col": "3",
+                            "message": "'Student' was not declared in this scope",
+                            "code": "Student s1, s2;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "3",
+                            "message": "'s1' was not declared in this scope; did you mean 'y1'?",
+                            "code": "s1 = sb;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "8",
+                            "message": "'sb' was not declared in this scope; did you mean 'fsub'?",
+                            "code": "s1 = sb;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "3",
+                            "message": "'s2' was not declared in this scope",
+                            "code": "s2 = sm;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "8",
+                            "message": "'sm' was not declared in this scope; did you mean 'tm'?",
+                            "code": "s2 = sm;"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "time": 1686293480
+}

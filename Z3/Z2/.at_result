@@ -1,0 +1,412 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9prim2",
+        "os": "Linux 5.15.0-58-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "2": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite naziv poglavlja:\nUnesite sadrzaj stranice 1:\nUnesite sadrzaj stranice 2:\nUnesite naziv poglavlja:\nKreirani indeks pojmova:\nabc: I/1/0, I/1/14, I/1/18\ndhi: I/1/22, I/1/35\nhrkw: I/1/30\nqwe: I/1/4, I/1/26\nstsda: I/1/8\nUnesite rijec:\nI/1/0 I/1/14 I/1/18\nUnesite rijec:\nI/1/30\nUnesite rijec:\nUnesena rijec nije nadjena!\nUnesite rijec:",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite naziv poglavlja:\nUnesite sadrzaj stranice 1:\nUnesite sadrzaj stranice 2:\nUnesite sadrzaj stranice 3:\nUnesite sadrzaj stranice 4:\nUnesite sadrzaj stranice 5:\nUnesite sadrzaj stranice 6:\nUnesite sadrzaj stranice 7:\nUnesite naziv poglavlja:\nKreirani indeks pojmova:\nabc: A/1/0, A/1/14, A/1/18, A/2/6, A/2/10\nasdfg: A/4/16\nb: A/3/0\ncdf: A/6/8\ncvb: A/6/12\ncxy: A/5/14\ndhi: A/1/22, A/1/35, A/2/14\ngfd: A/4/12\nghj: A/4/0, A/6/0\nhjzi: A/5/9\nhrkw: A/1/30\nkjh: A/4/4\nmng: A/5/5\npoi: A/4/8\npoiu: A/5/0\nqwe: A/1/4, A/1/26, A/6/16\nsdf: A/6/4\nstsda: A/1/8, A/2/0\nUnesite rijec:\nA/1/0 A/1/14 A/1/18 A/2/6 A/2/10\nUnesite rijec:\nA/4/0 A/6/0\nUnesite rijec:\nA/6/8\nUnesite rijec:\nA/1/22 A/1/35 A/2/14\nUnesite rijec:\nA/1/4 A/1/26 A/6/16\nUnesite rijec:\nUnesena rijec nije nadjena!\nUnesite rijec:",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "4": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite naziv poglavlja:\nUnesite sadrzaj stranice 1:\nUnesite sadrzaj stranice 2:\nUnesite sadrzaj stranice 3:\nUnesite sadrzaj stranice 4:\nUnesite sadrzaj stranice 5:\nUnesite naziv poglavlja:\nUnesite sadrzaj stranice 1:\nUnesite sadrzaj stranice 2:\nUnesite sadrzaj stranice 3:\nUnesite sadrzaj stranice 4:\nUnesite sadrzaj stranice 5:\nUnesite naziv poglavlja:\nUnesite sadrzaj stranice 1:\nUnesite sadrzaj stranice 2:\nUnesite sadrzaj stranice 3:\nUnesite sadrzaj stranice 4:\nUnesite sadrzaj stranice 5:\nUnesite naziv poglavlja:\nKreirani indeks pojmova:\n1: drugo poglavlje/1/23, prvo poglavlje/1/23, trece poglavlje/1/23\n2: drugo poglavlje/2/23, prvo poglavlje/2/23, trece poglavlje/2/23\n3: drugo poglavlje/3/23, prvo poglavlje/3/23, trece poglavlje/3/23\n4: drugo poglavlje/4/23, prvo poglavlje/4/23, trece poglavlje/4/23\nna: drugo poglavlje/1/11, drugo poglavlje/2/11, drugo poglavlje/3/11, drugo poglavlje/4/11, prvo poglavlje/1/11, prvo poglavlje/2/11, prvo poglavlje/3/11, prvo poglavlje/4/11, trece poglavlje/1/11, trece poglavlje/2/11, trece poglavlje/3/11, trece poglavlje/4/11\nneki: drugo poglavlje/1/0, drugo poglavlje/2/0, drugo poglavlje/3/0, drugo poglavlje/4/0, prvo poglavlje/1/0, prvo poglavlje/2/0, prvo poglavlje/3/0, prvo poglavlje/4/0, trece poglavlje/1/0, trece poglavlje/2/0, trece poglavlje/3/0, trece poglavlje/4/0\nstranici: drugo poglavlje/1/14, drugo poglavlje/2/14, drugo poglavlje/3/14, drugo poglavlje/4/14, prvo poglavlje/1/14, prvo poglavlje/2/14, prvo poglavlje/3/14, prvo poglavlje/4/14, trece poglavlje/1/14, trece poglavlje/2/14, trece poglavlje/3/14, trece poglavlje/4/14\ntekst: drugo poglavlje/1/5, drugo poglavlje/2/5, drugo poglavlje/3/5, drugo poglavlje/4/5, prvo poglavlje/1/5, prvo poglavlje/2/5, prvo poglavlje/3/5, prvo poglavlje/4/5, trece poglavlje/1/5, trece poglavlje/2/5, trece poglavlje/3/5, trece poglavlje/4/5\nUnesite rijec:\ndrugo poglavlje/1/23 prvo poglavlje/1/23 trece poglavlje/1/23\nUnesite rijec:\ndrugo poglavlje/2/23 prvo poglavlje/2/23 trece poglavlje/2/23\nUnesite rijec:\nUnesena rijec nije nadjena!\nUnesite rijec:\ndrugo poglavlje/3/23 prvo poglavlje/3/23 trece poglavlje/3/23\nUnesite rijec:",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "5": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite naziv poglavlja:\nUnesite sadrzaj stranice 1:\nUnesite sadrzaj stranice 2:\nUnesite sadrzaj stranice 3:\nUnesite sadrzaj stranice 4:\nUnesite naziv poglavlja:\nUnesite sadrzaj stranice 1:\nUnesite sadrzaj stranice 2:\nUnesite sadrzaj stranice 3:\nUnesite naziv poglavlja:\nKreirani indeks pojmova:\na: I/1/0, I/2/0, I/3/0, II/1/0\nb: I/1/2, I/2/2, I/3/2, II/1/2\nc: I/1/4, I/2/4, I/3/4, II/1/4\nd: I/1/6, I/2/6, I/3/6, II/1/6\netf: II/2/0\nUnesite rijec:\nII/2/0\nUnesite rijec:\nII/2/0\nUnesite rijec:\nII/2/0\nUnesite rijec:\nI/1/0 I/2/0 I/3/0 II/1/0\nUnesite rijec:",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "6": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite naziv poglavlja:\nUnesite sadrzaj stranice 1:\nUnesite sadrzaj stranice 2:\nUnesite naziv poglavlja:\nUnesite sadrzaj stranice 1:\nUnesite sadrzaj stranice 2:\nUnesite sadrzaj stranice 3:\nUnesite sadrzaj stranice 4:\nUnesite naziv poglavlja:\nUnesite sadrzaj stranice 1:\nUnesite sadrzaj stranice 2:\nUnesite sadrzaj stranice 3:\nUnesite sadrzaj stranice 4:\nUnesite naziv poglavlja:\nUnesite sadrzaj stranice 1:\nUnesite sadrzaj stranice 2:\nUnesite naziv poglavlja:\nKreirani indeks pojmova:\nabc: I/1/0, II/1/0, II/2/0, II/3/0, III/1/0, III/2/0, III/3/0, IV/1/0\nUnesite rijec:\nI/1/0 II/1/0 II/2/0 II/3/0 III/1/0 III/2/0 III/3/0 IV/1/0\nUnesite rijec:\nI/1/0 II/1/0 II/2/0 II/3/0 III/1/0 III/2/0 III/3/0 IV/1/0\nUnesite rijec:\nI/1/0 II/1/0 II/2/0 II/3/0 III/1/0 III/2/0 III/3/0 IV/1/0\nUnesite rijec:\nUnesena rijec nije nadjena!\nUnesite rijec:",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "7": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "OK.",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "8": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Ukupno postoji: 5 pojmova:\n1\n2\n3\nstranice\ntekst",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "9": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "abc: A/1/0, A/3/0, A/4/0, B/1/0, B/3/0, C/1/0\nabcd: A/2/0, B/2/0\nqwe: A/5/0, C/2/0\nqwer: A/6/0, C/3/0",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "10": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "A/1/0 A/3/0 A/4/0 B/1/0 B/3/0 C/1/0",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "11": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "rijec1: A/1/1\nrijec2: B/1/2\nrijec3: B/5/5",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "12": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Pojam nije nadjen",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "13": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "OK.",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1684790819
+}

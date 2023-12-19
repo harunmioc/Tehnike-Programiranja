@@ -1,0 +1,142 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 5, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zada\u0107a 5 - Zadatak 2\n\/\/ Odgovorni asistent: Haris \u010capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehni\u010dka pitanja vezana za autotestove za zadatak 2, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 1: Testiranje izuzetaka\n    {\n        Padavine t(2);\n        try\n        {\n            t.RegistrirajPadavine(5);\n            std::cout << \"Nije bacen izuzetak\";\n        }\n        catch(std::range_error e)\n        {\n            std::cout << \"Range error: \"<<e.what();\n        }\n        catch(...)\n        {\n            std::cout << \"Pogresan tip izuzetka\";\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Range error: Ilegalna kolicina padavina"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zada\u0107a 5 - Zadatak 2\n\/\/ Odgovorni asistent: Haris \u010capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehni\u010dka pitanja vezana za autotestove za zadatak 2, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 3: Testiranje ispravnosti registracije padavina\n    {\n        Padavine t(5);\n        for(int i= 1; i<=10; i++)\n            t.RegistrirajPadavine(3);\n\n        std::cout<<t.DajBrojRegistriranihPadavina();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "10"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zada\u0107a 5 - Zadatak 2\n\/\/ Odgovorni asistent: Haris \u010capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehni\u010dka pitanja vezana za autotestove za zadatak 2, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 9: Test metoda RegistrirajPadavine i Ispisi\n    {\n        Padavine t(10);\n        for(int i= 5; i<=10; i++)\n            t.RegistrirajPadavine(i);\n        for(int i= 4; i>=1; i--)\n            t.RegistrirajPadavine(i);\n        t.Ispisi();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "10\n9\n8\n7\n6\n5\n4\n3\n2\n1\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zada\u0107a 5 - Zadatak 2\n\/\/ Odgovorni asistent: Haris \u010capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehni\u010dka pitanja vezana za autotestove za zadatak 2, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 13: Test operatora ++ ; += ; -=\n    {\n        Padavine t(10);\n        for(int i= 5; i<=10; i++)\n            t.RegistrirajPadavine(i);\n        for(int i= 4; i>=1; i--)\n            t.RegistrirajPadavine(i);\n        t++;\n        t.RegistrirajPadavine(11);\n        t+=5;\n        t.RegistrirajPadavine(10);\n        t-=3;\n        t.Ispisi();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "13\n13\n12\n11\n10\n9\n8\n7\n7\n6\n5\n4\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

@@ -1,0 +1,412 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-137-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "2": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Clanski broj: 123\nIme i prezime: N N\nAdresa: Nedodjija BB\nTelefon: 000/000-000\n\n\nClanski broj: 124\nIme i prezime: D D\nAdresa: Nedodjija BB\nTelefon: 000/000-001",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "----------Najbolji film----------\nEvidencijski broj: 1\nMedij: DVD\nNaziv filma: 12 Angry Men\nZanr: krimi/drama\nGodina produkcije: 1957\n\n\n----------Luckasti filmovi----------\nEvidencijski broj: 1\nMedij: DVD\nNaziv filma: The Naked Gun: From the Files of Police Squad!\nZanr: komedija/akcija\nGodina produkcije: 1988\n\n\nEvidencijski broj: 2\nMedij: DVD\nNaziv filma: Airplane!\nZanr: komedija\nGodina produkcije: 1980\n\n\nEvidencijski broj: 3\nMedij: DVD\nNaziv filma: Mossad\nZanr: akcija/komedija\nGodina produkcije: 2019\n\n\nEvidencijski broj: 4\nMedij: DVD\nNaziv filma: Adam's Apples\nZanr: komedija/krimi/drama\nGodina produkcije: 2005\n\n\nEvidencijski broj: 5\nMedij: DVD\nNaziv filma: The Green Butchers\nZanr: komedija/drama\nGodina produkcije: 2003\n\n\nEvidencijski broj: 6\nMedij: DVD\nNaziv filma: Snatch\nZanr: komedija/krimi\nGodina produkcije: 2000\n\n\nEvidencijski broj: 7\nMedij: DVD\nNaziv filma: Lock, Stock and Two Smoking Barrels\nZanr: akcija/komedija/krimi\nGodina produkcije: 1998\n\n\nEvidencijski broj: 8\nMedij: DVD\nNaziv filma: Pulp Fiction\nZanr: krimi/komedija\nGodina produkcije: 1994\n\n\nEvidencijski broj: 9\nMedij: DVD\nNaziv filma: Burn After Reading\nZanr: komedija/krimi/drama\nGodina produkcije: 2008\n\n\nEvidencijski broj: 10\nMedij: DVD\nNaziv filma: The Men Who Stare at Goats\nZanr: komedija/ratni\nGodina produkcije: 2009\n\n\n----------Ozbiljni filmovi----------\nEvidencijski broj: 1\nMedij: DVD\nNaziv filma: Se7en\nZanr: krimi/drama/misterija\nGodina produkcije: 1995\n\n\nEvidencijski broj: 2\nMedij: DVD\nNaziv filma: Fight club\nZanr: drama\nGodina produkcije: 1999\n\n\nEvidencijski broj: 3\nMedij: DVD\nNaziv filma: The Hunt\nZanr: drama\nGodina produkcije: 2012\n\n\nEvidencijski broj: 4\nMedij: DVD\nNaziv filma: American Psycho\nZanr: krimi/drama/horror\nGodina produkcije: 2000\n\n\nEvidencijski broj: 5\nMedij: DVD\nNaziv filma: Hereditary\nZanr: drama/horor/misterija\nGodina produkcije: 2018\n\n\nEvidencijski broj: 6\nMedij: DVD\nNaziv filma: The VVitch\nZanr: drama/fantazija/horor\nGodina produkcije: 2015\n\n\nEvidencijski broj: 7\nMedij: DVD\nNaziv filma: 2001: A Space Odyssey\nZanr: avantura/sci-fi\nGodina produkcije: 1968\n\n\nEvidencijski broj: 8\nMedij: DVD\nNaziv filma: Dark City\nZanr: fantazija/misterija/sci-fi\nGodina produkcije: 1998\n\n\nEvidencijski broj: 9\nMedij: DVD\nNaziv filma: The Green Mile\nZanr: krimi/drama/fantazija\nGodina produkcije: 1999\n\n\nEvidencijski broj: 10\nMedij: DVD\nNaziv filma: Brazil\nZanr: drama/sci-fi\nGodina produkcije: 1985\n\n\nEvidencijski broj: 11\nMedij: DVD\nNaziv filma: Sunshine\nZanr: sci-fi/triler\nGodina produkcije: 2007\n\n\nEvidencijski broj: 12\nMedij: DVD\nNaziv filma: 12 Monkeys\nZanr: misterija/sci-fi/triler\nGodina produkcije: 1995\n\n\nEvidencijski broj: 13\nMedij: DVD\nNaziv filma: The Thirteenth Floor\nZanr: misterija/sci-fi/triler\nGodina produkcije: 1999\n\n\nEvidencijski broj: 14\nMedij: DVD\nNaziv filma: Pan's Labyrinth\nZanr: drama/fantazija/ratni\nGodina produkcije: 2006",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "4": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Evidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\n\nZaduzen kod korisnika: N N (123)\n\nEvidencijski broj: 124\nMedij: Video traka\nNaziv filma: Terminator\nZanr: akcija\nGodina produkcije: 1984",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "5": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Evidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "6": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Vec postoji korisnik s tim clanskim brojem",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "7": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Film s tim evidencijskim brojem vec postoji",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "8": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Film vec zaduzen",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "9": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Film nije nadjen",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "10": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Evidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\nClanski broj: 123\nIme i prezime: N N\nAdresa: Nedodjija BB\nTelefon: 000/000-000\nFilm nije nadjen\nKorisnik nije nadjen",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "11": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "V3\nEvidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\n\n\nEvidencijski broj: 124\nMedij: Video traka\nNaziv filma: Terminator\nZanr: akcija\nGodina produkcije: 1984\n\n\nV\nEvidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\n\nZaduzen kod korisnika: N N (123)\n\nEvidencijski broj: 124\nMedij: Video traka\nNaziv filma: Terminator\nZanr: akcija\nGodina produkcije: 1984",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "12": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Film nije nadjen\nV2\nEvidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\n\nZaduzen kod korisnika: N N (123)\n\nEvidencijski broj: 124\nMedij: Video traka\nNaziv filma: Terminator\nZanr: akcija\nGodina produkcije: 1984",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "13": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Filmovi:\nEvidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\n\nZaduzen kod korisnika: N N (123)\n\nEvidencijski broj: 124\nMedij: Video traka\nNaziv filma: Terminator\nZanr: akcija\nGodina produkcije: 1984\n\n\nKorisnici:\nClanski broj: 123\nIme i prezime: N N\nAdresa: Nedodjija BB\nTelefon: 000/000-000\n\n\nClanski broj: 124\nIme i prezime: D D\nAdresa: Nedodjija BB\nTelefon: 000/000-001\n\n\nZaduzenja korisnika 123:\nEvidencijski broj: 123\nMedij: DVD\nNaziv filma: Terminator 3\nZanr: akcija\nGodina produkcije: 2003\nFilm:\nEv. broj: 123\nGod. prod: 2003\nNaziv: Terminator 3\nDa li je DVD: 1\nDa li je zaduzen: 1\nKorisnik:\nAdresa: Nedodjija BB\nCl. broj: 123\nIme i prezime: N N\nTelefon: 000/000-000",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1685915937
+}

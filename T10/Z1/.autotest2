@@ -1,0 +1,232 @@
+{
+    "id": 8601,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 10, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3620,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: Testiranje izuzetka: postavljanje negativne vrijednosti za stanje racuna\n\n#define TestirajIzuzetak(izuzetak, tijelo) \\\ntry tijelo catch(izuzetak e) { std::cout << e.what() << std::endl; }\n\nTestirajIzuzetak(std::logic_error, { StedniRacun s5(-50); }); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <stdexcept>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Nedozvoljeno pocetno stanje"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3621,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: Testiranje izuzetka u metodi Podigni: iznos veci od trenutnog stanja na racunu\n\n#define TestirajIzuzetak(izuzetak, tijelo) \\\ntry tijelo catch(izuzetak e) { std::cout << e.what() << std::endl; }\n\nStedniRacun s1=30;\n\nTestirajIzuzetak(std::logic_error, { s1.Podigni(1000); });",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <stdexcept>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Transakcija odbijena"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3622,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: Testiranje izuzetka u metodi Ulozi: iznos negativan\n\n#define TestirajIzuzetak(izuzetak, tijelo) \\\ntry tijelo catch(izuzetak e) { std::cout << e.what() << std::endl; }\n\nStedniRacun s1=10;\n\nTestirajIzuzetak(std::logic_error, { s1.Ulozi(-1000); });  ",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <stdexcept>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Transakcija odbijena"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3623,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: Testiranje izuzetka u metodi ObracunajKamatu: kamatna_stopa je negativna\n\n#define TestirajIzuzetak(izuzetak, tijelo) \\\ntry tijelo catch(izuzetak e) { std::cout << e.what() << std::endl; }\n\nStedniRacun s1=30; \n\nTestirajIzuzetak(std::logic_error, { s1.ObracunajKamatu(-5); });",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <stdexcept>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Nedozvoljena kamatna stopa"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3624,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: Testiranje metode DajStanje\n\nStedniRacun s1=30,s2(150),s3=0; \n\nstd::cout << s1.DajStanje()<<\" \"<<s2.DajStanje()<<\" \"<<s3.DajStanje();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "30 150 0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3626,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6: Testiranje metode Ulozi\n\nStedniRacun s1=0; \ns1.Ulozi(20);\nstd::cout << s1.DajStanje()<<std::endl;\ns1.Ulozi(50);\nstd::cout << s1.DajStanje()<<std::endl;\ns1.Ulozi(-10);\nstd::cout << s1.DajStanje()<<std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "20\n70\n60"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3627,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7: Testiranje metode Podigni\n\nStedniRacun s1=150; \ns1.Podigni(100);\nstd::cout << s1.DajStanje()<<std::endl;\ns1.Podigni(-20);\nstd::cout << s1.DajStanje()<<std::endl;\ns1.Podigni(-20);\nstd::cout << s1.DajStanje()<<std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "50\n70\n90"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3628,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8: Testiranje metode ObracunajKamatu\n\nStedniRacun s1(50); \ns1.ObracunajKamatu(5);\nstd::cout << s1.DajStanje()<<std::endl;\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "52.5"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3629,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT9: Testiranje da li je konstruktor eksplicitan\n\nstd::cout << std::boolalpha                                     \n    << std::is_default_constructible<StedniRacun>::value << \" \"          \n    << std::is_default_constructible<StedniRacun>::value << \" \"         \n    << std::is_convertible<double, StedniRacun>::value << std::endl;         ",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <type_traits> ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "true true true"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

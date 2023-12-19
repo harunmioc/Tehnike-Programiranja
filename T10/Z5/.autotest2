@@ -1,0 +1,322 @@
+{
+    "id": 8605,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 10, Zadatak 5",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3664,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: Testiranje da li klasa Ugao sadrzi tri atributa\n\nstd::cout << sizeof(Ugao) << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "12"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3665,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: Testiranje metode Ispisi\n\/\/NAPOMENA: zbog nepreciznosti realne aritmetike ispis zaokruzite (fiksirano) na 5 decimala\n\nUgao u1, u2(90,0,0), u3(180,0,0);\n\nu1.Ispisi(); std::cout << std::endl;\nu2.Ispisi(); std::cout << std::endl;\nu3.Ispisi(); std::cout << std::endl;\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0.00000\n1.57080\n3.14159"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3666,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: Testiranje metode IspisiKlasicno\n\nUgao u1, u2(90,0,0), u3(180,0,0);\n\nu1.IspisiKlasicno(); std::cout << std::endl;\nu2.IspisiKlasicno(); std::cout << std::endl;\nu3.IspisiKlasicno(); std::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0deg 0min 0sec\n90deg 0min 0sec\n180deg 0min 0sec"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3667,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: Testiranje metoda DajRadijane, DajStepene, DajMinute, DajSekunde\n\nUgao u(90,0,0), v;\nstd::cout << u.DajRadijane() << std::endl;\nstd::cout << u.DajStepene() << \" \" << u.DajMinute()\n<< \" \" << u.DajSekunde() << std::endl;\nstd::cout << v.DajRadijane() << std::endl;\nstd::cout << v.DajStepene() << \" \" << v.DajMinute()\n<< \" \" << v.DajSekunde() << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1.5708\n90 0 0\n0\n0 0 0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3668,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: Testiranje metode Postavi sa tri parametrom\n\/\/NAPOMENA: zbog nepreciznosti realne aritmetike ispis zaokruzite (fiksirano) na 5 decimala\n\nUgao u,v;\nu.Postavi(212, 57, 28.062), v.Postavi(1,1,-1);\nu.Ispisi(); std::cout << std::endl;\nu.IspisiKlasicno(); std::cout << std::endl;\nv.Ispisi(); std::cout << std::endl;\nv.IspisiKlasicno();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "3.71681\n212deg 57min 28sec\n0.01774\n1deg 0min 59sec"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3669,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6: Testiranje redukcije na opseg od 0 do 2*pi (od 0 do 360deg)\n\nUgao u1,u2(50, 25, 12), u3(500, 300, 200), u4(-10, -20, -30);;\nu1.Postavi(500, 300, 200);\nu1.IspisiKlasicno(); std::cout << std::endl;\nu1.Postavi(-10, -20, -30);\nu1.IspisiKlasicno(); std::cout << std::endl;\nu2.IspisiKlasicno(); std::cout << std::endl;\nu3.IspisiKlasicno(); std::cout << std::endl;\nu4.IspisiKlasicno(); std::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "145deg 3min 20sec\n349deg 39min 30sec\n50deg 25min 12sec\n145deg 3min 20sec\n349deg 39min 30sec"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3670,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7: Testiranje metode SaberiSa (slucaj sa i bez redukcije na opseg od 0 do 2*pi)\n\nUgao u(50, 25, 12), v(500, 300, 200), f(50, 30, 10);\nu.SaberiSa(f);\nu.IspisiKlasicno(); std::cout << std::endl;\nu.SaberiSa(v);\nu.IspisiKlasicno(); std::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "100deg 55min 22sec\n245deg 58min 42sec"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3671,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8: Testiranje metode SaberiSa \n\nUgao u(50, 25, 12), v(500, 300, 200), f(50, 30, 10);\nu.SaberiSa(f).SaberiSa(v);                    \nu.IspisiKlasicno(); std::cout << std::endl;\nu.SaberiSa(v).SaberiSa(f).Ispisi(); std::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "245deg 58min 42sec\n1.42308"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3672,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT9: Testiranje sabiranja objekta tipa Ugao (ili Kut) sa realnim brojem\n\nUgao u(50, 25, 12), v(500, 300, 200), f(50, 30, 10);\nu.SaberiSa(1);\nu.IspisiKlasicno(); std::cout << std::endl;\nu.SaberiSa(1).SaberiSa(f).Ispisi();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "107deg 42min 56sec\n3.76143"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3683,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT10: Testiranje metode ZbirUglova\n\nUgao u(90, 0, 0), v(180, 0, 0), f(90, 0, 0);\n\nu=ZbirUglova(u, v);\nu.IspisiKlasicno(); std::cout << std::endl;\nZbirUglova(u, f).IspisiKlasicno(); std::cout << std::endl;\nu=ZbirUglova(u, 90);\nu.IspisiKlasicno(); std::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "270deg 0min 0sec\n0deg 0min 0sec\n26deg 37min 12sec"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3686,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT11: Testiranje inspektora\n\nUgao u(57, 17, 45);\n\nconst Ugao u1(u);\nstd::cout << u1.DajRadijane() << \" \" << u1.DajStepene() << \" \"\n<< u1.DajMinute() << \" \" << u1.DajSekunde() << std::endl;\nu1.Ispisi(); std::cout << std::endl;\nu1.IspisiKlasicno(); std::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 57 17 45\n1.00000\n57deg 17min 45sec"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3687,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT12: Testiranje metode PomnoziSa\n\nUgao u(90, 0, 0);\nu.PomnoziSa(1);\nu.IspisiKlasicno(); std::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define Kut Ugao ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "90deg 1min 30sec",
+                    "90deg 0min 0sec"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

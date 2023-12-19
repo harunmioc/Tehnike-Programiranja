@@ -1,0 +1,171 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), LV 7, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "above_main",
+                    "code": "static size_t alocirano(0);\nconst size_t RAM = 10 * sizeof(double);\n\nvoid *operator new[] (size_t vel)\n{\n    if (RAM < alocirano+vel) throw std::bad_alloc();\n    return std::malloc (vel);\n}\n\nvoid operator delete [] ( void* ptr) {\n  free(ptr);\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT1 testiranje hvatanja izuzetka u slu\u010daju nedostatka memorije prilikom alokacije niza pokazivaca\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2000000000"
+                },
+                "expect": [
+                    "Koliko zelite recenica: Unesite recenice:\nProblemi s memorijom!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "above_main",
+                    "code": "static size_t alocirano(0);\nconst size_t RAM = 5 * sizeof(double);\n\n\nvoid *operator new[](size_t vel)\n{\n    if (RAM < alocirano + vel) throw std::bad_alloc();\n    alocirano += vel;\n    return std::malloc(vel);\n}\n\nvoid operator delete [] ( void* ptr) {\n  free(ptr);\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT2 testiranje kada nestane memorije prilikom alokacije za svaku od recenica\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "4\nabcdefg\nabc\n"
+                },
+                "expect": [
+                    "Koliko zelite recenica: Unesite recenice:\nProblemi s memorijom!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT3 provjera sortiranja recenica\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3\nOtiso si sarme probo nisi\nHop cup na kalup cetir babe jedan zub\nI jogurt ujutro goji\n"
+                },
+                "expect": [
+                    "Koliko zelite recenica: Unesite recenice:\nSortirane recenice:\nHop cup na kalup cetir babe jedan zub\nI jogurt ujutro goji\nOtiso si sarme probo nisi"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT4 test ispravne dealokacije\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "static int brojac_new(0);\nstatic size_t alokacije[10];\n\nvoid *operator new[] (size_t vel)\n{\n    alokacije[brojac_new]=vel;   \n    brojac_new++;\n    return std::malloc (vel);\n}\n\nvoid operator delete [] (void* ptr)\n{\n  std::cout << alokacije[brojac_new - 1] << std::endl;\n  brojac_new--;\n  free(ptr);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5\nPrva recenica\nDruga recenica\nTreca recenica\nCetvrta recenica\nPeta recenica\n"
+                },
+                "expect": [
+                    "Koliko zelite recenica: Unesite recenice:\nSortirane recenice:\nCetvrta recenica\nDruga recenica\nPeta recenica\nPrva recenica\nTreca recenica\n14\n17\n15\n15\n14\n40"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT5 provjera sortiranja 2\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "20\nA\nA\nAA\nAAA\nZZZ\nZZ\nZ\nG\nGG\nG  \nH\nH\nI\nI\nY\nX\nZ\nAAA\nB\nXXX"
+                },
+                "expect": [
+                    "Koliko zelite recenica: Unesite recenice:\nSortirane recenice:\nA\nA\nAA\nAAA\nAAA\nB\nG\nG\nGG\nH\nH\nI\nI\nX\nXXX\nY\nZ\nZ\nZZ\nZZZ"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

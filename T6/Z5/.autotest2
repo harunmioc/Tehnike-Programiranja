@@ -1,0 +1,232 @@
+{
+    "id": 8565,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 6, Zadatak 5",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 3438,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 3417,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT1 testiranje maina koji sadrzi vektor dekova integera\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3 3 12 5 123 -6 2 17 4 -31"
+                },
+                "expect": [
+                    "Unesite broj redova kvadratne matrice: Unesite elemente matrice: 3 12 5\n123 -6 2\n17 4 -31"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3418,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "above_main",
+                    "code": "namespace std {\n    template <class T>\n    class Testni_vektor : public std::vector<T> {\n        public:\n        using std::vector<T>::vector; \/\/naslijedi sve konstuktore iz std::vector (C++11 i dalje)\n\n       Testni_vektor(unsigned int n, std::deque<int> d)\n        {\n            if (n > 10000)\n            {\n                throw std::bad_alloc();\n            }\n        }\n\n        Testni_vektor(unsigned int n)\n        {\n            if (n > 10000)\n            {\n                throw std::bad_alloc();\n            }\n        }\n\n        void resize( size_t n )\n        {\n            if (n > 10000)\n            {\n                throw std::bad_alloc();\n            }\n        }\n    };\n    template <class T>\n    class Testni_deque : public std::deque<T> {\n        public:\n        using std::deque<T>::deque; \/\/naslijedi sve konstuktore iz std::vector (C++11 i dalje)\n\n       Testni_deque(int &n)\n        {\n            if (n > 10000)\n            {\n                throw std::bad_alloc();\n            }\n        }\n\n       Testni_deque(unsigned int n)\n        {\n            if (n > 10000)\n            {\n                throw std::bad_alloc();\n            }\n        }\n\n        void resize( size_t n )\n        {\n            if (n > 10000)\n            {\n                throw std::bad_alloc();\n            }\n        }\n    };\n}\n#define vector Testni_vektor\n#define deque Testni_deque",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT2 testiranje izuzetka u slu\u010daju nedovoljno memorije\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "100000000"
+                },
+                "expect": [
+                    "Unesite broj redova kvadratne matrice: Nedovoljno memorije"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3419,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT3 testiranje funkcije koja prima grbavu matricu - vektor vektora integera\ntry {\n   std::vector<std::vector<int>> m {{1}, { 2, 2 }, {3,3,3}};\n    auto m1(KreirajDinamickuKopiju2D(m));\n    for(int i = 0; i < 3; i++) {\n      for(int j = 0; j <=i; j++) std::cout << m1[i][j] << \" \";\n      std::cout << std::endl;\n    }\n    for(int i = 0; i < 3; i++) delete[] m1[i];\n    delete[] m1;\n  }\n  catch(std::bad_alloc) {\n    std::cout << \"Nedovoljno memorije!\";\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 \n2 2 \n3 3 3"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3420,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ vektor vektora stringova\n\n try {\n   std::vector<std::vector<std::string>> m {{\"Ja\"}, { \"testiram\", \"vas\"}, {\"program\",\"na\",\"stringove\"}};\n    auto m1(KreirajDinamickuKopiju2D(m));\n    for(int i = 0; i < 3; i++) {\n      for(int j = 0; j <=i; j++) std::cout << m1[i][j] << \" \";\n      std::cout << std::endl;\n    }\n    for(int i = 0; i < 3; i++) delete[] m1[i];\n    delete[] m1;\n  }\n  catch(std::bad_alloc) {\n    std::cout << \"Nedovoljno memorije!\";\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Ja \ntestiram vas \nprogram na stringove"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3421,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5 dek vektora double-ova\ntry {\n   std::deque<std::vector<double>> m {{1.35, 2.45, -5}, {100, -50, 11.5}, {1.35, 2.45, -5}, {1.35, 2.45, -5}};\n    auto m1(KreirajDinamickuKopiju2D(m));\n    for(int i = 0; i < 4; i++) {\n      for(int j = 0; j <3; j++) std::cout << m1[i][j] << \" \";\n      std::cout << std::endl;\n    }\n    for(int i = 0; i < 4; i++) delete[] m1[i];\n    delete[] m1;\n  }\n  catch(std::bad_alloc) {\n    std::cout << \"Nedovoljno memorije!\";\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1.35 2.45 -5 \n100 -50 11.5 \n1.35 2.45 -5 \n1.35 2.45 -5"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3422,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT6 dek dekova unsigned int \ntry {\n   std::deque<std::deque<unsigned int>> m {{6,6,6,7}, {12,23,34,45}, {1000,1,2,30}};\n    auto m1(KreirajDinamickuKopiju2D(m));\n    for(int i = 0; i < 3; i++) {\n      for(int j = 0; j <4; j++) std::cout << m1[i][j] << \" \";\n      std::cout << std::endl;\n    }\n    for(int i = 0; i < 3; i++) delete[] m1[i];\n    delete[] m1;\n  }\n  catch(std::bad_alloc) {\n    std::cout << \"Nedovoljno memorije!\";\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "6 6 6 7\n12 23 34 45 \n1000 1 2 30"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3423,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT7 vector dekova long long int\n\ntry {\n   std::vector<std::deque<long long int>> m {{10000,20000,20000,10000}, {11000,12,12,11}, {1000,12222,2000,30000}};\n    auto m1(KreirajDinamickuKopiju2D(m));\n    for(int i = 0; i < 3; i++) {\n      for(int j = 0; j <4; j++) std::cout << m1[i][j] << \" \";\n      std::cout << std::endl;\n    }\n    for(int i = 0; i < 3; i++) delete[] m1[i];\n    delete[] m1;\n  }\n  catch(std::bad_alloc) {\n    std::cout << \"Nedovoljno memorije!\";\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "10000 20000 20000 10000 \n11000 12 12 11 \n1000 12222 2000 30000"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3436,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT8 provjera da li je ispravno kori\u0161tena fragmentirana alokacija\ntry {\n   std::vector<std::deque<int>> m {{1,2,3}, {1,2,3}, {1,2,3}};\n    auto m1(KreirajDinamickuKopiju2D(m));\n    for(int i = 0; i < 3; i++) {\n      for(int j = 0; j <3; j++) std::cout << m1[i][j] << \" \";\n      std::cout << std::endl;\n    }\n    for(int i = 0; i < 3; i++) delete[] m1[i];\n    delete[] m1;\nstd::cout << \"New pozvan \" << brojac_new << \" puta,  delete [] pozvan \" << brojac_deleteniz << \" puta, a alocirano ukupno \" << alocirano << \" bajta i to redom: \";\n    for (int i=0; i<brojac_new;i++) std::cout << alokacije[i] << \" \";\n  }\n  catch(std::bad_alloc) {\n    std::cout << \"Nedovoljno memorije!\";\n  }",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "static size_t alocirano(0);\nstatic int brojac_new(0);\nstatic int brojac_deleteniz(0);\nstatic size_t alokacije[20];\n\nvoid *operator new[] (size_t vel)\n{ \n alokacije[brojac_new]=vel;\n brojac_new++;\n alocirano+=vel; \n return std::malloc (vel);\n}\n\nvoid operator delete [] ( void* ptr) {\n brojac_deleteniz++;\n free(ptr);\n}\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 2 3 \n1 2 3 \n1 2 3 \nNew pozvan 4 puta,  delete [] pozvan 4 puta, a alocirano ukupno 60 bajta i to redom: 24 12 12 12 ",
+                    "1 2 3 \n1 2 3 \n1 2 3 \nNew pozvan 4 puta,  delete [] pozvan 4 puta, a alocirano ukupno 48 bajta i to redom: 12 12 12 12 "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3437,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT9 provjera da li se alocira vi\u0161e memorije nego \u0161to je neophodno\n\ntry {\n  std::vector<std::deque<double>> m {{1,2,3}, {1,2,3}, {1,2,3}};\n    auto m1(KreirajDinamickuKopiju2D(m));\n    for(int i = 0; i < 3; i++) {\n      for(int j = 0; j <3; j++) std::cout << m1[i][j] << \" \";\n      std::cout << std::endl;\n    }\n    for(int i = 0; i < 3; i++) delete[] m1[i];\n    delete[] m1;\n    std::cout << \"New pozvan \" << brojac_new << \" puta,  delete [] pozvan \" << brojac_deleteniz << \" puta, a alocirano ukupno \" << alocirano << \" bajta i to redom: \";\n    for (int i=0; i<brojac_new;i++) std::cout << alokacije[i] << \" \";\n  }\n  catch(std::bad_alloc) {\n    std::cout << \"Nedovoljno memorije!\";\n  }",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "static size_t alocirano(0);\nstatic int brojac_new(0);\nstatic int brojac_deleteniz(0);\nstatic size_t alokacije[20];\nconst size_t RAM = 12 * sizeof(double);\n\nvoid *operator new[] (size_t vel)\n{\n    if (RAM < alocirano+vel) throw std::bad_alloc();\n    alokacije[brojac_new]=vel;\n    brojac_new++;\n    alocirano+=vel;   \n    return std::malloc (vel);\n}\n\nvoid operator delete [] ( void* ptr) {\n  brojac_deleteniz++;\n  free(ptr);\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 2 3 \n1 2 3 \n1 2 3 \nNew pozvan 4 puta,  delete [] pozvan 4 puta, a alocirano ukupno 96 bajta i to redom: 24 24 24 24"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

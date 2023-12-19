@@ -1,0 +1,150 @@
+{
+    "id": 8632,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 13, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 71234,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "StudentBachelor s1(\"Dusko\", \"Dugousko\", 1234);\n  s1.RegistrirajIspit(7); s1.RegistrirajIspit(6); s1.RegistrirajIspit(5);\n  s1.RegistrirajIspit(10); s1.RegistrirajIspit(7);\n  std::cout << s1.DajIme() << \" \" << s1.DajPrezime() << \" \" << s1.DajBrojIndeksa()\n    << \" \" << s1.DajBrojPolozenih() << \" \" << s1.DajProsjek() << std::endl;\n  s1.IspisiPodatke();\n  TestirajIzuzetak(std::domain_error, { s1.RegistrirajIspit(4); });\n  TestirajIzuzetak(std::domain_error, { s1.RegistrirajIspit(11); });\n  s1.PonistiOcjene();\n  std::cout << s1.DajIme() << \" \" << s1.DajPrezime() << \" \" << s1.DajBrojIndeksa()\n    << \" \" << s1.DajBrojPolozenih() << \" \" << s1.DajProsjek() << std::endl;\n  s1.IspisiPodatke();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define TestirajIzuzetak(izuzetak, tijelo) \\\n  try tijelo catch(izuzetak e) { std::cout << e.what() << std::endl; }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Dusko Dugousko 1234 4 7.5\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 7.5.\nNeispravna ocjena\nNeispravna ocjena\nDusko Dugousko 1234 0 5\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 5."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3803,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  StudentMaster s2(\"Paja\", \"Patak\", 4312, 2015);\n  s2.RegistrirajIspit(7); s2.RegistrirajIspit(6); s2.RegistrirajIspit(5);\n  s2.RegistrirajIspit(10); s2.RegistrirajIspit(7);\n  std::cout << s2.DajIme() << \" \" << s2.DajPrezime() << \" \" << s2.DajBrojIndeksa()\n    << \" \" << s2.DajBrojPolozenih() << \" \" << s2.DajProsjek() << std::endl;\n  s2.IspisiPodatke();\n  TestirajIzuzetak(std::domain_error, { s2.RegistrirajIspit(4); });\n  TestirajIzuzetak(std::domain_error, { s2.RegistrirajIspit(11); });\n  s2.PonistiOcjene();\n  std::cout << s2.DajIme() << \" \" << s2.DajPrezime() << \" \" << s2.DajBrojIndeksa()\n    << \" \" << s2.DajBrojPolozenih() << \" \" << s2.DajProsjek() << std::endl;\n  s2.IspisiPodatke();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define TestirajIzuzetak(izuzetak, tijelo) \\\n  try tijelo catch(izuzetak e) { std::cout << e.what() << std::endl; }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Paja Patak 4312 4 7.5\nStudent master studija Paja Patak, sa brojem indeksa 4312,\nzavrsio bachelor studij godine 2015,ima prosjek 7.5.\nNeispravna ocjena\nNeispravna ocjena\nPaja Patak 4312 0 5\nStudent master studija Paja Patak, sa brojem indeksa 4312,\nzavrsio bachelor studij godine 2015,ima prosjek 5."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3804,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/Test polimorfizma\n  ApstraktniStudent *ps;                                \n  ps = new StudentBachelor(\"Dusko\", \"Dugousko\", 1234);\n  ps->RegistrirajIspit(7); ps->RegistrirajIspit(6); ps->RegistrirajIspit(5);\n  ps->RegistrirajIspit(10); ps->RegistrirajIspit(7);\n  std::cout << ps->DajIme() << \" \" << ps->DajPrezime() << \" \" << ps->DajBrojIndeksa()\n    << \" \" << ps->DajBrojPolozenih() << \" \" << ps->DajProsjek() << std::endl;\n  ps->IspisiPodatke();\n  delete ps;\n  ps = new StudentMaster(\"Paja\", \"Patak\", 4312, 2015);\n  ps->RegistrirajIspit(7); ps->RegistrirajIspit(6); ps->RegistrirajIspit(5);\n  ps->RegistrirajIspit(10); ps->RegistrirajIspit(7);\n  std::cout << ps->DajIme() << \" \" << ps->DajPrezime() << \" \" << ps->DajBrojIndeksa()\n    << \" \" << ps->DajBrojPolozenih() << \" \" << ps->DajProsjek() << std::endl;\n  ps->IspisiPodatke();\n  delete ps;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Dusko Dugousko 1234 4 7.5\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 7.5.\nPaja Patak 4312 4 7.5\nStudent master studija Paja Patak, sa brojem indeksa 4312,\nzavrsio bachelor studij godine 2015,ima prosjek 7.5."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3805,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\tApstraktniStudent *ps, *pskopija;                                    \n  ps = new StudentBachelor(\"Dusko\", \"Dugousko\", 1234);\n  ps->RegistrirajIspit(7); ps->RegistrirajIspit(6); ps->RegistrirajIspit(5);\n  ps->RegistrirajIspit(10); ps->RegistrirajIspit(7);\n  std::cout << \"Originalni student: \" << std::endl;\n  std::cout << \"-----------------\" << std::endl;\n  ps->IspisiPodatke();\n  \n  pskopija = ps->DajKopiju();\n  std::cout << \"Kopija student: \" << std::endl;\n  std::cout << \"-----------------\" << std::endl;\n  pskopija->IspisiPodatke();\n  \n  \n  ps->RegistrirajIspit(10);\n  \n  std::cout << \"Originalni student nakon izmjene: \" << std::endl;\n  std::cout << \"-----------------\" << std::endl;\n  ps->IspisiPodatke();\n\n\n  std::cout << \"Kopija student: \" << std::endl;\n  std::cout << \"-----------------\" << std::endl;\n  pskopija->IspisiPodatke();\n\n  delete pskopija;\n  delete ps;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Originalni student: \n-----------------\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 7.5.\nKopija student: \n-----------------\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 7.5.\nOriginalni student nakon izmjene: \n-----------------\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 8.\nKopija student: \n-----------------\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 7.5."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3806,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  ApstraktniStudent *p = new Medjed;\n  delete p;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "class Medjed : public ApstraktniStudent {\npublic:\n  Medjed() : ApstraktniStudent(\"\", \"\", 0) {}\n  ~Medjed() { std::cout << \"Pozvan ispravan destruktor!\\n\"; };\n  void IspisiPodatke() const {};\n  ApstraktniStudent *DajKopiju() const {};\n};",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Pozvan ispravan destruktor!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

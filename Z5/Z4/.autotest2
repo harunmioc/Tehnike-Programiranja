@@ -1,0 +1,99 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 5, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zada\u0107a 5 - Zadatak 4\n\/\/ Odgovorni asistent: Haris \u010capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehni\u010dka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT1 - testiranje izuzetaka konstruktora\n    {\n        try\n        {\n            Matrica<int> m1(\"datoteka.DAT\", true);\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n\n        try\n        {\n            Matrica<int> m1(\"datoteka.txt\", false);\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Trazena datoteka ne postoji\nIzuzetak: Trazena datoteka ne postoji\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zada\u0107a 5 - Zadatak 4\n\/\/ Odgovorni asistent: Haris \u010capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehni\u010dka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void kreirajDatotetkuZbii1()\n{\n    std::string ime = \"matrica.txt\";\n    std::ofstream dat(ime);\n    dat << \"1, 2\\n3, 4\";\n    dat.close();\n}\n\nvoid kreirajDatotetkuZbii2()\n{\n    std::string ime = \"matrica.txt\";\n    std::ofstream dat(ime);\n    dat << \"1.4, 2.54\\n3.7, -4.7\";\n    dat.close();\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/AT 3: Testiranje konstruktora za u\u010ditavanje iz tekstualne datoteke\n    {\n        try\n        {\n            kreirajDatotetkuZbii1();\n            Matrica<int> m1(\"matrica.txt\", false);\n            std::cout << std::setw(6) << m1;\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        std::cout << std::endl << std::endl;\n        try\n        {\n            kreirajDatotetkuZbii2();\n            Matrica<double> m1(\"matrica.txt\", false);\n            std::cout << std::setw(6) << m1;\n        }\n        catch (const std::logic_error& e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "     1     2\n     3     4\n\n\n   1.4  2.54\n   3.7  -4.7\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

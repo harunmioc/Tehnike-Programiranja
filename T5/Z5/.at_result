@@ -1,0 +1,214 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9prim2",
+        "os": "Linux 5.13.0-39-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3352": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj podintervala: Za taj broj podintervala priblizne vrijednosti integrala iznose:\n- Za funkciju sin x na intervalu (0,pi): 1.99966\n- Za funkciju x^3 na intervalu (0,10): 2500.51\n- Za funkciju 1/x na intervalu (1,2): 0.69316",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3353": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "- Za funkciju sin x na intervalu (0,pi/50): 0.00197\n- Za funkciju x^3 na intervalu (0,0.5): 0.02\n- Za funkciju 1/x na intervalu (1,1.1): 0.09531\n- Za funkciju cos x na intervalu (0,pi/50): 0.06279\n- Za funkciju exp(x) na intervalu (1,1.1): 0.28588\n- Za funkciju sin(x)*cos(x*x)*sin(x*x*x) na intervalu (0,pi/50): 0.00000",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3354": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj podintervala: Za taj broj podintervala priblizne vrijednosti integrala iznose:\n- Za funkciju sin x na intervalu (0,pi): 0.00000\n- Za funkciju x^3 na intervalu (0,10): 5000.00\n- Za funkciju 1/x na intervalu (1,2): 0.75000",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3355": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj podintervala: Za taj broj podintervala priblizne vrijednosti integrala iznose:\n- Za funkciju sin x na intervalu (0,pi): 1.57080\n- Za funkciju x^3 na intervalu (0,10): 3125.00\n- Za funkciju 1/x na intervalu (1,2): 0.70833",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3356": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "- Za funkciju sin x na intervalu (-pi,pi): -0.00000\n- Za funkciju x^3 na intervalu (0,100): 25002500.00\n- Za funkciju 1/x na intervalu (1,100): 4.68093\n- Za funkciju cos x na intervalu (-pi,pi): -0.00000\n- Za funkciju exp(x) na intervalu (1,10): 22038.61154\n- Za funkciju sin(x)*cos(x*x)*sin(x*x*x) na intervalu (-pi,pi): 0.55896",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3357": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "- Za funkciju sin x na intervalu (-pi,pi): 0.00000\n- Za funkciju x^3 na intervalu (0,100): 31250000.00\n- Za funkciju 1/x na intervalu (1,100): 25.97770\n- Za funkciju cos x na intervalu (-pi,pi): 0.00000\n- Za funkciju exp(x) na intervalu (1,10): 50666.77787\n- Za funkciju sin(x)*cos(x*x)*sin(x*x*x) na intervalu (-pi,pi): 0.00000",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1680745042
+}

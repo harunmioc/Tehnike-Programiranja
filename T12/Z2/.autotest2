@@ -1,0 +1,117 @@
+{
+    "id": 8622,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 12, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3757,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT1 testiranje unije i presjeka\n  std::set<int> s1{3, 5, 1, 2, 8}, s2{7, 2, 8, 4};\n  std::cout << s1 + s2 << std::endl;\n  std::cout << s1 * s2 << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "{1,2,3,4,5,7,8}\n{2,8}"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3758,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2 testiranj ispisa praznog skupa\n  std::set<int> s1{3, 5, 1, 2, 8}, s2{7, 2, 8, 4};\n  std::cout << s1 * std::set<int>{10, 20, 30} << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "{}"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3759,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3 testiranje operatora += i *=  \nstd::set<double> s1{3.6, 5.1, 1, 2, 8};\n  s1 *= std::set<double>{3.6,10,3, 2., 9};\n  std::cout << s1 << std::endl;\n  s1 += std::set<double>{3.6,10,3, 2., 9};\n  std::cout << s1 << std::endl;\n  std::set<std::string> s3{\"dajte\", \"mi\", \"presjek\", \"molim\", \"vas\"};\n  s3 *= std::set<std::string>{\"izvolite\", \"va\u0161\", \"presjek\"};\n  std::cout << s3 << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "{2,3.6}\n{2,3,3.6,9,10}\n{presjek}"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3760,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4 testiranje Dekartovog proizvoda\nstd::set<char> s3{'A', 'B'};\nstd::set<int> s4{1, 2, 3};\nstd::cout << s3 % s4 << std::endl;\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "{(A,1),(A,2),(A,3),(B,1),(B,2),(B,3)}\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

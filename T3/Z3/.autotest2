@@ -1,0 +1,165 @@
+{
+    "id": 8533,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 3, Zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3183,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: Testiranje kada ima elemenata i sa parnom i sa neparnom sumom\n\/\/ cifara\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define vector zabranjen\n#define push_front zabranjen",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n15 16 -23 555 -727 -122344 0 23 45 -777"
+                },
+                "expect": [
+                    "Koliko zelite unijeti elemenata: Unesite elemente: 15,-727,-122344,0\n16,-23,555,23,45,-777"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3184,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: Testiranje kada nema elemenata sa neparnom sumom cifara\n\/\/NAPOMENA: Znak \"_\" je sastavni dio autotesta\n_main();\nstd::cout<<'_';",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define vector zabranjen\n#define push_front zabranjen",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5\n121 121 -334 6 0"
+                },
+                "expect": [
+                    "Koliko zelite unijeti elemenata: Unesite elemente: 121,121,-334,6,0\n_"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3185,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: Testiranje kada nema elemenata sa parnom sumom cifara\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define vector zabranjen\n#define push_front zabranjen",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5\n12 54541 -23 667 -56"
+                },
+                "expect": [
+                    "Koliko zelite unijeti elemenata: Unesite elemente: \n12,54541,-23,667,-56"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3239,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: Testiranje funkcije IzdvojiElemente sa integer granicama\nstd::deque<int> v1 {1,std::numeric_limits<int>::min(),2,std::numeric_limits<int>::max(),5};\nstd::deque<int> v2;\n  \nv2 = IzdvojiElemente(v1, true);\n  \nfor(int i=0; i < v2.size(); i++)\n   std::cout << v2[i] << \" \";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include<limits>\n#define vector zabranjen\n#define push_front zabranjen",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "2 2147483647 "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        }
+    ]
+}

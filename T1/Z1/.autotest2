@@ -1,0 +1,269 @@
+{
+    "id": 8511,
+    "name": "Tehnike programiranja (2016\/2076), Tutorijal 1, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++11"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++11"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3120,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: iz postavke\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5 15 3\n10"
+                },
+                "expect": [
+                    "Unesite duzinu, sirinu i dubinu bazena u metrima: Unesite sirinu plocice u centimetrima: \nZa poplocavanje bazena dimenzija 5x15x3m sa plocicama dimenzija 10x10cm\npotrebno je 19500 plocica."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5 15 3\n10"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5 15 3\n10"
+                }
+            }
+        },
+        {
+            "id": 3121,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: iz postavke (nemoguce poplociti cijelim plocicama)\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5 15 3\n13\n"
+                },
+                "expect": [
+                    "Unesite duzinu, sirinu i dubinu bazena u metrima: Unesite sirinu plocice u centimetrima: \nPoplocavanje bazena dimenzija 5x15x3m sa plocicama dimenzija 13x13cm\nnije izvodljivo bez lomljenja plocica!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5 15 3\n13\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5 15 3\n13\n"
+                }
+            }
+        },
+        {
+            "id": 3122,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: svaka strana po 1m, svaka ploca po 1m\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 1 1\n100\n"
+                },
+                "expect": [
+                    "Unesite duzinu, sirinu i dubinu bazena u metrima: Unesite sirinu plocice u centimetrima: \nZa poplocavanje bazena dimenzija 1x1x1m sa plocicama dimenzija 100x100cm\npotrebno je 5 plocica."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 1 1\n100\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 1 1\n100\n"
+                }
+            }
+        },
+        {
+            "id": 3123,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: 7x1x14m, 4x4cm\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "7 1 14\n4\n"
+                },
+                "expect": [
+                    "Unesite duzinu, sirinu i dubinu bazena u metrima: Unesite sirinu plocice u centimetrima: \nZa poplocavanje bazena dimenzija 7x1x14m sa plocicama dimenzija 4x4cm\npotrebno je 144375 plocica."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "7 1 14\n4\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "7 1 14\n4\n"
+                }
+            }
+        },
+        {
+            "id": 3124,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: ne moze se poplociti cijelim plocicama\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3 2 6\n3\n"
+                },
+                "expect": [
+                    "Unesite duzinu, sirinu i dubinu bazena u metrima: Unesite sirinu plocice u centimetrima: \nPoplocavanje bazena dimenzija 3x2x6m sa plocicama dimenzija 3x3cm\nnije izvodljivo bez lomljenja plocica!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "3 2 6\n3\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "3 2 6\n3\n"
+                }
+            }
+        },
+        {
+            "id": 3125,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/cijeli broj plo\u010dica, ali sa lomljenjem\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2 2 3\n200"
+                },
+                "expect": [
+                    "Unesite duzinu, sirinu i dubinu bazena u metrima: Unesite sirinu plocice u centimetrima: \nPoplocavanje bazena dimenzija 2x2x3m sa plocicama dimenzija 200x200cm\nnije izvodljivo bez lomljenja plocica!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2 2 3\n200"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2 2 3\n200"
+                }
+            }
+        },
+        {
+            "id": 3126,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/cijeli broj plo\u010dica po stranici, ali sa lomljenjem\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "54 27 3\n9"
+                },
+                "expect": [
+                    "Unesite duzinu, sirinu i dubinu bazena u metrima: Unesite sirinu plocice u centimetrima: \nPoplocavanje bazena dimenzija 54x27x3m sa plocicama dimenzija 9x9cm\nnije izvodljivo bez lomljenja plocica!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "54 27 3\n9"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "54 27 3\n9"
+                }
+            }
+        }
+    ]
+}

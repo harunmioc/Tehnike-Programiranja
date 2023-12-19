@@ -1,0 +1,323 @@
+{
+    "id": 8554,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 5, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3411,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: testira primjer iz postavke (slicno postavci zadatka 3)\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <algorithm>\n#include <vector>\nnamespace std \n{\n    template <typename TIP>\n    class ZbiiVector : public std::vector<TIP> \n    {\n        public:\n        explicit ZbiiVector () = delete;\n        explicit ZbiiVector (int n) = delete;\n        \n        \/\/Ovdje bi se inace trebali naslijediti konstruktori\n        \/\/ali kako je cilj klase onemoguciti studentima \n        \/\/da kreiraju vektor, program koji koristi vector\n        \/\/nece se moci kompajlirati\n    };\n}\n#define vector ZbiiVector",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!\n\n\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n1849 374 3327 -112 12544 -27 -112 998001 -112 49"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Najveci element deka je 998001 \nNajmanji element deka se pojavljuje 3 puta u deku\nU deku ima 4 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je -27\nElementi koji nisu trocifreni su: 1849 3327 12544 -27 998001 49"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3412,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: testira slucaj deka bez trocifrenih brojeva\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <algorithm>\n#include <vector>\nnamespace std \n{\n    template <typename TIP>\n    class ZbiiVector : public std::vector<TIP> \n    {\n        public:\n        explicit ZbiiVector () = delete;\n        explicit ZbiiVector (int n) = delete;\n        \n        \/\/Ovdje bi se inace trebali naslijediti konstruktori\n        \/\/ali kako je cilj klase onemoguciti studentima \n        \/\/da kreiraju vektor, program koji koristi vector\n        \/\/nece se moci kompajlirati\n    };\n}\n#define vector ZbiiVector",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5\n1000 1 2123 -12 9 "
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Najveci element deka je 2123 \nNajmanji element deka se pojavljuje 1 puta u deku\nU deku ima 2 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 1\nElementi koji nisu trocifreni su: 1000 1 2123 -12 9"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3413,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: testira dek bez elemenata koji su potpuni kvadrati\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <algorithm>\n#include <vector>\nnamespace std \n{\n    template <typename TIP>\n    class ZbiiVector : public std::vector<TIP> \n    {\n        public:\n        explicit ZbiiVector () = delete;\n        explicit ZbiiVector (int n) = delete;\n        \n        \/\/Ovdje bi se inace trebali naslijediti konstruktori\n        \/\/ali kako je cilj klase onemoguciti studentima \n        \/\/da kreiraju vektor, program koji koristi vector\n        \/\/nece se moci kompajlirati\n    };\n}\n#define vector ZbiiVector",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "6\n12 35 789 99110 205 -111"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Najveci element deka je 99110 \nNajmanji element deka se pojavljuje 1 puta u deku\nU deku ima 0 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 12\nElementi koji nisu trocifreni su: 12 35 99110"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3414,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: testira dek koji se sastavljen iskljucivo od elemenata koji su potpuni kvadrati\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <algorithm>\n#include <vector>\nnamespace std \n{\n    template <typename TIP>\n    class ZbiiVector : public std::vector<TIP> \n    {\n        public:\n        explicit ZbiiVector () = delete;\n        explicit ZbiiVector (int n) = delete;\n        \n        \/\/Ovdje bi se inace trebali naslijediti konstruktori\n        \/\/ali kako je cilj klase onemoguciti studentima \n        \/\/da kreiraju vektor, program koji koristi vector\n        \/\/nece se moci kompajlirati\n    };\n}\n#define vector ZbiiVector",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n1 4 9 16 25 36 49 64 81 100"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Najveci element deka je 100 \nNajmanji element deka se pojavljuje 1 puta u deku\nU deku ima 10 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 1\nElementi koji nisu trocifreni su: 1 4 9 16 25 36 49 64 81"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3415,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: testira dek koji sadrzi jednu nulu kao element \n\/\/(ispitivanje vrijednosti za koje je definisana funkcija log)\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <algorithm>\n#include <vector>\nnamespace std \n{\n    template <typename TIP>\n    class ZbiiVector : public std::vector<TIP> \n    {\n        public:\n        explicit ZbiiVector () = delete;\n        explicit ZbiiVector (int n) = delete;\n        \n        \/\/Ovdje bi se inace trebali naslijediti konstruktori\n        \/\/ali kako je cilj klase onemoguciti studentima \n        \/\/da kreiraju vektor, program koji koristi vector\n        \/\/nece se moci kompajlirati\n    };\n}\n#define vector ZbiiVector",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5 \n1053 0 125 333333 55 "
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Najveci element deka je 333333 \nNajmanji element deka se pojavljuje 1 puta u deku\nU deku ima 1 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 0\nElementi koji nisu trocifreni su: 1053 0 333333 55"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3416,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6: testira dek koji sadrzi sve nule kao elemente \n\/\/(ispitivanje vrijednosti za koje je definisana funkcija log)\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <algorithm>\n#include <vector>\nnamespace std \n{\n    template <typename TIP>\n    class ZbiiVector : public std::vector<TIP> \n    {\n        public:\n        explicit ZbiiVector () = delete;\n        explicit ZbiiVector (int n) = delete;\n        \n        \/\/Ovdje bi se inace trebali naslijediti konstruktori\n        \/\/ali kako je cilj klase onemoguciti studentima \n        \/\/da kreiraju vektor, program koji koristi vector\n        \/\/nece se moci kompajlirati\n    };\n}\n#define vector ZbiiVector",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n0 0 0 0 0 0 0 0 0 0"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Najveci element deka je 0 \nNajmanji element deka se pojavljuje 10 puta u deku\nU deku ima 10 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 0\nElementi koji nisu trocifreni su: 0 0 0 0 0 0 0 0 0 0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3417,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7: testira dek koji sadrzi negativan broj koji je po apsolutnoj vrijednosti potpun kvadrat\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <algorithm>\n#include <vector>\nnamespace std \n{\n    template <typename TIP>\n    class ZbiiVector : public std::vector<TIP> \n    {\n        public:\n        explicit ZbiiVector () = delete;\n        explicit ZbiiVector (int n) = delete;\n        \n        \/\/Ovdje bi se inace trebali naslijediti konstruktori\n        \/\/ali kako je cilj klase onemoguciti studentima \n        \/\/da kreiraju vektor, program koji koristi vector\n        \/\/nece se moci kompajlirati\n    };\n}\n#define vector ZbiiVector",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2\n225 -64"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Najveci element deka je 225\nNajmanji element deka se pojavljuje 1 puta u deku\nU deku ima 1 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je -64\nElementi koji nisu trocifreni su: -64"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3418,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8: testira dek koji sadr\u017ei samo grani\u010dne vrijednosti iz opsega trocifrenih brojeva\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <algorithm>\n#include <vector>\nnamespace std \n{\n    template <typename TIP>\n    class ZbiiVector : public std::vector<TIP> \n    {\n        public:\n        explicit ZbiiVector () = delete;\n        explicit ZbiiVector (int n) = delete;\n        \n        \/\/Ovdje bi se inace trebali naslijediti konstruktori\n        \/\/ali kako je cilj klase onemoguciti studentima \n        \/\/da kreiraju vektor, program koji koristi vector\n        \/\/nece se moci kompajlirati\n    };\n}\n#define vector ZbiiVector",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "4\n100 -100 999 -999"
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Najveci element deka je 999 \nNajmanji element deka se pojavljuje 1 puta u deku\nU deku ima 1 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 100\nElementi koji nisu trocifreni su: "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3419,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT9: testira dek koji sadrzi veliki broj elemenata\n\n_main(); ",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <algorithm>\n#include <vector>\nnamespace std \n{\n    template <typename TIP>\n    class ZbiiVector : public std::vector<TIP> \n    {\n        public:\n        explicit ZbiiVector () = delete;\n        explicit ZbiiVector (int n) = delete;\n        \n        \/\/Ovdje bi se inace trebali naslijediti konstruktori\n        \/\/ali kako je cilj klase onemoguciti studentima \n        \/\/da kreiraju vektor, program koji koristi vector\n        \/\/nece se moci kompajlirati\n    };\n}\n#define vector ZbiiVector",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define for !zabranjeno!!\n#define while !zabranjeno!!\n#define goto !zabranjeno!!\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "160\n6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 "
+                },
+                "expect": [
+                    "Unesite broj elemenata: Unesite elemente: Najveci element deka je 7\nNajmanji element deka se pojavljuje 14 puta u deku\nU deku ima 43 brojeva koji su potpuni kvadrati\nPrvi element sa najmanjim brojem cifara je 6\nElementi koji nisu trocifreni su: 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 6 4 7 5 3 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

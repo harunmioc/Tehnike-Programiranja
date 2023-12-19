@@ -1,0 +1,189 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-89-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[memcheck]": "valgrind-3.15.0",
+        "profile[sgcheck]": "valgrind-3.15.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3136": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite prirodan broj ili 0 za kraj: Broj 42 je obilan!\nUnesite prirodan broj ili 0 za kraj: Broj 28 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 49 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==3219252== Memcheck, a memory error detector\n==3219252== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==3219252== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==3219252== Command: outputeVzc6T\n==3219252==\n====START_TEST_3946====Unesite prirodan broj ili 0 za kraj: Broj 42 je obilan!\nUnesite prirodan broj ili 0 za kraj: Broj 28 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 49 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!====END_TEST_3946======3219252==\n==3219252== HEAP SUMMARY:\n==3219252==     in use at exit: 0 bytes in 0 blocks\n==3219252==   total heap usage: 7 allocs, 7 frees, 81,124 bytes allocated\n==3219252==\n==3219252== All heap blocks were freed -- no leaks are possible\n==3219252==\n==3219252== For lists of detected and suppressed errors, rerun with: -s\n==3219252== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 5,
+                    "output": "==3219270== exp-sgcheck, a stack and global array overrun detector\n==3219270== NOTE: This is an Experimental-Class Valgrind Tool\n==3219270== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==3219270== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==3219270== Command: outputeVzc6T\n==3219270==\n--3219270-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219270-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219270-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219270-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219270-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219270-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219270-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219270-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_3946====Unesite prirodan broj ili 0 za kraj: Broj 42 je obilan!\nUnesite prirodan broj ili 0 za kraj: Broj 28 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 49 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!====END_TEST_3946======3219270==\n==3219270== For lists of detected and suppressed errors, rerun with: -s\n==3219270== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3137": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 5 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 7 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 8 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 3 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 4 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==3219337== Memcheck, a memory error detector\n==3219337== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==3219337== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==3219337== Command: outputDQF75R\n==3219337==\n====START_TEST_4747====Unesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 5 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 7 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 8 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 3 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 4 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!====END_TEST_4747======3219337==\n==3219337== HEAP SUMMARY:\n==3219337==     in use at exit: 0 bytes in 0 blocks\n==3219337==   total heap usage: 11 allocs, 11 frees, 81,352 bytes allocated\n==3219337==\n==3219337== All heap blocks were freed -- no leaks are possible\n==3219337==\n==3219337== For lists of detected and suppressed errors, rerun with: -s\n==3219337== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 6,
+                    "output": "==3219349== exp-sgcheck, a stack and global array overrun detector\n==3219349== NOTE: This is an Experimental-Class Valgrind Tool\n==3219349== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==3219349== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==3219349== Command: outputDQF75R\n==3219349==\n--3219349-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219349-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219349-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219349-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219349-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219349-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219349-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219349-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_4747====Unesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 5 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 7 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 8 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 3 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 4 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!====END_TEST_4747======3219349==\n==3219349== For lists of detected and suppressed errors, rerun with: -s\n==3219349== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3140": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 228 je obilan!\nUnesite prirodan broj ili 0 za kraj: Broj 28 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 1 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==3219416== Memcheck, a memory error detector\n==3219416== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==3219416== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==3219416== Command: output2vehsQ\n==3219416==\n====START_TEST_9334====Unesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 228 je obilan!\nUnesite prirodan broj ili 0 za kraj: Broj 28 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 1 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!====END_TEST_9334======3219416==\n==3219416== HEAP SUMMARY:\n==3219416==     in use at exit: 0 bytes in 0 blocks\n==3219416==   total heap usage: 10 allocs, 10 frees, 81,295 bytes allocated\n==3219416==\n==3219416== All heap blocks were freed -- no leaks are possible\n==3219416==\n==3219416== For lists of detected and suppressed errors, rerun with: -s\n==3219416== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 6,
+                    "output": "==3219434== exp-sgcheck, a stack and global array overrun detector\n==3219434== NOTE: This is an Experimental-Class Valgrind Tool\n==3219434== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==3219434== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==3219434== Command: output2vehsQ\n==3219434==\n--3219434-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219434-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219434-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219434-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219434-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219434-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219434-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219434-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_9334====Unesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 228 je obilan!\nUnesite prirodan broj ili 0 za kraj: Broj 28 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 1 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!====END_TEST_9334======3219434==\n==3219434== For lists of detected and suppressed errors, rerun with: -s\n==3219434== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3141": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite prirodan broj ili 0 za kraj: Broj 1 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 2 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 3 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 4 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 5 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 484 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 44 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==3219510== Memcheck, a memory error detector\n==3219510== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==3219510== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==3219510== Command: outputR4x1QT\n==3219510==\n====START_TEST_2139====Unesite prirodan broj ili 0 za kraj: Broj 1 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 2 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 3 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 4 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 5 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 484 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 44 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!====END_TEST_2139======3219510==\n==3219510== HEAP SUMMARY:\n==3219510==     in use at exit: 0 bytes in 0 blocks\n==3219510==   total heap usage: 17 allocs, 17 frees, 81,694 bytes allocated\n==3219510==\n==3219510== All heap blocks were freed -- no leaks are possible\n==3219510==\n==3219510== For lists of detected and suppressed errors, rerun with: -s\n==3219510== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 6,
+                    "output": "==3219522== exp-sgcheck, a stack and global array overrun detector\n==3219522== NOTE: This is an Experimental-Class Valgrind Tool\n==3219522== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==3219522== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==3219522== Command: outputR4x1QT\n==3219522==\n--3219522-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219522-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219522-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219522-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219522-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219522-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219522-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--3219522-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_2139====Unesite prirodan broj ili 0 za kraj: Broj 1 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 2 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 3 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 4 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 5 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 484 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 44 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!====END_TEST_2139======3219522==\n==3219522== For lists of detected and suppressed errors, rerun with: -s\n==3219522== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1678441121
+}

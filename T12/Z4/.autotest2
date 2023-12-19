@@ -1,0 +1,81 @@
+{
+    "id": 8624,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 12, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3765,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1 testiranje raznih varijanti ispisa\n std::cout << Kompleksni(0) << \" \" << Kompleksni(1) << \" \" << Kompleksni(5) << \" \"\n    << Kompleksni(-1) << \" \" << Kompleksni(-5) << \" \" << Kompleksni(0, 1) << \" \"\n    << Kompleksni(0, -1) << \" \" << Kompleksni(0, 5) << \" \" << Kompleksni(0, -5) << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0 1 5 -1 -5 i -i 5i -5i"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3766,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT testiranje razli\u010ditih varijanti ipisa\n std::cout  << Kompleksni(2, 1) << \" \" << Kompleksni(2, 5) << \" \" << Kompleksni(2, -1) << \" \"\n    << Kompleksni(2, -5) << \" \" << Kompleksni(-1, 1) << \" \" << Kompleksni(-1, 3) << \" \"\n    << Kompleksni(-1, -1) << \" \" << Kompleksni(-1, -5) << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "2+i 2+5i 2-i 2-5i -1+i -1+3i -1-i -1-5i"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

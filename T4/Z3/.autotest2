@@ -1,0 +1,484 @@
+{
+    "id": 8543,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 4, Zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3256,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: testira primjer iz predavanja\n\nstd::vector<std::string> v {\"xyzzy\", \"qwert\", \"uiop\", \"asd\", \"rrrfat\", \"asd\", \"yxcvbb\", \"qwert\", \"asd\", \"cvbnm\"};\nstd::string prva, posljednja;\nIzdvojiKrajnjeRijeci(v, prva, posljednja);\nstd::cout << prva << \" \" << posljednja;",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "asd yxcvbb"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3257,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: testira primjer iz predavanja\n\nstd::vector<std::string> v {\"xyzzy\", \"qwert\", \"uiop\", \"asd\", \"rrrfat\", \"asd\", \"yxcvbb\", \"qwert\", \"asd\", \"cvbnm\"};\nZadrziDuplikate(v);\nfor(auto temp : v) std::cout << temp << \"_\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "qwert_asd_"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3258,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: testira na prazan vektor\n\nstd::vector<std::string> v;\nstd::string prva, posljednja;\nIzdvojiKrajnjeRijeci(v, prva, posljednja);\nstd::cout << prva << \",\" << posljednja;",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    ","
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3259,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: testira osjetljivost na velika i mala slova\n\nstd::vector<std::string> v{\"aaa\", \"ZZZ\"};\nstd::string prva, posljednja;\nIzdvojiKrajnjeRijeci(v, prva, posljednja);\nstd::cout << prva << \" \" << posljednja;",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "aaa ZZZ"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3260,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: testira osjetljivost na velika i mala slova\n\nstd::vector<std::string> v{\"AbC\", \"ZzZ\", \"aBc\", \"zZe\", \"pQr\", \"AaAAa\"};\nstd::string prva, posljednja;\nIzdvojiKrajnjeRijeci(v, prva, posljednja);\nstd::cout << prva << \" \" << posljednja;",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "AaAAa ZzZ"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3261,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6: testira osjetljivost na velika i mala slova\n\nstd::vector<std::string> v{\"iJkLM\"};\nstd::string prva, posljednja;\nIzdvojiKrajnjeRijeci(v, prva, posljednja);\nstd::cout << prva << \" \" << posljednja;",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "iJkLM iJkLM"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3262,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7: testira osjetljivost na velika i mala slova\n\nstd::vector<std::string> v{\"xjsh\", \"asqssq\", \"cjdh\", \"icuudh\", \"OfyX\", \"oiDEu\", \"qwyt\", \"pQjasW\", \"WWW\", \"poWmkJA\", \"a\", \"aa\", \"Z\"};\nstd::string prva, posljednja;\nIzdvojiKrajnjeRijeci(v, prva, posljednja);\nstd::cout << prva << \" \" << posljednja;",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "a Z"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3263,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8: testira osjetljivost na velika i mala slova\n\nstd::vector<std::string> v{\"IM\", \"tp\", \"eeS\", \"Or\", \"eK\", \"mLtI\", \"dM\", \"lAg\", \"maTrIcaA\"};\nstd::string prva, posljednja;\nIzdvojiKrajnjeRijeci(v, prva, posljednja);\nstd::cout << prva << \" \" << posljednja;",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "dM tp"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3264,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT9: testira funkciju ZadrziDuplikate na prazan vektor\n\nstd::vector<std::string> v {};\nZadrziDuplikate(v);\nfor(auto temp : v) std::cout << temp << \"_\";\nstd::cout << \"x\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "x"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3265,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT10: testira funkciju ZadrziDuplikate\n\nstd::vector<std::string> v {\"abc\", \"abc\", \"abc\", \"abc\", \"def\", \"opr\", \"opr\", \"OpR\", \"AbC\"};\nZadrziDuplikate(v);\nfor(auto temp : v) std::cout << temp << \"_\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "abc_opr_"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3266,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT11: testira funkciju ZadrziDuplikate\n\nstd::vector<std::string> v {\"abc\", \"ABC\", \"aBc\", \"abC\", \"aBC\", \"AbC\", \"ABc\"};\nZadrziDuplikate(v);\nfor(auto temp : v) std::cout << temp << \"_\";\nstd::cout << \"x\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "x"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3267,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT12: testira funkciju ZadrziDuplikate\n\nstd::vector<std::string> v {\"abc\", \"abc\",\"abc\",\"abc\",\"abc\",\"abc\",\"abc\",\"abc\",\"abc\",\"abc\",\"abc\",\"abc\"};\nZadrziDuplikate(v);\nfor(auto temp : v) std::cout << temp << \"_\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "abc_"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3268,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT13: testira funkciju ZadrziDuplikate\n\nstd::vector<std::string> v {\"abc\", \"abc\", \"acb\", \"bac\", \"acb\",\"bca\", \"cab\", \"cba\",\"cab\", \"cba\",\"bac\",\"bca\"};\nZadrziDuplikate(v);\nfor(auto temp : v) std::cout << temp << \"_\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "abc_acb_bac_bca_cab_cba_"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3269,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT14: testira funkciju ZadrziDuplikate\n\nstd::vector<std::string> v {\"AsM\", \"XyZzzZ\", \"XyZzzZ\", \"qwe\", \"qwe\", \"asd\", \"asd\", \"PwA\", \"pwa\", \"pwa\", \"AsM\"};\nZadrziDuplikate(v);\nfor(auto temp : v) std::cout << temp << \"_\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "AsM_XyZzzZ_qwe_asd_pwa_"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3270,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT15: testira kombinovano IzdvojiKrajnjeRijeci i ZadrziDuplikate\n\nstd::vector<std::string> v{\"AbC\", \"ZzZ\", \"aBc\", \"zZe\", \"pQr\", \"AaAAa\", \"ZzZ\", \"AbC\", \"aBc\"};\nstd::string prva, posljednja;\nIzdvojiKrajnjeRijeci(v, prva, posljednja);\nstd::cout << prva << \" \" << posljednja << std::endl;\nZadrziDuplikate(v);\nfor(auto temp : v) std::cout << temp << \"_\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "AaAAa ZzZ\nAbC_ZzZ_aBc_"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3295,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT16: testira main na primjer iz postavke tutorijala\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <vector>\n#include <string>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\nxyzzy qwert uiop asd rrrfat asd yxcvbb qwert asd cvbnm\n"
+                },
+                "expect": [
+                    "Koliko zelite unijeti rijeci: Unesite rijeci:\nPrva rijec po abecednom poretku je: asd\nPosljednja rijec po abecednom poretku je: yxcvbb\nRijeci koje se ponavljaju su: qwert asd",
+                    "Koliko zelite unijeti rijeci: Unesite rijeci: Prva rijec po abecednom poretku je: asd\nPosljednja rijec po abecednom poretku je: yxcvbb\nRijeci koje se ponavljaju su: qwert asd"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        }
+    ]
+}

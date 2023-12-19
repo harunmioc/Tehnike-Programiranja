@@ -1,0 +1,157 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 3, Zadatak 6",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 3 - Zadatak 6\n\/\/ Odgovorni asistent: Haris \u010capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 6, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 1: Test main funkcije - Postoji mjesto 1\n    {\n        _main();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "11\n4\n1 11\n\n"
+                },
+                "expect": [
+                    "Unesite broj punoljetnih clanova za odabir poglavice plemena Wabambe: Unesite korak razbrajanja: Unesite raspon za odabir (N1 i N2): Redni broj osobe koja postaje poglavica: 9\nMbebe Mgogo, stani na sigurno mjesto 3 da ne bi bio poglavica!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 3 - Zadatak 6\n\/\/ Odgovorni asistent: Haris \u010capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 6, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 2: Test main funkcije - Postoji mjesto 2\n    {\n        _main();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "17\n5\n1 17\n\n"
+                },
+                "expect": [
+                    "Unesite broj punoljetnih clanova za odabir poglavice plemena Wabambe: Unesite korak razbrajanja: Unesite raspon za odabir (N1 i N2): Redni broj osobe koja postaje poglavica: 11\nMbebe Mgogo, stani na sigurno mjesto 4 da ne bi bio poglavica!"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 3 - Zadatak 6\n\/\/ Odgovorni asistent: Haris \u010capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 6, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 3: Test main funkcije - Ne postoji mjesto\n    {\n        _main();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5\n1\n1 5\n\n"
+                },
+                "expect": [
+                    "Unesite broj punoljetnih clanova za odabir poglavice plemena Wabambe: Unesite korak razbrajanja: Unesite raspon za odabir (N1 i N2): Redni broj osobe koja postaje poglavica: 5\nZao mi je Mbebe Mgogo, ali nema sigurnog mjesta."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 3 - Zadatak 6\n\/\/ Odgovorni asistent: Haris \u010capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 6, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <iostream>\n#include <list>\n#include <typeinfo>\nnamespace std\n{\ntemplate<typename Tip>\nclass MojaLista : public list<Tip>\n{\npublic:\n    MojaLista() : list<Tip>()\n    {\n        std::cout << \"Pozvana moja lista\" << std::endl;\n    }\n};\n\n}\n#define list MojaLista",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 18: Eliminatoran AT - Provjere da li su implementirani zahtjevi zadatka\n    {\n        \/\/ Ne smije biti ispis \"Pozvana moja lista\"\n        int a = Poglavica(20,5);\n        std::cout << \"Kraj!\" << std::endl;\n\n        \/\/ Provjera strukture cvor\n        Cvor b;\n        b.redni_broj = 1;\n\n        std::cout << sizeof(b) << std::endl << typeid(b.sljedeci).name() << std::endl;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Kraj!\n12\nSt10shared_ptrI4CvorE",
+                    "Kraj!\n24\nSt10shared_ptrI4CvorE"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

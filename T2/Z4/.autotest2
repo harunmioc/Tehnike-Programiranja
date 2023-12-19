@@ -1,0 +1,149 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2016\/2076), Tutorijal 2, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++11"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++11"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3164,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: primjer iz zadatka\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3\n3.5\n2.8\n10\n-1.54\n12.37\n0.24\n\n"
+                },
+                "expect": [
+                    "Unesite broj elemenata: \nR1 = X1 = \nR2 = X2 = \nR3 = X3 = \nParalelna veza ovih elemenata ima R = 2.51479 i X = 0.897637."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "3\n3.5\n2.8\n10\n-1.54\n12.37\n0.24\n\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "3\n3.5\n2.8\n10\n-1.54\n12.37\n0.24\n\n"
+                }
+            }
+        },
+        {
+            "id": 3165,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: postoji otpor 0, ukupno kolo nema impedanse\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2\n10\n-10\n0\n0\n"
+                },
+                "expect": [
+                    "Unesite broj elemenata: \nR1 = X1 = \nR2 = X2 = \nParalelna veza ovih elemenata ima R = 0 i X = 0."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2\n10\n-10\n0\n0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2\n10\n-10\n0\n0\n"
+                }
+            }
+        },
+        {
+            "id": 3166,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: 7 otpornika\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "7\n1\n1\n2\n-2\n3.3\n-3.3\n0.4\n0.4\n5\n-0.55\n6.1\n0.69\n77\n77\n"
+                },
+                "expect": [
+                    "Unesite broj elemenata: \nR1 = X1 =\nR2 = X2 =\nR3 = X3 = \nR4 = X4 = \nR5 = X5 = \nR6 = X6 = \nR7 = X7 = \nParalelna veza ovih elemenata ima R = 0.308349 i X = 0.165542."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "7\n1\n1\n2\n-2\n3.3\n-3.3\n0.4\n0.4\n5\n-0.55\n6.1\n0.69\n77\n77\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "7\n1\n1\n2\n-2\n3.3\n-3.3\n0.4\n0.4\n5\n-0.55\n6.1\n0.69\n77\n77\n"
+                }
+            }
+        }
+    ]
+}

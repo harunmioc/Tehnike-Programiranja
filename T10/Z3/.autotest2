@@ -1,0 +1,122 @@
+{
+    "id": 8603,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 10, Zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3646,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: Test konstruktora\n\nVektor3d v1(3, 1, 4), v2, v3{-2,0,-10};\nv1.Ispisi(); std::cout<<\" \"; v1.Ispisi();\nstd::cout<<\" \"; v2.Ispisi(); std::cout<<\" \";\nv2.Ispisi(); std::cout<<\" \"; v3.Ispisi();\nstd::cout<<\" \"; v3.Ispisi(); std::cout<<\" \";\nv3.Ispisi();",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <cmath>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "{3,1,4} {3,1,4} {0,0,0} {0,0,0} {-2,0,-10} {-2,0,-10} {-2,0,-10}"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3647,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: Testiranje metode DajBrojIspisa\n\nVektor3d v1(3, 1, 4), v2, v3{-2,0,-10};\nfor(int i=0;i<5;i++) {v1.Ispisi();std::cout<<\" \";}\nstd::cout<<std::endl;\nfor(int i=0;i<2;i++) {v2.Ispisi();std::cout<<\" \";}\nstd::cout<<std::endl;\nfor(int i=0;i<1;i++) {v3.Ispisi();std::cout<<\" \";}\nstd::cout<<std::endl;\nstd::cout<<\"Vektor v1 je ispisan \"<<v1.DajBrojIspisa()<<\", vektor v2 \"<<v2.DajBrojIspisa()<<\" i vektor v3 \"<<v3.DajBrojIspisa()<<\" puta.\";",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "{3,1,4} {3,1,4} {3,1,4} {3,1,4} {3,1,4}\n{0,0,0} {0,0,0}\n{-2,0,-10}\nVektor v1 je ispisan 5, vektor v2 2 i vektor v3 1 puta."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3648,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: Testiranje da li novokreirana kopija nasljedjuje brojac ispisa\n\nVektor3d v1(1, 1, 1);\nfor(int i=0;i<3;i++) {v1.Ispisi();std::cout<<\" \";}\nstd::cout<<std::endl;\nconst Vektor3d v2(v1);\nv2.Ispisi(); std::cout << std::endl;\nstd::cout << v2.DajBrojIspisa() << std::endl;\nconst Vektor3d v3(v2);\nstd::cout << v3.DajBrojIspisa();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "{1,1,1} {1,1,1} {1,1,1}\n{1,1,1}\n1\n0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3678,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: Testiranje da li klasa zaista ima niz od tri double elementa i brojac ispisa kao atribute.\n\nstd::cout<<sizeof(Vektor3d)<<std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "32"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

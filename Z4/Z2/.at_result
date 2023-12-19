@@ -1,0 +1,181 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-137-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "2": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "_Nedozvoljeno preklapanje_",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj krugova: Unesite centar za 1. krug: Unesite poluprecnik: Neispravan poluprecnik!\nUnesite ponovo poluprecnik za 1. krug: Neispravan poluprecnik!\nUnesite ponovo poluprecnik za 1. krug: Unesite centar za 2. krug: Unesite poluprecnik: Nedozvoljeno preklapanje\nUnesite centar za 2. krug: Unesite poluprecnik: Nedozvoljeno preklapanje\nUnesite centar za 2. krug: Unesite poluprecnik: Krugovi nakon obavljenog sortiranja:\n{(8,8),2.1}\n{(0,0),2}",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "4": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj krugova: Unesite centar za 1. krug: Neispravan centar!\nUnesite ponovo centar za 1. krug: Unesite poluprecnik: Neispravan poluprecnik!\nUnesite ponovo poluprecnik za 1. krug: Unesite centar za 2. krug: Neispravan centar!\nUnesite ponovo centar za 2. krug: Unesite poluprecnik: Unesite centar za 3. krug: Unesite poluprecnik: Unesite centar za 4. krug: Unesite poluprecnik: Unesite centar za 5. krug: Unesite poluprecnik: Krugovi nakon obavljenog sortiranja:\n{(123,-130),30}\n{(17,20),6}\n{(5,6),5}\n{(30,30),2}\n{(1,1),1}",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "5": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj krugova: Neispravan broj krugova, unesite ponovo! Neispravan broj krugova, unesite ponovo! Unesite centar za 1. krug: Unesite poluprecnik: Unesite centar za 2. krug: Unesite poluprecnik: Nedozvoljeno preklapanje\nUnesite centar za 2. krug: Unesite poluprecnik: Neispravan poluprecnik!\nUnesite ponovo poluprecnik za 2. krug: Unesite centar za 3. krug: Unesite poluprecnik: Krugovi nakon obavljenog sortiranja:\n{(0,10),2}\n{(0,3),1}\n{(0,0),1}",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "6": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj krugova: Unesite centar za 1. krug: Unesite poluprecnik: Unesite centar za 2. krug: Unesite poluprecnik: Unesite centar za 3. krug: Unesite poluprecnik: Nedozvoljeno preklapanje\nUnesite centar za 3. krug: Unesite poluprecnik: Nedozvoljeno preklapanje\nUnesite centar za 3. krug: Unesite poluprecnik: Krugovi nakon obavljenog sortiranja:\n{(2,3),5}\n{(10,7),2}\n{(-5,-8),1}",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1685788177
+}

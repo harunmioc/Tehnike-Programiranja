@@ -1,0 +1,392 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 5, Zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        Automobil a(700, {80, 90, 60});\n        ApstraktnoVozilo *v = &a;\n        std::cout << v->DajUkupnuTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "930\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        Automobil a(700, {80, 90, 60});\n        ApstraktnoVozilo *v = &a;\n        std::cout << v->DajTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "700\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        Kamion k(700, 2000);\n        ApstraktnoVozilo *v = &k;\n        std::cout << v->DajUkupnuTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "2700\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        Kamion k(700, 2000);\n        ApstraktnoVozilo *v = &k;\n        std::cout << v->DajTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "700\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        Autobus a(1350, 50, 80);\n        ApstraktnoVozilo *v = &a;\n        std::cout << v->DajUkupnuTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "5350\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        Autobus a(700, 80, 50);\n        ApstraktnoVozilo *v = &a;\n        std::cout << v->DajTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "700\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        ApstraktnoVozilo *v1 = new Automobil(700, {80, 90, 60});\n        ApstraktnoVozilo *v2 = v1->DajKopiju();\n        if (v1 == v2)\n            std::cout << \"GRESKA\";\n        delete v1;\n        std::cout << v2->DajUkupnuTezinu();\n        delete v2;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "930\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        Automobil a(700, {80, 90, 60});\n        Automobil b(800, {50, 60, 70});\n        a = b;\n        std::cout << a.DajUkupnuTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "980\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 10,
+            "name": "Test 10",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        Automobil a(700, {80, 90, 60});\n        Vozilo v = a;\n        std::cout << v.DajUkupnuTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "930\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 11,
+            "name": "Test 11",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        Kamion k(700, 2000);\n        Vozilo v1 = k;\n        Vozilo v2 = v1;\n        std::cout << v2.DajUkupnuTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "2700\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 12,
+            "name": "Test 12",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        Autobus a(700, 80, 50);\n        Vozilo v = a;\n        Vozilo *v1 = &v;\n        Vozilo *v2 = new Vozilo(*v1);\n        if (v1 == v2)\n            std::cout << \"GRESKA\";\n        std::cout << v2->DajUkupnuTezinu();\n        delete v2;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "4700\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 13,
+            "name": "Test 13",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        Automobil a(700, {80, 90, 60});\n        Kamion k(700, 2000);\n        Vozilo v = a;\n        v = k;\n        std::cout << v.DajUkupnuTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "2700\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 14,
+            "name": "Test 14",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <fstream>\n#include <iostream>\n#include <cstdio>",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        std::ofstream vozila(\"VOZILA.TXT\");\n        vozila << \"A500 3 80 60 75\\nK500 1200\\n\";\n        vozila << \"B1500 50 80\\n\";\n        vozila.flush();\n        vozila.close();\n\n        try\n        {\n            _main();\n        }\n        catch(...) {}\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "715\n1700\n5500\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 15,
+            "name": "Test 15",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 5 - Zadatak 3\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 3, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <fstream>\n#include <iostream>\n#include <cstdio>",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::cout << std::endl << std::endl;\n    {\n        std::ofstream vozila(\"VOZILA.TXT\");\n        vozila << \"A700 3 80 90 60\\nK700 2000\\nB700 80 50\\n\";\n        vozila << \"A1400 5 80 60 75 25 10\\nK500 1200\\n\";\n        vozila << \"B1500 5 8\\n\";\n        vozila.flush();\n        vozila.close();\n\n        try\n        {\n            _main();\n        }\n        catch(...) {}\n    }\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "930\n1540\n1650\n1700\n2700\n4700\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

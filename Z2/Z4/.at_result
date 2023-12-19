@@ -1,0 +1,274 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-137-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "2": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesi elemente (* za kraj reda, * na pocetku reda za kraj unosa):\nMatrica nakon sortiranja:\n3 3 2 3\n4 5 2 1 1 3 2\n2 5 1 6 7\n9 8 9\nUnesite elemente sekvence koja se trazi (* za kraj reda): Trazena sekvenca se nalazi u 3. redu (nakon sortiranja)",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesi elemente (* za kraj reda, * na pocetku reda za kraj unosa):\nMatrica nakon sortiranja:\n1 2 3\n1 3 2\n2 1 3\n2 3 1\n3 1 2\n3 2 1\nUnesite elemente sekvence koja se trazi (* za kraj reda): Trazena sekvenca se nalazi u 4. redu (nakon sortiranja)",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "4": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "Unesi elemente (* za kraj reda, * na pocetku reda za kraj unosa):\nMatrica nakon sortiranja:\n116 1 2\n115 1 2 3\n114 1 2 3 4\n113 1 2 3 4 5\n112 1 2 3 4 5 6\n111 1 2 3 4 5 6 7\nUnesite elemente sekvence koja se trazi (* za kraj reda): Trazena sekvenca se ne nalazi u matrici",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "5": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesi elemente (* za kraj reda, * na pocetku reda za kraj unosa):\nMatrica nakon sortiranja:\n1 1 1 1 2\n1 1 1 2\n1 1 2\n1 2\nUnesite elemente sekvence koja se trazi (* za kraj reda): Trazena sekvenca se ne nalazi u matrici",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "6": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Matrica nakon sortiranja:\n2.1 1.1 3.1\n1.2 3.2 2.2\n3.3 2.3 1.3\n1.4 2.4 3.4\n2.5 3.5 1.5\n3.6 1.6 2.6",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "7": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Matrica nakon sortiranja:\nCapljinu\nca mac\ncamdijinog\ncavke\ncekaju\ncetirii\ncetrdeset\ncuce\ni\nispod\nmosta\nz a",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "8": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In instantiation of ‘auto Product(std::vector<TipVar>) [with TipVar = Cigla]’:\nmain.cpp:27:14:   required from ‘bool Kriterij(std::vector<TipVar>, std::vector<TipVar>) [with TipVar = Cigla]’\nmain.cpp:35:12:   required from ‘void SortirajPoProizvoduRedova(std::vector<std::vector<TipVar> >&) [with TipVar = Cigla]’\nmain.cpp:123:29:   required from here\nmain.cpp:15:11: error: no match for ‘operator=’ (operand types are ‘Cigla’ and ‘int’)\n   15 |   product = 1;\n      |   ~~~~~~~~^~~\nmain.cpp:38:7: note: candidate: ‘constexpr Cigla& Cigla::operator=(const Cigla&)’\n   38 | class Cigla {\n      |       ^~~~~\nmain.cpp:38:7: note:   no known conversion for argument 1 from ‘int’ to ‘const Cigla&’\nmain.cpp:38:7: note: candidate: ‘constexpr Cigla& Cigla::operator=(Cigla&&)’\nmain.cpp:38:7: note:   no known conversion for argument 1 from ‘int’ to ‘Cigla&&’",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "main.cpp",
+                            "line": 9,
+                            "col": "11",
+                            "message": "no match for 'operator=' (operand types are 'Cigla' and 'int')",
+                            "code": "product = 1;"
+                        }
+                    ]
+                }
+            }
+        },
+        "9": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In instantiation of ‘auto Product(std::vector<TipVar>) [with TipVar = Cigla]’:\nmain.cpp:27:14:   required from ‘bool Kriterij(std::vector<TipVar>, std::vector<TipVar>) [with TipVar = Cigla]’\nmain.cpp:144:58:   required from here\nmain.cpp:14:10: error: no matching function for call to ‘Cigla::Cigla()’\n   14 |   TipVar product;\n      |          ^~~~~~~\nmain.cpp:40:5: note: candidate: ‘Cigla::Cigla(int, int)’\n   40 |     Cigla(int x, int y):X(x), Y(y){}\n      |     ^~~~~\nmain.cpp:40:5: note:   candidate expects 2 arguments, 0 provided\nmain.cpp:38:7: note: candidate: ‘constexpr Cigla::Cigla(const Cigla&)’\n   38 | class Cigla{\n      |       ^~~~~\nmain.cpp:38:7: note:   candidate expects 1 argument, 0 provided\nmain.cpp:38:7: note: candidate: ‘constexpr Cigla::Cigla(Cigla&&)’\nmain.cpp:38:7: note:   candidate expects 1 argument, 0 provided\nmain.cpp:15:11: error: no match for ‘operator=’ (operand types are ‘Cigla’ and ‘int’)\n   15 |   product = 1;\n      |   ~~~~~~~~^~~\nmain.cpp:38:7: note: candidate: ‘constexpr Cigla& Cigla::operator=(const Cigla&)’\n   38 | class Cigla{\n      |       ^~~~~\nmain.cpp:38:7: note:   no known conversion for argument 1 from ‘int’ to ‘const Cigla&’\nmain.cpp:38:7: note: candidate: ‘constexpr Cigla& Cigla::operator=(Cigla&&)’\nmain.cpp:38:7: note:   no known conversion for argument 1 from ‘int’ to ‘Cigla&&’",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "main.cpp",
+                            "line": 8,
+                            "col": "10",
+                            "message": "no matching function for call to 'Cigla::Cigla()'",
+                            "code": "TipVar product;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "main.cpp",
+                            "line": 9,
+                            "col": "11",
+                            "message": "no match for 'operator=' (operand types are 'Cigla' and 'int')",
+                            "code": "product = 1;"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "time": 1681758428
+}

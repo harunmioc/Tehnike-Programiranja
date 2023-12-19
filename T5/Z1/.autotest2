@@ -1,0 +1,267 @@
+{
+    "id": 8551,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 5, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 3319,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 3311,
+            "name": "Test 2",
+            "parse": {
+                "ban_types": [
+                    "string"
+                ]
+            },
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: testira primjer iz postavke\n\/\/NAPOMENA: Znak \"_\" je sastavni dio autotesta\n_main();\nstd::cout << \"_\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/#define string! \/\/zabranjeno!!\n\/\/#define cstring! \/\/zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Na vrh brda vrba mrda...\n"
+                },
+                "expect": [
+                    "Unesite recenicu: Recenica bez prve rijeci glasi: vrh brda vrba mrda...\n_\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3312,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: testira recenicu sastavljenu od razmaka\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/#define string !zabranjeno!!\n\/\/#define cstring !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "      \n"
+                },
+                "expect": [
+                    "Unesite recenicu: Recenica bez prve rijeci glasi:"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3313,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: testira recenicu sastavljenu od jedne rije\u010di\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/#define string !zabranjeno!!\n\/\/#define cstring !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Rijec\n"
+                },
+                "expect": [
+                    "Unesite recenicu: Recenica bez prve rijeci glasi:\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3314,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: testira recenicu sa razmacima ispred prve rijeci\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/#define string !zabranjeno!!\n\/\/#define cstring !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "   Na vrh brda vrba mrda...\n"
+                },
+                "expect": [
+                    "Unesite recenicu: Recenica bez prve rijeci glasi: vrh brda vrba mrda..."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3315,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: testira recenicu koja se sastoji od jedne rijeci i vi\u0161e razmaka ispred nje\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/#define string !zabranjeno!!\n\/\/#define cstring !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "   Rijec\n"
+                },
+                "expect": [
+                    "Unesite recenicu: Recenica bez prve rijeci glasi: "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3316,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6: testira recenicu koja se sastoji od jedne rijeci i razmaka ispred i iza nje\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/#define string !zabranjeno!!\n\/\/#define cstring !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": " Rijec \n"
+                },
+                "expect": [
+                    "Unesite recenicu: Recenica bez prve rijeci glasi: "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3317,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7: testira recenicu sa 100+ znakova\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/#define string !zabranjeno!!\n\/\/#define cstring !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "Ova recenica je jako duga, i koristi samo u svrhu testiranja unosa dugih recenica te stoga nema nikakvog drugog smisla.\n"
+                },
+                "expect": [
+                    "Unesite recenicu: Recenica bez prve rijeci glasi: recenica je jako duga, i koristi samo u svrhu testiranja unosa dugih recenica te stoga nema nikakvog drugog smisla.\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3318,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8: testira recenicu koja se sastoji od jedne rijeci i \n\/\/vise razmaka ispred nje, kao i vise razmaka iza nje\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/#define string !zabranjeno!!\n\/\/#define cstring !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "   Rijec   \n"
+                },
+                "expect": [
+                    "Unesite recenicu: Recenica bez prve rijeci glasi: "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

@@ -1,0 +1,87 @@
+{
+    "id": 8625,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 12, Zadatak 5",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3763,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1 testoranje transformacije unesenog niza brojeva\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5 1 2 3 4 5"
+                },
+                "expect": [
+                    "Koliko zelite elemenata: Unesite elemente: Transformirani elementi: 1 0.5 0.333333 0.25 0.2"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3764,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2 testiranje maina\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "4 100 50 25 10"
+                },
+                "expect": [
+                    "Koliko zelite elemenata: Unesite elemente: Transformirani elementi: 0.01 0.02 0.04 0.1 "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

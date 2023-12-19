@@ -1,0 +1,560 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9prim2",
+        "os": "Linux 5.15.0-58-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3664": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:20:21: error: ‘Ugao’ was not declared in this scope\n   20 | std::cout << sizeof(Ugao) << std::endl;\n      |                     ^~~~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "21",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "std::cout << sizeof(Ugao) << std::endl;"
+                        }
+                    ]
+                }
+            }
+        },
+        "3665": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:21:1: error: ‘Ugao’ was not declared in this scope\n   21 | Ugao u1, u2(90,0,0), u3(180,0,0);\n      | ^~~~\nmain.cpp:23:1: error: ‘u1’ was not declared in this scope; did you mean ‘y1’?\n   23 | u1.Ispisi(); std::cout << std::endl;\n      | ^~\n      | y1\nmain.cpp:24:1: error: ‘u2’ was not declared in this scope\n   24 | u2.Ispisi(); std::cout << std::endl;\n      | ^~\nmain.cpp:25:1: error: ‘u3’ was not declared in this scope\n   25 | u3.Ispisi(); std::cout << std::endl;\n      | ^~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "1",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "Ugao u1, u2(90,0,0), u3(180,0,0);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 11,
+                            "col": "1",
+                            "message": "'u1' was not declared in this scope; did you mean 'y1'?",
+                            "code": "u1.Ispisi(); std::cout << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 12,
+                            "col": "1",
+                            "message": "'u2' was not declared in this scope",
+                            "code": "u2.Ispisi(); std::cout << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 13,
+                            "col": "1",
+                            "message": "'u3' was not declared in this scope",
+                            "code": "u3.Ispisi(); std::cout << std::endl;"
+                        }
+                    ]
+                }
+            }
+        },
+        "3666": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:20:1: error: ‘Ugao’ was not declared in this scope\n   20 | Ugao u1, u2(90,0,0), u3(180,0,0);\n      | ^~~~\nmain.cpp:22:1: error: ‘u1’ was not declared in this scope; did you mean ‘y1’?\n   22 | u1.IspisiKlasicno(); std::cout << std::endl;\n      | ^~\n      | y1\nmain.cpp:23:1: error: ‘u2’ was not declared in this scope\n   23 | u2.IspisiKlasicno(); std::cout << std::endl;\n      | ^~\nmain.cpp:24:1: error: ‘u3’ was not declared in this scope\n   24 | u3.IspisiKlasicno(); std::cout << std::endl;\n      | ^~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "Ugao u1, u2(90,0,0), u3(180,0,0);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "1",
+                            "message": "'u1' was not declared in this scope; did you mean 'y1'?",
+                            "code": "u1.IspisiKlasicno(); std::cout << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 11,
+                            "col": "1",
+                            "message": "'u2' was not declared in this scope",
+                            "code": "u2.IspisiKlasicno(); std::cout << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 12,
+                            "col": "1",
+                            "message": "'u3' was not declared in this scope",
+                            "code": "u3.IspisiKlasicno(); std::cout << std::endl;"
+                        }
+                    ]
+                }
+            }
+        },
+        "3667": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:20:1: error: ‘Ugao’ was not declared in this scope\n   20 | Ugao u(90,0,0), v;\n      | ^~~~\nmain.cpp:21:14: error: ‘u’ was not declared in this scope\n   21 | std::cout << u.DajRadijane() << std::endl;\n      |              ^\nmain.cpp:24:14: error: ‘v’ was not declared in this scope\n   24 | std::cout << v.DajRadijane() << std::endl;\n      |              ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "Ugao u(90,0,0), v;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "14",
+                            "message": "'u' was not declared in this scope",
+                            "code": "std::cout << u.DajRadijane() << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 12,
+                            "col": "14",
+                            "message": "'v' was not declared in this scope",
+                            "code": "std::cout << v.DajRadijane() << std::endl;"
+                        }
+                    ]
+                }
+            }
+        },
+        "3668": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:21:1: error: ‘Ugao’ was not declared in this scope\n   21 | Ugao u,v;\n      | ^~~~\nmain.cpp:22:1: error: ‘u’ was not declared in this scope\n   22 | u.Postavi(212, 57, 28.062), v.Postavi(1,1,-1);\n      | ^\nmain.cpp:22:29: error: ‘v’ was not declared in this scope\n   22 | u.Postavi(212, 57, 28.062), v.Postavi(1,1,-1);\n      |                             ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "1",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "Ugao u,v;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "1",
+                            "message": "'u' was not declared in this scope",
+                            "code": "u.Postavi(212, 57, 28.062), v.Postavi(1,1,-1);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "29",
+                            "message": "'v' was not declared in this scope",
+                            "code": "u.Postavi(212, 57, 28.062), v.Postavi(1,1,-1);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3669": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:20:1: error: ‘Ugao’ was not declared in this scope\n   20 | Ugao u1,u2(50, 25, 12), u3(500, 300, 200), u4(-10, -20, -30);;\n      | ^~~~\nmain.cpp:21:1: error: ‘u1’ was not declared in this scope; did you mean ‘y1’?\n   21 | u1.Postavi(500, 300, 200);\n      | ^~\n      | y1\nmain.cpp:25:1: error: ‘u2’ was not declared in this scope\n   25 | u2.IspisiKlasicno(); std::cout << std::endl;\n      | ^~\nmain.cpp:26:1: error: ‘u3’ was not declared in this scope\n   26 | u3.IspisiKlasicno(); std::cout << std::endl;\n      | ^~\nmain.cpp:27:1: error: ‘u4’ was not declared in this scope\n   27 | u4.IspisiKlasicno(); std::cout << std::endl;\n      | ^~",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "Ugao u1,u2(50, 25, 12), u3(500, 300, 200), u4(-10, -20, -30);;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "1",
+                            "message": "'u1' was not declared in this scope; did you mean 'y1'?",
+                            "code": "u1.Postavi(500, 300, 200);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 13,
+                            "col": "1",
+                            "message": "'u2' was not declared in this scope",
+                            "code": "u2.IspisiKlasicno(); std::cout << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 14,
+                            "col": "1",
+                            "message": "'u3' was not declared in this scope",
+                            "code": "u3.IspisiKlasicno(); std::cout << std::endl;"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 15,
+                            "col": "1",
+                            "message": "'u4' was not declared in this scope",
+                            "code": "u4.IspisiKlasicno(); std::cout << std::endl;"
+                        }
+                    ]
+                }
+            }
+        },
+        "3670": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:20:1: error: ‘Ugao’ was not declared in this scope\n   20 | Ugao u(50, 25, 12), v(500, 300, 200), f(50, 30, 10);\n      | ^~~~\nmain.cpp:21:1: error: ‘u’ was not declared in this scope\n   21 | u.SaberiSa(f);\n      | ^\nmain.cpp:21:12: error: ‘f’ was not declared in this scope\n   21 | u.SaberiSa(f);\n      |            ^\nmain.cpp:23:12: error: ‘v’ was not declared in this scope\n   23 | u.SaberiSa(v);\n      |            ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "Ugao u(50, 25, 12), v(500, 300, 200), f(50, 30, 10);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "1",
+                            "message": "'u' was not declared in this scope",
+                            "code": "u.SaberiSa(f);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "12",
+                            "message": "'f' was not declared in this scope",
+                            "code": "u.SaberiSa(f);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 11,
+                            "col": "12",
+                            "message": "'v' was not declared in this scope",
+                            "code": "u.SaberiSa(v);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3671": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:20:1: error: ‘Ugao’ was not declared in this scope\n   20 | Ugao u(50, 25, 12), v(500, 300, 200), f(50, 30, 10);\n      | ^~~~\nmain.cpp:21:1: error: ‘u’ was not declared in this scope\n   21 | u.SaberiSa(f).SaberiSa(v);\n      | ^\nmain.cpp:21:12: error: ‘f’ was not declared in this scope\n   21 | u.SaberiSa(f).SaberiSa(v);\n      |            ^\nmain.cpp:21:24: error: ‘v’ was not declared in this scope\n   21 | u.SaberiSa(f).SaberiSa(v);\n      |                        ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "Ugao u(50, 25, 12), v(500, 300, 200), f(50, 30, 10);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "1",
+                            "message": "'u' was not declared in this scope",
+                            "code": "u.SaberiSa(f).SaberiSa(v);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "12",
+                            "message": "'f' was not declared in this scope",
+                            "code": "u.SaberiSa(f).SaberiSa(v);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "24",
+                            "message": "'v' was not declared in this scope",
+                            "code": "u.SaberiSa(f).SaberiSa(v);"
+                        }
+                    ]
+                }
+            }
+        },
+        "3672": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:20:1: error: ‘Ugao’ was not declared in this scope\n   20 | Ugao u(50, 25, 12), v(500, 300, 200), f(50, 30, 10);\n      | ^~~~\nmain.cpp:21:1: error: ‘u’ was not declared in this scope\n   21 | u.SaberiSa(1);\n      | ^\nmain.cpp:23:24: error: ‘f’ was not declared in this scope\n   23 | u.SaberiSa(1).SaberiSa(f).Ispisi();\n      |                        ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "Ugao u(50, 25, 12), v(500, 300, 200), f(50, 30, 10);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "1",
+                            "message": "'u' was not declared in this scope",
+                            "code": "u.SaberiSa(1);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 11,
+                            "col": "24",
+                            "message": "'f' was not declared in this scope",
+                            "code": "u.SaberiSa(1).SaberiSa(f).Ispisi();"
+                        }
+                    ]
+                }
+            }
+        },
+        "3683": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:20:1: error: ‘Ugao’ was not declared in this scope\n   20 | Ugao u(90, 0, 0), v(180, 0, 0), f(90, 0, 0);\n      | ^~~~\nmain.cpp:22:1: error: ‘u’ was not declared in this scope\n   22 | u=ZbirUglova(u, v);\n      | ^\nmain.cpp:22:17: error: ‘v’ was not declared in this scope\n   22 | u=ZbirUglova(u, v);\n      |                 ^\nmain.cpp:22:3: error: ‘ZbirUglova’ was not declared in this scope\n   22 | u=ZbirUglova(u, v);\n      |   ^~~~~~~~~~\nmain.cpp:24:15: error: ‘f’ was not declared in this scope\n   24 | ZbirUglova(u, f).IspisiKlasicno(); std::cout << std::endl;\n      |               ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "Ugao u(90, 0, 0), v(180, 0, 0), f(90, 0, 0);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "1",
+                            "message": "'u' was not declared in this scope",
+                            "code": "u=ZbirUglova(u, v);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "17",
+                            "message": "'v' was not declared in this scope",
+                            "code": "u=ZbirUglova(u, v);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "3",
+                            "message": "'ZbirUglova' was not declared in this scope",
+                            "code": "u=ZbirUglova(u, v);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 12,
+                            "col": "15",
+                            "message": "'f' was not declared in this scope",
+                            "code": "ZbirUglova(u, f).IspisiKlasicno(); std::cout << std::endl;"
+                        }
+                    ]
+                }
+            }
+        },
+        "3686": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:20:1: error: ‘Ugao’ was not declared in this scope\n   20 | Ugao u(57, 17, 45);\n      | ^~~~\nmain.cpp:22:7: error: ‘Ugao’ does not name a type\n   22 | const Ugao u1(u);\n      |       ^~~~\nmain.cpp:23:14: error: ‘u1’ was not declared in this scope; did you mean ‘y1’?\n   23 | std::cout << u1.DajRadijane() << \" \" << u1.DajStepene() << \" \"\n      |              ^~\n      |              y1",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "Ugao u(57, 17, 45);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 10,
+                            "col": "7",
+                            "message": "'Ugao' does not name a type",
+                            "code": "const Ugao u1(u);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 11,
+                            "col": "14",
+                            "message": "'u1' was not declared in this scope; did you mean 'y1'?",
+                            "code": "std::cout << u1.DajRadijane() << \" \" << u1.DajStepene() << \" \""
+                        }
+                    ]
+                }
+            }
+        },
+        "3687": {
+            "success": false,
+            "status": 3,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 5,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int main()’:\nmain.cpp:20:1: error: ‘Ugao’ was not declared in this scope\n   20 | Ugao u(90, 0, 0);\n      | ^~~~\nmain.cpp:21:1: error: ‘u’ was not declared in this scope\n   21 | u.PomnoziSa(1);\n      | ^",
+                    "exit_code": 1,
+                    "success": false,
+                    "parsed_output": [
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 8,
+                            "col": "1",
+                            "message": "'Ugao' was not declared in this scope",
+                            "code": "Ugao u(90, 0, 0);"
+                        },
+                        {
+                            "type": "error",
+                            "file": "TEST_CODE",
+                            "line": 9,
+                            "col": "1",
+                            "message": "'u' was not declared in this scope",
+                            "code": "u.PomnoziSa(1);"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "time": 1684459229
+}

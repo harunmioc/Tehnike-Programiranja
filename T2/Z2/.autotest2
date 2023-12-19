@@ -1,0 +1,244 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2016\/2076), Tutorijal 2, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++11"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++11"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3153,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: primjer iz postavke\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 3 1 4 2 1 3 1 4 2 1 3 0\n"
+                },
+                "expect": [
+                    "Unesite slijed brojeva (0 za kraj): Slijed je periodican sa osnovnim periodom 5."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 3 1 4 2 1 3 1 4 2 1 3 0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 3 1 4 2 1 3 1 4 2 1 3 0\n"
+                }
+            }
+        },
+        {
+            "id": 3154,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: primjer iz postavke (nije periodican)\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "4 5 1 7 1 5 0\n"
+                },
+                "expect": [
+                    "Unesite slijed brojeva (0 za kraj): Slijed nije periodican!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "4 5 1 7 1 5 0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "4 5 1 7 1 5 0\n"
+                }
+            }
+        },
+        {
+            "id": 3155,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT3: poziv funkcije TestPerioda (1)\n    std::cout << std::boolalpha << TestPerioda({1, 2, 3, 1, 2}, 2) << \" \"\n              << TestPerioda({1, 2, 3, 1, 2}, 3) << \" \"\n              << TestPerioda({1, 2, 3, 1, 2, 3}, 2) << \" \"\n              << TestPerioda({1, 2, 3, 1, 2, 5, 1}, 4) << \" \"\n              << TestPerioda({1, 2, 3, 1, 2, 5, 1}, 6) << \" \"\n              << TestPerioda({1}, 1) << \" \"\n              << TestPerioda({1}, 2) << \" \"\n              << TestPerioda({1}, 0);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "false true false false true false false false"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3156,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT4: poziv funkcije TestPerioda (2)\n    std::cout << std::boolalpha << TestPerioda({1, 2, 1}, 2) << \" \"\n              << TestPerioda({1, 2, 1}, 1) << \" \"\n              << TestPerioda({1, 2, 1}, 3) << \" \"\n              << TestPerioda({0, 1, 2, 3, 0, 1, 2, 3, 4}, 4) << \" \"\n              << TestPerioda({0, 1, 2, 3, 0, 1, 2, 3, 4}, 3) << \" \"\n              << TestPerioda({0, 1, 2, 3, 0, 1, 2, 3, 0}, 4) << \" \"\n              << TestPerioda({1, 2}, 1) << \" \"\n              << TestPerioda({1, 1}, 2) << \" \"\n              << TestPerioda({1, 1}, 1) << \" \"\n              << TestPerioda({1, 1, 2, 3, 4, 5, 6}, 1);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "true false false false false true false false true false"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3157,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT5: poziv funkcije OdrediOsnovniPeriod (1)\n    std::cout << OdrediOsnovniPeriod({1, 2}) << \" \"\n              << OdrediOsnovniPeriod({1, 2, 3, 4, 5, 0}) << \" \"\n              << OdrediOsnovniPeriod({1, 2, 3, 4, 5, 1}) << \" \"\n              << OdrediOsnovniPeriod({1, 2, 3, 4, 5, 1, 2, 7, 1});",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0 0 5 8"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3158,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT6: poziv funkcije OdrediOsnovniPeriod (2)\n    std::cout << OdrediOsnovniPeriod({1.1, 2.2}) << \" \"\n              << OdrediOsnovniPeriod({.1, .2, .3, .1, .5, .1, .2}) << \" \"\n              << OdrediOsnovniPeriod({-1, -2, -3, -4, -5, 1, 0, 6, -1, -2}) << \" \"\n              << OdrediOsnovniPeriod({-1, -2, -3, -4, -5, 1, 0, 6, -1, -2, -1}) << \" \"\n              << OdrediOsnovniPeriod({-1, -2, -3, -4, -5, 1, 0, 6, -1, -2, -2});",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0 5 8 10 0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3159,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7: main sa realnim brojevima\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1.2 -1 0.5 301 1.2 -1 0\n"
+                },
+                "expect": [
+                    "Unesite slijed brojeva (0 za kraj): Slijed je periodican sa osnovnim periodom 4."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1.2 -1 0.5 301 1.2 -1 0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1.2 -1 0.5 301 1.2 -1 0\n"
+                }
+            }
+        },
+        {
+            "id": 3160,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8: stress test\n    std::vector<double> v1 (1000, 7.7);\n    std::cout << OdrediOsnovniPeriod(v1) << std::endl; \/\/1\n    std::vector<double> v2 (1000);\n    for (unsigned int i = 0; i < v2.size(); ++i)\n        v2.at (i) = i;\n    v2.push_back (0);\n    std::cout << OdrediOsnovniPeriod(v2) << std::endl; \/\/1000\n    v2.push_back (0);\n    std::cout << OdrediOsnovniPeriod(v2) << std::endl; \/\/1001\n    v2.push_back (1);\n    std::cout << OdrediOsnovniPeriod(v2) << std::endl; \/\/1001\n    v2.push_back (1);\n    std::cout << OdrediOsnovniPeriod(v2) << std::endl; \/\/0",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1\n1000\n1001\n1001\n0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

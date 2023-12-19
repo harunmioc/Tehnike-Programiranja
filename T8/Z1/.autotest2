@@ -1,0 +1,228 @@
+{
+    "id": 8581,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 8, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3517,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1 - testiranje main-a\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3 34 52 4 42 50\n"
+                },
+                "expect": [
+                    "Unesite prvo vrijeme (h m s): Unesite drugo vrijeme (h m s): Prvo vrijeme: 03:34:52\nDrugo vrijeme: 04:42:50\nZbir vremena: 08:17:42"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3518,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2 - testiranje main-a\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "12 24 52 9 18 23\n"
+                },
+                "expect": [
+                    "Unesite prvo vrijeme (h m s): Unesite drugo vrijeme (h m s): Prvo vrijeme: 12:24:52\nDrugo vrijeme: 09:18:23\nZbir vremena: 21:43:15"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3519,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3 - testiranje main-a sa naispravnim vremenom\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "25 12 15\n"
+                },
+                "expect": [
+                    "Unesite prvo vrijeme (h m s): Neispravno vrijeme\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3520,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4 - testiranje main-a sa naispravnim vremenom\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 24 15 12\n"
+                },
+                "expect": [
+                    "Unesite prvo vrijeme (h m s): Unesite drugo vrijeme (h m s): Neispravno vrijeme"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3521,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5 - testiranje main-a sa karakteristi\u010dnim unosom\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "0 0 1 23 59 59\n"
+                },
+                "expect": [
+                    "Unesite prvo vrijeme (h m s): Unesite drugo vrijeme (h m s): Prvo vrijeme: 00:00:01\nDrugo vrijeme: 23:59:59\nZbir vremena: 00:00:00"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3522,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6 - testiranje main-a sa karakteristi\u010dnim unosom\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "23 59 59 23 59 59\n"
+                },
+                "expect": [
+                    "Unesite prvo vrijeme (h m s): Unesite drugo vrijeme (h m s): Prvo vrijeme: 23:59:59\nDrugo vrijeme: 23:59:59\nZbir vremena: 23:59:58"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3523,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7 - da li funkcija SaberiVrijeme testira ispravnost proslijedjenih parametara\n\n    try \n    {\n        Vrijeme v1, v2;\n        v1.sati = 21, v1.minute = 65, v1.sekunde = 45;\n        v2.sati = 21, v2.minute = 15, v2.sekunde = 45;\n        SaberiVrijeme(v1, v2);\n    }\n    catch(std::domain_error e) \n    {\n        std::cout << e.what() << std::endl;\n    }\n    \n    try \n    {\n        Vrijeme v1, v2;\n        v1.sati = 21, v1.minute = 15, v1.sekunde = 45;\n        v2.sati = 21, v2.minute = 65, v2.sekunde = 45;\n        SaberiVrijeme(v1, v2);\n    }\n    catch(std::domain_error e) \n    {\n        std::cout << e.what() << std::endl;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Neispravno vrijeme\nNeispravno vrijeme\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3524,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8 - da li funkcija IspisiVrijeme testira ispravnost proslijedjenih parametara\n\n    try \n    {\n        Vrijeme v1;\n        v1.sati = 21, v1.minute = 65, v1.sekunde = 45;\n        IspisiVrijeme(v1);\n    }\n    catch(std::domain_error e) \n    {\n        std::cout << e.what() << std::endl;\n    }\n    \n    try \n    {\n        Vrijeme v1;\n        v1.sati = 25, v1.minute = 15, v1.sekunde = 45;\n        IspisiVrijeme(v1);\n    }\n    catch(std::domain_error e) \n    {\n        std::cout << e.what() << std::endl;\n    }\n    \n    try \n    {\n        Vrijeme v1;\n        v1.sati = 15, v1.minute = 15, v1.sekunde = 75;\n        IspisiVrijeme(v1);\n    }\n    catch(std::domain_error e) \n    {\n        std::cout << e.what() << std::endl;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Neispravno vrijeme\nNeispravno vrijeme\nNeispravno vrijeme\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3525,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT9 - da li funkcije prepoznaju negativne parametre kao neispravne\n\n_main();\nstd::cout << std::endl;\n_main();\nstd::cout << std::endl;\n_main();\nstd::cout << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3 15 -4 -3 15 19 3 -15 4\n"
+                },
+                "expect": [
+                    "Unesite prvo vrijeme (h m s): Neispravno vrijeme\nUnesite prvo vrijeme (h m s): Neispravno vrijeme\nUnesite prvo vrijeme (h m s): Neispravno vrijeme"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

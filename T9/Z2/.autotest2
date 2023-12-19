@@ -1,0 +1,95 @@
+{
+    "id": 8592,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 9, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 3569,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 3567,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/Testiranje da li klasa Vektor3d idalje sadrzi isti interface i da li sve radi kako treba.\n\n  Vektor3d v1, v2;\n  v1.Postavi(4,3,0);\n  v2.PostaviX(1);\n  v2.PostaviY(2);\n  v2.PostaviZ(3);\n  v1.Ispisi();\n  std::cout << std::endl;\n  v2.Ispisi();\n  double x, y, z;\n  v2.Ocitaj(x, y, z);\n  std::cout << std::endl << x << \" \" << y << \" \" << z;\n  std::cout << std::endl << v2.DajX() << \" \" << v2.DajY() << \" \" << v2.DajZ();\n  std::cout << std::endl << v1.DajDuzinu() << std::endl;\n  v2.PomnoziSaSkalarom(-1).PomnoziSaSkalarom(2).Ispisi();\n  std::cout << std::endl;\n  v2.SaberiSa(v2).Ispisi();\n  auto v3 = ZbirVektora(v1, v2);\n  std::cout << std::endl;\n  v3.Ispisi();\n  \n  const Vektor3d vConst(v1);\n  std::cout << std::endl;\n  vConst.Ispisi();\n  vConst.Ocitaj(x, y, z);\n  std::cout << std::endl << x << \" \" << y << \" \" << z << std::endl;\n  std::cout << vConst.DajX() << \" \" << vConst.DajY() << \" \" << vConst.DajZ() << std::endl;\n  std::cout << vConst.DajDuzinu();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "{4,3,0}\n{1,2,3}\n1 2 3\n1 2 3\n5\n{-2,-4,-6}\n{-4,-8,-12}\n{0,-5,-12}\n{4,3,0}\n4 3 0\n4 3 0\n5"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3568,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "above_main",
+                    "code": "\/\/Testiranje da li Vektor3d zaista sadrzi niz koordinate. \n\/\/Napomena: ako test pada dobijate 0 bodova na zadatku.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ #define class struct\n\/\/ #define private public",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "Vektor3d test;\ntest.Postavi(1,2,3);\ndouble niz[3]{5};\n\nif (sizeof(test) == sizeof(niz))\nstd::cout << \"OK\";\nelse\nstd::cout << \"Izmijeniti privatni dio klase prema postavci zadatka!\";\n\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

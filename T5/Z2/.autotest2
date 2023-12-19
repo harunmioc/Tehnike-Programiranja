@@ -1,0 +1,282 @@
+{
+    "id": 8552,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 5, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3319,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: testiramo funkciju RazmijeniBlokove \n\/\/ulazni parametri su nizovi cijelih brojeva\n\nint a[]{1, 2, 3, 4, 5}, b[]{6, 7, 8, 9, 10};\nRazmijeniBlokove(std::begin(a), std::end(a), std::begin(b));\nstd::cout << \"Prvi niz: \";\nfor(int x : a) std::cout << x << \" \";\nstd::cout << \"\\nDrugi niz: \";\nfor(int x : b) std::cout << x << \" \";",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Prvi niz: 6 7 8 9 10 \nDrugi niz: 1 2 3 4 5 "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3320,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: testiramo funkciju RazmijeniBlokove \n\/\/ulazni parametri su stringovi\n\nstd::string s1(\"String1\"), s2(\"String2\");\nRazmijeniBlokove(s1.begin(), s1.end(), s2.begin());\nstd::cout << \"Prvi string: \" << s1 << std::endl;\nstd::cout << \"Drugi string: \" << s2 << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Prvi string: String2\nDrugi string: String1"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3322,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: testiramo funkciju RazmijeniBlokove \n\/\/razliciti kontejneri kao ulazni parametri funkcije (vector i deque)\n\nstd::vector<int> vektor{1, 2, 3, 4, 5};\nstd::deque <int> dek{6, 7, 8, 9, 10};\nRazmijeniBlokove(vektor.begin(),vektor.end(),dek.begin());\nstd::cout << \"Prvi kontejner: \";\nfor(int x : vektor) std::cout << x << \" \";\nstd::cout << \"\\nDrugi kontejner: \";\nfor(int x : dek) std::cout << x << \" \";\nstd::cout << std::endl;\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <vector>\n#include <deque>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Prvi kontejner: 6 7 8 9 10\nDrugi kontejner: 1 2 3 4 5"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3323,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: testiramo funkciju RazmijeniBlokove \n\/\/razliciti kontejneri kao ulazni parametri funkcije (vector i deque)\n\nstd::deque <int> dek{1, 2, 3, 4, 5};\nstd::vector <int> vektor{6, 7, 8, 9, 10};\nRazmijeniBlokove(dek.begin(),dek.end(),vektor.begin());\nstd::cout << \"Prvi kontejner: \";\nfor(int x : dek) std::cout << x << \" \";\nstd::cout << \"\\nDrugi kontejner: \";\nfor(int x : vektor) std::cout << x << \" \";\nstd::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <vector>\n#include <deque>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Prvi kontejner: 6 7 8 9 10\nDrugi kontejner: 1 2 3 4 5"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3326,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: testiramo funkciju RazmijeniBlokove \n\/\/razliciti kontejneri kao ulazni parametri funkcije (obi\u010dan niz cijelih brojeva i vektor)\n\nint niz[]{1,2,3,4,5};\nstd::vector <int> vektor{6, 7, 8, 9, 10};\nRazmijeniBlokove(std::begin(niz),std::end(niz),vektor.begin());\nstd::cout << \"Prvi kontejner: \";\nfor(int x : niz) std::cout << x << \" \";\nstd::cout << \"\\nDrugi kontejner: \";\nfor(int x : vektor) std::cout << x << \" \";\nstd::cout << std::endl;\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <vector>\n#include <deque>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Prvi kontejner: 6 7 8 9 10\nDrugi kontejner: 1 2 3 4 5 "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3327,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6: testiramo funkciju RazmijeniBlokove \n\/\/razliciti kontejneri kao ulazni parametri funkcije (obi\u010dan niz cijelih brojeva i vektor)\n\nint niz[]{1,2,3,4,5};\nstd::vector <int> vektor{6, 7, 8, 9, 10};\nRazmijeniBlokove(vektor.begin(),vektor.end(),std::begin(niz));\nstd::cout << \"Prvi kontejner: \";\nfor(int x : niz) std::cout << x << \" \";\nstd::cout << \"\\nDrugi kontejner: \";\nfor(int x : vektor) std::cout << x << \" \";\nstd::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <vector>\n#include <deque>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Prvi kontejner: 6 7 8 9 10\nDrugi kontejner: 1 2 3 4 5"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3328,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7: testiramo funkciju RazmijeniBlokove \n\/\/razliciti kontejneri kao ulazni parametri funkcije (obi\u010dan niz cijelih brojeva i deque)\n\nint niz[]{1,2,3,4,5};\nstd::deque <int> dek{6, 7, 8, 9, 10};\nRazmijeniBlokove(dek.begin(),dek.end(),std::begin(niz));\nstd::cout << \"Prvi kontejner: \";\nfor(int x : niz) std::cout << x << \" \";\nstd::cout << \"\\nDrugi kontejner: \";\nfor(int x : dek) std::cout << x << \" \";\nstd::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <vector>\n#include <deque>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Prvi kontejner: 6 7 8 9 10\nDrugi kontejner: 1 2 3 4 5 "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3329,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8: testiramo funkciju RazmijeniBlokove \n\/\/razliciti kontejneri kao ulazni parametri funkcije (obi\u010dan niz cijelih brojeva i deque) i razliciti tipovi\n\nint niz[]{1,2,3,4,5};\nstd::deque <short> dek{6,7,8,9,10};\nRazmijeniBlokove(std::begin(niz),std::end(niz),dek.begin());\nstd::cout << \"Prvi kontejner: \";\nfor(int x : niz) std::cout << x << \" \";\nstd::cout << \"\\nDrugi kontejner: \";\nfor(int x : dek) std::cout << x << \" \";\nstd::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <vector>\n#include <deque>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Prvi kontejner: 6 7 8 9 10\nDrugi kontejner: 1 2 3 4 5"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3332,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT9: testiramo funkciju RazmijeniBlokove \n\/\/testiramo prazan kontejner\n\nstd::deque <int> dek1{1,2,3,4,5};\nstd::deque <int> dek2{6,7,8,9,10};\nRazmijeniBlokove(dek1.begin(),dek1.begin(),dek2.begin());\nstd::cout << \"Prvi kontejner: \";\nfor(int x : dek1) std::cout << x << \" \";\nstd::cout << \"\\nDrugi kontejner: \";\nfor(int x : dek2) std::cout << x << \" \";\nstd::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <vector>\n#include <deque>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Prvi kontejner: 1 2 3 4 5 \nDrugi kontejner: 6 7 8 9 10"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3335,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT10: testiramo funkciju RazmijeniBlokove \n\/\/ulazni parametri obicni nizovi cijelih brojeva\n\nint niz1[]{1,2,3,4,5};\nint niz2[]{6,7,8,9,10};\nRazmijeniBlokove(niz1,niz1+5,niz2);\nstd::cout << \"Prvi niz: \";\nfor(int x : niz1) std::cout << x << \" \";\nstd::cout << \"\\nDrugi niz: \";\nfor(int x : niz2) std::cout << x << \" \";\nstd::cout << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Prvi niz: 6 7 8 9 10\nDrugi niz: 1 2 3 4 5"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3371,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT11: testiramo funkciju RazmijeniBlokove \n\/\/testiramo da li funkcija vraca vrijednost\n\nstd::deque<double> a{1, 2, 3, 4, 5}, b{6, 7, 8, 9, 10};\nstd::deque<double>::iterator iza_kraja = RazmijeniBlokove(a.begin(), a.end(), b.begin());\nfor (auto it = b.begin(); it != iza_kraja; ++it)\nstd::cout << *it << \" \";\nstd::cout << \"\\nPoslije razmjene:\\n\";\nstd::cout << \"Prvi niz: \";\nfor(int x : a) std::cout << x << \" \";\nstd::cout << \"\\nDrugi niz: \";\nfor(int x : b) std::cout << x << \" \";\nstd::cout << std::endl;",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <deque>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 2 3 4 5\nPoslije razmjene:\nPrvi niz: 6 7 8 9 10\nDrugi niz: 1 2 3 4 5"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

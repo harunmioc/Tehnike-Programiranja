@@ -1,0 +1,255 @@
+{
+    "id": 8585,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 8, Zadatak 5",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3531,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1 - main iz postavke\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2.5 3.17 5.8 2 -1 3.9 6 1.17 1 -2.25 9 0\n"
+                },
+                "expect": [
+                    "Unesite slijed brojeva (0 za kraj): U slijedu ima 5 brojeva vecih od njihove aritmeticke sredine"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3532,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2 - main\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "13 1.2 16.4 18.7 12.4 15 19 4 0\n"
+                },
+                "expect": [
+                    "Unesite slijed brojeva (0 za kraj): U slijedu ima 5 brojeva vecih od njihove aritmeticke sredine"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3533,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3 - unos sa negativnim brojevima\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "-13 -1.2 -16.4 -18.7 -12.4 -15 -19 -4 0\n"
+                },
+                "expect": [
+                    "Unesite slijed brojeva (0 za kraj): U slijedu ima 3 brojeva vecih od njihove aritmeticke sredine"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3534,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4 - unos sa pozitivnim i negativnim brojevima\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "-13 1.2 -16.4 18.7 -12.4 -15 19 -4 4 0\n"
+                },
+                "expect": [
+                    "Unesite slijed brojeva (0 za kraj): U slijedu ima 4 brojeva vecih od njihove aritmeticke sredine"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3535,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5 - unos sa pozitivnim i negativnim brojevima\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "-5 -4 5 4 -5 -4 5 4 0\n"
+                },
+                "expect": [
+                    "Unesite slijed brojeva (0 za kraj): U slijedu ima 4 brojeva vecih od njihove aritmeticke sredine"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3536,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6 - svi brojevi u listi su isti\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 1 1 1 1 1 1 1 1 1 0\n"
+                },
+                "expect": [
+                    "Unesite slijed brojeva (0 za kraj): U slijedu ima 0 brojeva vecih od njihove aritmeticke sredine"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3537,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7 - svi brojevi u listi su isti po modulu\n\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 -1 1 -1 1 -1 1 -1 -1 1 0\n"
+                },
+                "expect": [
+                    "Unesite slijed brojeva (0 za kraj): U slijedu ima 5 brojeva vecih od njihove aritmeticke sredine"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3538,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8 - testiranje funkcija sa elementima tipa int\n\n  auto lista(KreirajPovezanuListu<int>(0));\n  int prag;\n  std::cin >> prag; \n  std::cout << \"Suma elemenata \" << SumaElemenata(lista) << std::endl;\n  std::cout << \"Broj elemenata \" << BrojElemenata(lista) << std::endl;\n  std::cout << \"Broj vecih od praga: \" << BrojVecihOd(lista, prag) << std::endl;\n  UnistiListu(lista);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10 0 4\n"
+                },
+                "expect": [
+                    "Suma elemenata 55\nBroj elemenata 10\nBroj vecih od praga: 6\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3539,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT9 - da li se ispravno obavlja unos elemenata do zavrsnog\n\n  auto lista(KreirajPovezanuListu<int>(5));\n  int prag;\n  std::cin >> prag; \n  std::cout << \"Suma elemenata \" << SumaElemenata(lista) << std::endl;\n  std::cout << \"Broj elemenata \" << BrojElemenata(lista) << std::endl;\n  std::cout << \"Broj vecih od praga: \" << BrojVecihOd(lista, prag) << std::endl;\n  UnistiListu(lista);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6\n"
+                },
+                "expect": [
+                    "Suma elemenata 10\nBroj elemenata 4\nBroj vecih od praga: 0\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3540,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT10 - da li se ispravno obavlja unos elemenata do zavrsnog\n\n  auto lista(KreirajPovezanuListu<int>(5));\n  int prag;\n  std::cin >> prag; \n  std::cout << \"Suma elemenata \" << SumaElemenata(lista) << std::endl;\n  std::cout << \"Broj elemenata \" << BrojElemenata(lista) << std::endl;\n  std::cout << \"Broj vecih od praga: \" << BrojVecihOd(lista, prag) << std::endl;\n  UnistiListu(lista);",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3 4 5 6 7 8 9 10\n"
+                },
+                "expect": [
+                    "Suma elemenata 10\nBroj elemenata 4\nBroj vecih od praga: 0\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

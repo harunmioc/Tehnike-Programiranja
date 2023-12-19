@@ -1,0 +1,171 @@
+{
+    "id": 8615,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 11, Zadatak 5",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3732,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT1: Testiranje da li se kopirajuci konstruktor ponasa konzistentno i da li je ispravno implementirano duboko kopiranje\n \nLiga l1{\"NK Zeljeznicar\", \"HSK Zrinjski\", \"FK Sarajevo\", \"FK Sloboda\", \"FK Krupa\", \"FK Radnik Bijeljina\"};\nl1.RegistrirajUtakmicu(\"NK Zeljeznicar\", \"HSK Zrinjski\",2,0);\nLiga l2(l1);\n\nstd::cout << \"Orginalna Liga za Prvaka: \" << std::endl;\nl1.IspisiTabelu();\nstd::cout << std::endl << \"Kopija Lige za Prvaka: \" << std::endl;\nl2.IspisiTabelu();\n\nl2.RegistrirajUtakmicu(\"FK Krupa\", \"FK Sloboda\",1,1);\n\nstd::cout << std::endl << \"Nakon izmjene kopije: \" << std::endl << std::endl;\n\nstd::cout << \"Orginalna Liga za Prvaka: \" << std::endl;\nl1.IspisiTabelu();  \nstd::cout << std::endl << \"Kopija Lige za Prvaka: \" << std::endl;\nl2.IspisiTabelu();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Orginalna Liga za Prvaka: \nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nKopija Lige za Prvaka: \nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nNakon izmjene kopije: \n\nOrginalna Liga za Prvaka: \nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nKopija Lige za Prvaka: \nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               1   0   1   0   1   1   1\nFK Sloboda             1   0   1   0   1   1   1\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3733,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT2: Testiranje da li se operator dodjele ponasa konzistentno i da li je ispravno implementirano duboko kopiranje\n \nLiga l1{\"NK Zeljeznicar\", \"HSK Zrinjski\", \"FK Sarajevo\", \"FK Sloboda\", \"FK Krupa\", \"FK Radnik Bijeljina\"};\nl1.RegistrirajUtakmicu(\"NK Zeljeznicar\", \"HSK Zrinjski\",2,0);\n\nLiga l2 = l1;\n\nstd::cout << \"Orginalna Liga za Prvaka: \" << std::endl;\nl1.IspisiTabelu();\nstd::cout << std::endl << \"Kopija Lige za Prvaka: \" << std::endl;\nl2.IspisiTabelu();\n\nl2.RegistrirajUtakmicu(\"FK Krupa\", \"FK Sloboda\",1,1);\n\nstd::cout << std::endl << \"Nakon izmjene kopije: \" << std::endl << std::endl;\n\nstd::cout << \"Orginalna Liga za Prvaka: \" << std::endl;\nl1.IspisiTabelu();  \nstd::cout << std::endl << \"Kopija Lige za Prvaka: \" << std::endl;\nl2.IspisiTabelu();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Orginalna Liga za Prvaka: \nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nKopija Lige za Prvaka: \nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nNakon izmjene kopije: \n\nOrginalna Liga za Prvaka: \nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nKopija Lige za Prvaka: \nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               1   0   1   0   1   1   1\nFK Sloboda             1   0   1   0   1   1   1\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3734,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT3: Provjera ispravnog funkcionisanja operatora dodjele ako je varijabla vec incijalizirana sa istim brojem timova\n\nLiga l1{\"NK Zeljeznicar\", \"HSK Zrinjski\", \"FK Sarajevo\", \"FK Sloboda\", \"FK Krupa\", \"FK Radnik Bijeljina\"};\nLiga l2{\"NK Siroki Brijeg\", \"FK Mladost DK\", \"NK Celik\", \"NK Vitez\", \"NK Metalleghe BSI\", \"FK Olimpic\"};\n  \nl1.RegistrirajUtakmicu(\"FK Sloboda\", \"HSK Zrinjski\",1,1);\nl1.RegistrirajUtakmicu(\"FK Sarajevo\", \"HSK Zrinjski\",1,2);\nl1.RegistrirajUtakmicu(\"FK Krupa\", \"FK Radnik Bijeljina\",1,1);\nl1.RegistrirajUtakmicu(\"NK Zeljeznicar\",\"FK Krupa\",1,0);\nl1.RegistrirajUtakmicu(\"FK Radnik Bijeljina\", \"FK Sloboda\",0,1);\nl1.RegistrirajUtakmicu(\"FK Sarajevo\", \"NK Zeljeznicar\",0,3);\n  \nl2 = l1;\n  \nstd::cout << \"Orginalna Liga za Prvaka: \" << std::endl;\nl1.IspisiTabelu();\nstd::cout << std::endl << \"Kopija Lige za Prvaka: \" << std::endl;\nl2.IspisiTabelu();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Orginalna Liga za Prvaka: \nNK Zeljeznicar         2   2   0   0   4   0   6\nFK Sloboda             2   1   1   0   2   1   4\nHSK Zrinjski           2   1   1   0   3   2   4\nFK Krupa               2   0   1   1   1   2   1\nFK Radnik Bijeljina    2   0   1   1   1   2   1\nFK Sarajevo            2   0   0   2   1   5   0\n\nKopija Lige za Prvaka: \nNK Zeljeznicar         2   2   0   0   4   0   6\nFK Sloboda             2   1   1   0   2   1   4\nHSK Zrinjski           2   1   1   0   3   2   4\nFK Krupa               2   0   1   1   1   2   1\nFK Radnik Bijeljina    2   0   1   1   1   2   1\nFK Sarajevo            2   0   0   2   1   5   0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3735,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT4: Provjera ispravnog funkcionisanja operatora dodjele ako je varijabla vec incijalizirana sa manje timova\n\nLiga l1{\"NK Zeljeznicar\", \"HSK Zrinjski\", \"FK Sarajevo\", \"FK Sloboda\", \"FK Krupa\", \"FK Radnik Bijeljina\"};\nLiga l2{\"NK Siroki Brijeg\", \"FK Mladost DK\", \"NK Celik\", \"NK Vitez\"};\n  \nl1.RegistrirajUtakmicu(\"FK Sloboda\", \"HSK Zrinjski\",1,1);\nl1.RegistrirajUtakmicu(\"FK Sarajevo\", \"HSK Zrinjski\",1,2);\nl1.RegistrirajUtakmicu(\"FK Krupa\", \"FK Radnik Bijeljina\",1,1);\nl1.RegistrirajUtakmicu(\"NK Zeljeznicar\",\"FK Krupa\",1,0);\nl1.RegistrirajUtakmicu(\"FK Radnik Bijeljina\", \"FK Sloboda\",0,1);\nl1.RegistrirajUtakmicu(\"FK Sarajevo\", \"NK Zeljeznicar\",0,3);\n  \nl2 = l1;\n  \nstd::cout << \"Orginalna Liga za Prvaka: \" << std::endl;\nl1.IspisiTabelu();\nstd::cout << std::endl << \"Kopija Lige za Prvaka: \" << std::endl;\nl2.IspisiTabelu();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Orginalna Liga za Prvaka: \nNK Zeljeznicar         2   2   0   0   4   0   6\nFK Sloboda             2   1   1   0   2   1   4\nHSK Zrinjski           2   1   1   0   3   2   4\nFK Krupa               2   0   1   1   1   2   1\nFK Radnik Bijeljina    2   0   1   1   1   2   1\nFK Sarajevo            2   0   0   2   1   5   0\n\nKopija Lige za Prvaka: \nNK Zeljeznicar         2   2   0   0   4   0   6\nFK Sloboda             2   1   1   0   2   1   4\nHSK Zrinjski           2   1   1   0   3   2   4\nFK Krupa               2   0   1   1   1   2   1\nFK Radnik Bijeljina    2   0   1   1   1   2   1\nFK Sarajevo            2   0   0   2   1   5   0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3736,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT5: Provjera ispravnog funkcionisanja operatora dodjele ako je varijabla vec incijalizirana sa vecim brojme timova\n\nLiga l1{\"NK Zeljeznicar\", \"HSK Zrinjski\", \"FK Sarajevo\", \"FK Sloboda\"};\nLiga l2{\"NK Siroki Brijeg\", \"FK Mladost DK\", \"NK Celik\", \"NK Vitez\", \"NK Metalleghe BSI\", \"FK Olimpic\"};\n  \nl1.RegistrirajUtakmicu(\"FK Sloboda\", \"HSK Zrinjski\",1,1);\nl1.RegistrirajUtakmicu(\"FK Sarajevo\", \"HSK Zrinjski\",1,2);\nl1.RegistrirajUtakmicu(\"NK Zeljeznicar\",\"FK Sloboda\",1,0);\nl1.RegistrirajUtakmicu(\"FK Sarajevo\", \"FK Sloboda\",0,1);\nl1.RegistrirajUtakmicu(\"FK Sarajevo\", \"NK Zeljeznicar\",0,3);\n  \nl2 = l1;\n  \nstd::cout << \"Orginalna Liga za Prvaka: \" << std::endl;\nl1.IspisiTabelu();\nstd::cout << std::endl << \"Kopija Lige za Prvaka: \" << std::endl;\nl2.IspisiTabelu();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Orginalna Liga za Prvaka: \nNK Zeljeznicar         2   2   0   0   4   0   6\nHSK Zrinjski           2   1   1   0   3   2   4\nFK Sloboda             3   1   1   1   2   2   4\nFK Sarajevo            3   0   0   3   1   6   0\n\nKopija Lige za Prvaka: \nNK Zeljeznicar         2   2   0   0   4   0   6\nHSK Zrinjski           2   1   1   0   3   2   4\nFK Sloboda             3   1   1   1   2   2   4\nFK Sarajevo            3   0   0   3   1   6   0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3748,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT6: Provjera ispravne implementacije pomjeraju\u0107eg konstruktora i provjera na plitko kopiranje\n\nLiga l1{\"NK Zeljeznicar\", \"HSK Zrinjski\", \"FK Sarajevo\", \"FK Sloboda\", \"FK Krupa\", \"FK Radnik Bijeljina\"};\nLiga l2(l1);\nLiga l3(std::move(l1));\n\t\nstd::cout << \"Liga 1:\" << std::endl;\nl1.IspisiTabelu();\nstd::cout << std::endl  << \"Liga 2:\" << std::endl;\nl2.IspisiTabelu();\nstd::cout << std::endl  << \"Liga 3:\" << std::endl;\nl3.IspisiTabelu();\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Liga 1:\n\nLiga 2:\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           0   0   0   0   0   0   0\nNK Zeljeznicar         0   0   0   0   0   0   0\n\nLiga 3:\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           0   0   0   0   0   0   0\nNK Zeljeznicar         0   0   0   0   0   0   0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3749,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT7: Provjera ispravne implementacije pomjeraju\u0107eg operatora dodjele i provjera na plitko kopiranje\n\nLiga l1{\"NK Zeljeznicar\", \"HSK Zrinjski\", \"FK Sarajevo\", \"FK Sloboda\", \"FK Krupa\", \"FK Radnik Bijeljina\"};\nl1.RegistrirajUtakmicu(\"FK Sloboda\", \"HSK Zrinjski\",1,1);\n\t\nLiga l2{\"NK Zeljeznicar\", \"HSK Zrinjski\", \"FK Sarajevo\"};\nLiga l3{\"NK Zeljeznicar\", \"HSK Zrinjski\", \"FK Sarajevo\",\"NK Zeljeznicar\", \"HSK Zrinjski\", \"FK Sarajevo\",\"NK Zeljeznicar\", \"HSK Zrinjski\", \"FK Sarajevo\"};\n\t\nl3 = std::move(l1);\nl2 = l1;\n\t\nstd::cout << \"Liga 1:\" << std::endl;\nl1.IspisiTabelu();\nstd::cout << std::endl  << \"Liga 2:\" << std::endl;\nl2.IspisiTabelu();\nstd::cout << std::endl  << \"Liga 3:\" << std::endl;\nl3.IspisiTabelu();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Liga 1:\n\nLiga 2:\n\nLiga 3:\nFK Sloboda             1   0   1   0   1   1   1\nHSK Zrinjski           1   0   1   0   1   1   1\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nNK Zeljeznicar         0   0   0   0   0   0   0"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

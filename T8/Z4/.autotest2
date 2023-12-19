@@ -1,0 +1,135 @@
+{
+    "id": 8584,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 8, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3526,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1\n\n  std::map<std::string, std::string> rjecnik \n    { \n        {\"jabuka\", \"apple\"}, \n        {\"da\", \"yes\"}, \n        {\"kako\", \"how\"}, \n        {\"ne\", \"no\"}, \n        {\"majmun\", \"monkey\"}, \n        {\"mart\", \"ozujak\"},\n        {\"maj\", \"svibanj\"}, \n        {\"jul\", \"srpanj\"}\n    };\n    \n  std::cout << ZamijeniPremaRjecniku(\"  kako   da   ne   \", rjecnik) << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "  how   yes   no   \n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3527,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2\n\n  std::map<std::string, std::string> rjecnik \n    { \n        {\"jabuka\", \"apple\"}, \n        {\"da\", \"yes\"}, \n        {\"kako\", \"how\"}, \n        {\"ne\", \"no\"}, \n        {\"majmun\", \"monkey\"}, \n        {\"mart\", \"ozujak\"},\n        {\"maj\", \"svibanj\"}, \n        {\"jul\", \"srpanj\"}\n    };\n    \n  std::cout << ZamijeniPremaRjecniku(\"danas je 8. mart a 1. maj je praznik rada\", rjecnik) << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "danas je 8. ozujak a 1. svibanj je praznik rada\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3528,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\/\/AT3\n\n    std::map<std::string, std::string> rjecnik \n    { \n        {\"jabuka\", \"apple\"}, \n        {\"da\", \"yes\"}, \n        {\"kako\", \"how\"}, \n        {\"ne\", \"no\"}, \n        {\"majmun\", \"monkey\"}, \n        {\"mart\", \"ozujak\"},\n        {\"maj\", \"svibanj\"}, \n        {\"jul\", \"srpanj\"}\n    };\n\n    std::cout << ZamijeniPremaRjecniku(\"davor martic ima sestre maju i juliju\", rjecnik) << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "davor martic ima sestre maju i juliju\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3529,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4\n\n    std::map<std::string, std::string> rjecnik \n    { \n        {\"ana\", \"nan\"}, \n        {\"lov\", \"hunt\"}, \n        {\"volim\", \"love\"},\n    };\n    std::cout << ZamijeniPremaRjecniku(\"ana voli milovana nanan\", rjecnik) << std::endl;\n\n   \n    std::map<std::string, std::string> rjecnik1 \n    { \n        {\"ana\", \"nan\"}, \n        {\"lov\", \"hunt\"}, \n        {\"voli\", \"love\"},\n    };\n    std::cout << ZamijeniPremaRjecniku(\"ana voli milovana nanan\", rjecnik1) << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "nan voli milovana nanan\nnan love milovana nanan\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3530,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5\n\n    std::map<std::string, std::string> rjecnik\n    { \n        {\"km\", \"kilometar\"}, \n        {\"kg\", \"kilogram\"}, \n        {\"dl\", \"decilitar\"}, \n        {\"cal\", \"kalorija\"}, \n        {\"rad\", \"radijan\"}, \n        {\"hu\", \"madjarska\"}\n    };\n    \n    std::cout << ZamijeniPremaRjecniku(\"   rad     hudl    kg hugh kmkg jackman   dl      kg     k g\", rjecnik) << std::endl;\n    ",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "   radijan     hudl    kilogram hugh kmkg jackman   decilitar      kilogram     k g\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

@@ -1,0 +1,181 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-137-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "2": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj krugova:\nUneseni broj nije prirodan!",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj krugova: Unesite centar 1. kruga: Neispravne koordinate centra! Pokusajte ponovo:\nUnesite centar 1. kruga: Unesite poluprecnik 1. kruga: Unesite centar 2. kruga: Unesite poluprecnik 2. kruga: Neispravan poluprecnik! Pokusajte ponovo:\nUnesite centar 2. kruga: Unesite poluprecnik 2. kruga: Unesite parametre translacije (delta_x,delta_y): Unesite ugao rotacije oko tacke (0,0) u stepenima: Parametri krugova nakon obavljene transformacije su:\n{(2.13,-1.16),2}\n{(3.26,-0.13),4}\nKrug sa najvecim obimom je: {(3.26,-0.13),4}\nNe postoje krugovi koji se presjecaju!",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "4": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite broj krugova: Unesite centar 1. kruga: Unesite poluprecnik 1. kruga: Unesite centar 2. kruga: Unesite poluprecnik 2. kruga: Unesite centar 3. kruga: Unesite poluprecnik 3. kruga: Unesite parametre translacije (delta_x,delta_y): Unesite ugao rotacije oko tacke (0,0) u stepenima: Parametri krugova nakon obavljene transformacije su:\n{(1.11022e-16,1.41421),1}\n{(4.44089e-16,4.24264),2}\n{(-0.707107,3.53553),3}\nKrug sa najvecim obimom je: {(-0.707107,3.53553),3}\nPresjecaju se krugovi:\n{(1.11022e-16,1.41421),1} i {(4.44089e-16,4.24264),2}\nPresjecaju se krugovi:\n{(1.11022e-16,1.41421),1} i {(-0.707107,3.53553),3}\nPresjecaju se krugovi:\n{(4.44089e-16,4.24264),2} i {(-0.707107,3.53553),3}",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "5": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Nedozvoljen poluprecnik\nNedozvoljen poluprecnik\nOdlicno! Ocekivani broj izuzetaka jeste 2!",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "6": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Na pocetku se presjeca 3 krugova.\nNovi parametri krugova 1 i 2 su:\n{(-0.40154,0.801153),1}\n{(-0.445923,-2.34207),2}\nNa kraju se presjeca 1 krugova.",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1685895895
+}

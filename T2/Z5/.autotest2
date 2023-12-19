@@ -1,0 +1,145 @@
+{
+    "id": 5480,
+    "name": "Tehnike programiranja (2017\/2018), Tutorijal 2, zadatak 5",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++11"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++11"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 2,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: primjer iz postavke\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2\n10.5\n30\n2.8\n-47.6\n"
+                },
+                "expect": [
+                    "Unesi broj elemenata:\nZ1 = fi1 = \nZ2 = fi2 = \nParalelna veza ovih elemenata ima Z = 2.57147 i fi = -33.7613.",
+                    "Unesite broj elemenata:\nZ1 = fi1 = \nZ2 = fi2 = \nParalelna veza ovih elemenata ima Z = 2.57147 i fi = -33.7613."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2\n10.5\n30\n2.8\n-47.6\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2\n10.5\n30\n2.8\n-47.6\n"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: provjera za nulu\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\n0\n0\n"
+                },
+                "expect": [
+                    "Unesi broj elemenata:\nZ1 = fi1 =  \nParalelna veza ovih elemenata ima Z = 0 i fi = 0.",
+                    "Unesite broj elemenata:\nZ1 = fi1 =  \nParalelna veza ovih elemenata ima Z = 0 i fi = 0."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\n0\n0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\n0\n0\n"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "4\n1\n90\n1\n90\n1\n0\n1\n0\n"
+                },
+                "expect": [
+                    "Unesi broj elemenata:\nZ1 = fi1 = \nZ2 = fi2 = \nZ3 = fi3 = \nZ4 = fi4 =\nParalelna veza ovih elemenata ima Z = 0.353553 i fi = 45.",
+                    "Unesite broj elemenata:\nZ1 = fi1 = \nZ2 = fi2 = \nZ3 = fi3 = \nZ4 = fi4 =\nParalelna veza ovih elemenata ima Z = 0.353553 i fi = 45."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "4\n1\n90\n1\n90\n1\n0\n1\n0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "4\n1\n90\n1\n90\n1\n0\n1\n0\n"
+                }
+            }
+        }
+    ]
+}

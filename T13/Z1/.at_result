@@ -1,0 +1,264 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-137-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3797": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Neispravni parametri\nNeispravni parametri\nKrug poluprecnika 10\nObim: 62.8319 Povrsina: 314.159\nKrug poluprecnika 5.1\nObim: 32.0442 Povrsina: 81.7128",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3798": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Neispravni parametri\nNeispravni parametri\nNeispravni parametri\nNeispravni parametri\nPravougaonik sa stranicama duzine 5 i 1\nObim: 12 Povrsina: 5\nPravougaonik sa stranicama duzine 5.5 i 1.1\nObim: 13.2 Povrsina: 6.05",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3799": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "Neispravni parametri\nNeispravni parametri\nNeispravni parametri\nNeispravni parametri\nNeispravni parametri\nNeispravni parametri\nTrougao sa stranicama duzine 3, 4 i 5\nObim: 12 Povrsina: 6\nTrougao sa stranicama duzine 4, 4 i 4\nObim: 12 Povrsina: 6.9282",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3800": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Koliko zelite likova: Lik 1: Pogresni podaci, ponovite unos!\nLik 1: Pogresni podaci, ponovite unos!\nLik 1: Lik 2: Lik 3: Pogresni podaci, ponovite unos!\nLik 3: Pogresni podaci, ponovite unos!\nLik 3: Pogresni podaci, ponovite unos!\nLik 3: Pogresni podaci, ponovite unos!\nLik 3: Lik 4: Lik 5: Pogresni podaci, ponovite unos!\nLik 5: Pogresni podaci, ponovite unos!\nLik 5: Pogresni podaci, ponovite unos!\nLik 5: Pogresni podaci, ponovite unos!\nLik 5: Pogresni podaci, ponovite unos!\nLik 5: Pogresni podaci, ponovite unos!\nLik 5: Lik 6: Krug poluprecnika 10\nObim: 62.8319 Povrsina: 314.159\nKrug poluprecnika 5.1\nObim: 32.0442 Povrsina: 81.7128\nPravougaonik sa stranicama duzine 5 i 1\nObim: 12 Povrsina: 5\nPravougaonik sa stranicama duzine 5.5 i 1.1\nObim: 13.2 Povrsina: 6.05\nTrougao sa stranicama duzine 3, 4 i 5\nObim: 12 Povrsina: 6\nTrougao sa stranicama duzine 4, 4 i 4\nObim: 12 Povrsina: 6.9282",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3801": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Koliko zelite likova: Lik 1: Lik 2: Pogresni podaci, ponovite unos!\nLik 2: Pogresni podaci, ponovite unos!\nLik 2: Lik 3: Pogresni podaci, ponovite unos!\nLik 3: Lik 4: Lik 5: Pravougaonik sa stranicama duzine 3 i 2\nObim: 10 Povrsina: 6\nKrug poluprecnika 5\nObim: 31.4159 Povrsina: 78.5398\nTrougao sa stranicama duzine 3, 4 i 5\nObim: 12 Povrsina: 6\nPravougaonik sa stranicama duzine 10 i 20\nObim: 60 Povrsina: 200\nKrug poluprecnika 10\nObim: 62.8319 Povrsina: 314.159",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3802": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In member function ‘virtual double DummyKlasa::DajObim() const’:\nmain.cpp:230:27: warning: no return statement in function returning non-void [-Wreturn-type]\n  230 |   double DajObim() const {};\n      |                           ^\nmain.cpp: In member function ‘virtual double DummyKlasa::DajPovrsinu() const’:\nmain.cpp:231:31: warning: no return statement in function returning non-void [-Wreturn-type]\n  231 |   double DajPovrsinu() const {};\n      |                               ^",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "TEST_CODE",
+                            "line": 5,
+                            "col": "27",
+                            "message": "no return statement in function returning non-void",
+                            "code": "double DajObim() const {};"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "TEST_CODE",
+                            "line": 6,
+                            "col": "31",
+                            "message": "no return statement in function returning non-void",
+                            "code": "double DajPovrsinu() const {};"
+                        }
+                    ]
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Pozvan ispravan destruktor!",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "71234": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Krug poluprecnika 10\nPravougaonik sa stranicama duzine 10 i 10\nTrougao sa stranicama duzine 3, 4 i 5",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1686292714
+}

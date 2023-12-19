@@ -1,0 +1,247 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-137-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "1": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Meteoroloska opservatorija Bjelasnica\n-------------------------------------\nDatum mjerenja: 9/11/2014\nMinimalna temperatura: -5\nMaksimalna temperatura: 3\nProsjecna temperatura: -0.75\n\nMobilno mjerno mjesto Aerodrom, stanica II\n------------------------------------------\nDatum mjerenja: 9/11/2014\nMinimalna temperatura: -1\nMaksimalna temperatura: 10\nProsjecna temperatura: 5.20\n\nMeteoroloska stanica Bjelave\n----------------------------\nDatum mjerenja: 23/5/2016\nMinimalna temperatura: 6\nMaksimalna temperatura: 20\nProsjecna temperatura: 13.14",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "2": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Prenj 4\n-------\nDatum mjerenja: 9/5/2016\nMinimalna temperatura: 2\nMaksimalna temperatura: 21\nProsjecna temperatura: 10.20\n\nPrenj 5\n-------\nDatum mjerenja: 9/10/2016\nMinimalna temperatura: -2\nMaksimalna temperatura: 7\nProsjecna temperatura: 3.25\n\nPrenj 3\n-------\nDatum mjerenja: 10/10/2016\nMinimalna temperatura: -4\nMaksimalna temperatura: 8\nProsjecna temperatura: 0.80\n\nPrenj 1\n-------\nDatum mjerenja: 10/10/2016\nMinimalna temperatura: -3\nMaksimalna temperatura: 8\nProsjecna temperatura: 0.90\n\nPrenj 2\n-------\nDatum mjerenja: 10/11/2016\nMinimalna temperatura: -4\nMaksimalna temperatura: 2\nProsjecna temperatura: -1.20",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 3,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Neka opservaciona stanica, paralelni svemir #1337\n-------------------------------------------------\nDatum mjerenja: 5/5/3000\nMinimalna temperatura: -273\nMaksimalna temperatura: -272\nProsjecna temperatura: -272.86",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "4": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Stanica X\n---------\nDatum mjerenja: 9/5/2016\nMinimalna temperatura: -13\nMaksimalna temperatura: 21\nProsjecna temperatura: 7.60\n\n1\n-\nDatum mjerenja: 10/10/2016\nMinimalna temperatura: -3\nMaksimalna temperatura: 8\nProsjecna temperatura: 0.90\n\nPrenj\n-----\nDatum mjerenja: 10/10/2016\nMinimalna temperatura: -4\nMaksimalna temperatura: 8\nProsjecna temperatura: 1.00\n\n___2___\n-------\nDatum mjerenja: 10/11/2016\nMinimalna temperatura: -4\nMaksimalna temperatura: 2\nProsjecna temperatura: -1.20",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "5": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "|Stanica X|\n|---------|\n|Datum mjerenja: 9/5/2016|\n|Minimalna temperatura: 0|\n|Maksimalna temperatura: 1|\n|Prosjecna temperatura: 0.14|\n||\n|1|\n|-|\n|Datum mjerenja: 10/10/2016|\n|Minimalna temperatura: -3|\n|Maksimalna temperatura: 8|\n|Prosjecna temperatura: 0.90|\n||\n|Prenj|\n|-----|\n|Datum mjerenja: 10/10/2016|\n|Minimalna temperatura: -4|\n|Maksimalna temperatura: 10|\n|Prosjecna temperatura: 1.90|\n||\n|     2      |\n|------------|\n|Datum mjerenja: 10/11/2016|\n|Minimalna temperatura: -4|\n|Maksimalna temperatura: 2|\n|Prosjecna temperatura: -1.20|\n||\n||",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "6": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 6,
+                    "duration": 0,
+                    "output": "Stanica X\n---------\nDatum mjerenja: 9/5/2016\nMinimalna temperatura: 0\nMaksimalna temperatura: 1\nProsjecna temperatura: 0.14\n\n1\n-\nDatum mjerenja: 10/10/2016\nMinimalna temperatura: -3\nMaksimalna temperatura: 8\nProsjecna temperatura: 0.90\n\nPrenj\n-----\nDatum mjerenja: 10/10/2016\nMinimalna temperatura: -4\nMaksimalna temperatura: 10\nProsjecna temperatura: 1.90\n\n____3_____\n----------\nDatum mjerenja: 10/11/2016\nMinimalna temperatura: -1e+02\nMaksimalna temperatura: -1e+02\nProsjecna temperatura: -100.00\n\n-----2-----\n-----------\nDatum mjerenja: 10/11/2016\nMinimalna temperatura: -4\nMaksimalna temperatura: 2\nProsjecna temperatura: -1.20",
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "7": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 6,
+                    "duration": 0,
+                    "output": "Da vidimo.... 1: 'Datoteka TEMPERATURE.TXT ne postoji!\n'\nDa vidimo.... 2: ''OK",
+                    "exit_code": 0,
+                    "success": false
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1686870054
+}

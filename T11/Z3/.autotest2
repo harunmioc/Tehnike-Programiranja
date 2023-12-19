@@ -1,0 +1,150 @@
+{
+    "id": 8613,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 11, Zadatak 3",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3703,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: Testiranje izuzetka kada je predugacko ime tima\n\n#define TestirajIzuzetak(izuzetak, tijelo) \\\n  try tijelo catch(izuzetak e) { std::cout << e.what() << std::endl; }\n\nTestirajIzuzetak(std::range_error, { Tim t(\"NK Metalleghe BSI Jajce\"); });\n\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <stdexcept>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Predugacko ime tima"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3704,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: Testiranje izuzetka kada je neispravan rezultat domacina\n\n#define TestirajIzuzetak(izuzetak, tijelo) \\\n  try tijelo catch(izuzetak e) { std::cout << e.what() << std::endl; }\n\nTim t(\"NK GOSK\");\nTestirajIzuzetak(std::range_error, { t.ObradiUtakmicu(-15, 0); });",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <stdexcept>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Neispravan broj golova"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3705,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: Testiranje izuzetka kada je neispravan rezultat gosta\n\n#define TestirajIzuzetak(izuzetak, tijelo) \\\n  try tijelo catch(izuzetak e) { std::cout << e.what() << std::endl; }\n\nTim t(\"NK TOSK\");\nTestirajIzuzetak(std::range_error, { t.ObradiUtakmicu(1, -15); });",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#include <stdexcept>",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Neispravan broj golova"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3706,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: Provjera ispravnog bodovanja svih ishoda utakmice\n\nTim t(\"FK Krupa\");\n\nt.ObradiUtakmicu(1, 0);\nt.ObradiUtakmicu(1, 1);\nt.ObradiUtakmicu(0, 2);\n\nstd::cout << t.DajImeTima() << \" \" << t.DajBrojPoena() << \" \" << t.DajGolRazliku() << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "FK Krupa 4 -1"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3707,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT5: Provjera ispravnog ispisa tabele\n \nTim t1(\"NK Zeljeznicar\");\nTim t2(\"FK Sarajevo\");\nTim t3(\"HSK Zrinjski\");\n  \nt1.ObradiUtakmicu(1, 0);\nt1.ObradiUtakmicu(3, 0);\nt1.ObradiUtakmicu(2, 1);\nt2.ObradiUtakmicu(1, 1);\nt2.ObradiUtakmicu(1, 0);\nt2.ObradiUtakmicu(0, 5);\nt3.ObradiUtakmicu(0, 1);\nt3.ObradiUtakmicu(0, 2);\nt3.ObradiUtakmicu(1, 1);\n   \nt1.IspisiPodatke();\nt2.IspisiPodatke();\nt3.IspisiPodatke();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "NK Zeljeznicar         3   3   0   0   6   1   9\nFK Sarajevo            3   1   1   1   2   6   4\nHSK Zrinjski           3   0   1   2   1   4   1"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

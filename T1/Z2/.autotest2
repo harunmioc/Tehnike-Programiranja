@@ -1,0 +1,360 @@
+{
+    "id": 8512,
+    "name": "Tehnike programiranja (2016\/2076), Tutorijal 1, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++11"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++11"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3125,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: iz postavke zadatka\n_main();\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "7 5 8\n"
+                },
+                "expect": [
+                    "Unesite tri broja: Obim trougla sa duzinama stranica 7, 5 i 8 iznosi 20.\nNjegova povrsina iznosi 17.3205.\nNjegov najmanji ugao ima 38 stepeni, 12 minuta i 47 sekundi."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "7 5 8\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "7 5 8\n"
+                }
+            }
+        },
+        {
+            "id": 3126,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: double ulaz\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "7.7 8.4 5.1\n"
+                },
+                "expect": [
+                    "Unesite tri broja: Obim trougla sa duzinama stranica 7.7, 8.4 i 5.1 iznosi 21.2.\nNjegova povrsina iznosi 19.2861.\nNjegov najmanji ugao ima 36 stepeni, 36 minuta i 33 sekundi."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "7.7 8.4 5.1\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "7.7 8.4 5.1\n"
+                }
+            }
+        },
+        {
+            "id": 3127,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: iz postavke - nije trougao\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "5 15 7\n"
+                },
+                "expect": [
+                    "Unesite tri broja: Ne postoji trougao cije su duzine stranica 5, 15 i 7!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "5 15 7\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "5 15 7\n"
+                }
+            }
+        },
+        {
+            "id": 3128,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: nije trougao, dva puta se unosi!\n_main(); \/\/7 5 -8\n_main(); \/\/7 8 0",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "7 5 -8\n7 8 0\n\n"
+                },
+                "expect": [
+                    "Unesite tri broja: Ne postoji trougao cije su duzine stranica 7, 5 i -8!Unesite tri broja: Ne postoji trougao cije su duzine stranica 7, 8 i 0!\n",
+                    "Unesite tri broja: Ne postoji trougao cije su duzine stranica 7, 5 i -8!\nUnesite tri broja: Ne postoji trougao cije su duzine stranica 7, 8 i 0!\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "7 5 -8\n7 8 0\n\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "7 5 -8\n7 8 0\n\n"
+                }
+            }
+        },
+        {
+            "id": 3129,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: test preciznosti\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "0.5 0.7 0.3"
+                },
+                "expect": [
+                    "Unesite tri broja: Obim trougla sa duzinama stranica 0.5, 0.7 i 0.3 iznosi 1.5.\nNjegova povrsina iznosi 0.0649519.\nNjegov najmanji ugao ima 21 stepeni, 47 minuta i 12 sekundi."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "0.5 0.7 0.3"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "0.5 0.7 0.3"
+                }
+            }
+        },
+        {
+            "id": 3130,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6: jednakostranicni trougao\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "7 7 7\n"
+                },
+                "expect": [
+                    "Unesite tri broja: Obim trougla sa duzinama stranica 7, 7 i 7 iznosi 21.\nNjegova povrsina iznosi 21.2176.\nNjegov najmanji ugao ima 60 stepeni, 0 minuta i 0 sekundi."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "7 7 7\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "7 7 7\n"
+                }
+            }
+        },
+        {
+            "id": 3131,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7: pravougli\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3 4 5"
+                },
+                "expect": [
+                    "Unesite tri broja: Obim trougla sa duzinama stranica 3, 4 i 5 iznosi 12.\nNjegova povrsina iznosi 6.\nNjegov najmanji ugao ima 36 stepeni, 52 minuta i 11 sekundi."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "3 4 5"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "3 4 5"
+                }
+            }
+        },
+        {
+            "id": 3132,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8: pravougli, ostale stranice jednake duzine (90 + 45 + 45 stepeni)\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "7 7 9.89949493661"
+                },
+                "expect": [
+                    "Unesite tri broja: Obim trougla sa duzinama stranica 7, 7 i 9.89949 iznosi 23.8995.\nNjegova povrsina iznosi 24.5.\nNjegov najmanji ugao ima 45 stepeni, 0 minuta i 0 sekundi."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "7 7 9.89949493661"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "7 7 9.89949493661"
+                }
+            }
+        },
+        {
+            "id": 3138,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT9: da li je ispravno provjereno da li tri broja\n\/\/     mogu biti stranice trougla?\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 2 3"
+                },
+                "expect": [
+                    "Unesite tri broja: Ne postoji trougao cije su duzine stranica 1, 2 i 3!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1 2 3"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1 2 3"
+                }
+            }
+        },
+        {
+            "id": 3139,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT10: malo ve\u0107i projevi, ugao oko 15 stepeni\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "123 321 222\n"
+                },
+                "expect": [
+                    "Unesite tri broja: Obim trougla sa duzinama stranica 123, 321 i 222 iznosi 666.\nNjegova povrsina iznosi 9651.26.\nNjegov najmanji ugao ima 15 stepeni, 42 minuta i 57 sekundi."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "123 321 222\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "123 321 222\n"
+                }
+            }
+        }
+    ]
+}

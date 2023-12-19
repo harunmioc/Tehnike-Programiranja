@@ -1,0 +1,270 @@
+{
+    "id": 8542,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 4, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3251,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: testiranje funkcije IzvrniString\n\nstd::string s(\"Ovo je neki tekst...\");\nIzvrniString(s);\nstd::cout << s;",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <string>\n#define vector !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "...tsket iken ej ovO"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3252,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: testiranje funkcije IzvrniString\n\nstd::string s(\"...tsket iken ej ovO\");\nIzvrniString(s);\nstd::cout << s;\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <string>\n#define vector !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Ovo je neki tekst..."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3253,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: testiranje funkcije IzvrniString\n\nstd::string s(\"   123   abc   ...   ttt   ppp   \");\nIzvrniString(s);\nstd::cout << s;\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <string>\n#define vector !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "   ppp   ttt   ...   cba   321   "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3254,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: testiranje funkcije IzvrniString\n\nstd::string s(\"   ? . ! 1 _ \");\nIzvrniString(s);\nIzvrniString(s);\nstd::cout << s;",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <string>\n#define vector !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "   ? . ! 1 _ "
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3255,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: testiranje funkcije IzvrniString\n\nstd::string s(\"\\n 123 abc\");\nIzvrniString(s);\nIzvrniString(s);\nstd::cout << s;",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <string>\n#define vector !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    " 123 abc"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3294,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6: testiranje funkcije IzvrniString\n\nstd::string s(\"-1-1-1-\");\nIzvrniString(s);\nIzvrniString(s);\nstd::cout << s;",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <string>\n#define vector !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "-1-1-1-"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3298,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7: testira main\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <string>\n#define vector !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "tutorijal\n"
+                },
+                "expect": [
+                    "Unesi string: Izvrnuti string je: lajirotut"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3299,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8: testira main\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <string>\n#define vector !zabranjeno!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "teHnikE proGrAmiRanjA\n"
+                },
+                "expect": [
+                    "Unesi string: Izvrnuti string je: AjnaRimArGorp EkinHet"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        }
+    ]
+}

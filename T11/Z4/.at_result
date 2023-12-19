@@ -1,0 +1,346 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-137-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3709": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Nesaglasni kapaciteti liga",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3712": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Nesaglasni kapaciteti liga",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3713": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Liga popunjena",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3714": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Tim nije nadjen",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3718": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Neispravan broj golova",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3722": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Orginalna Liga za Prvaka:\nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nKopija Lige za Prvaka:\nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nNakon izmjene kopije:\n\nOrginalna Liga za Prvaka:\nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nKopija Lige za Prvaka:\nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               1   0   1   0   1   1   1\nFK Sloboda             1   0   1   0   1   1   1\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3724": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Orginalna Liga za Prvaka:\nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nKopija Lige za Prvaka:\nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nNakon izmjene kopije:\n\nOrginalna Liga za Prvaka:\nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0\n\nKopija Lige za Prvaka:\nNK Zeljeznicar         1   1   0   0   2   0   3\nFK Krupa               1   0   1   0   1   1   1\nFK Sloboda             1   0   1   0   1   1   1\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nHSK Zrinjski           1   0   0   1   0   2   0",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3726": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Orginalna Liga za Prvaka:\nNK Zeljeznicar         2   2   0   0   4   0   6\nFK Sloboda             2   1   1   0   2   1   4\nHSK Zrinjski           2   1   1   0   3   2   4\nFK Krupa               2   0   1   1   1   2   1\nFK Radnik Bijeljina    2   0   1   1   1   2   1\nFK Sarajevo            2   0   0   2   1   5   0\n\nKopija Lige za Prvaka:\nNK Zeljeznicar         2   2   0   0   4   0   6\nFK Sloboda             2   1   1   0   2   1   4\nHSK Zrinjski           2   1   1   0   3   2   4\nFK Krupa               2   0   1   1   1   2   1\nFK Radnik Bijeljina    2   0   1   1   1   2   1\nFK Sarajevo            2   0   0   2   1   5   0",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3727": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Djelimicna Liga za Ispadanje:\nNK Siroki Brijeg       1   0   1   0   1   1   1\nNK Vitez               1   0   1   0   1   1   1\n\nOrginalna Liga za Prvaka:\nNK Zeljeznicar         2   2   0   0   4   0   6\nFK Sloboda             2   1   1   0   2   1   4\nHSK Zrinjski           2   1   1   0   3   2   4\nFK Krupa               2   0   1   1   1   2   1\nFK Radnik Bijeljina    2   0   1   1   1   2   1\nFK Sarajevo            2   0   0   2   1   5   0\n\nKopija Lige za Prvaka:\nFK Krupa               0   0   0   0   0   0   0\nFK Radnik Bijeljina    0   0   0   0   0   0   0\nFK Sarajevo            0   0   0   0   0   0   0\nFK Sloboda             0   0   0   0   0   0   0\nHSK Zrinjski           0   0   0   0   0   0   0\nNK Zeljeznicar         0   0   0   0   0   0   0",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3743": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "OK",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1687505563
+}

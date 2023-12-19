@@ -1,0 +1,148 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-137-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3541": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Koliko ima ucenika: Unesite podatke za 1. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta:\nUcenik Niko Nikic rodjen 17/11/1995 ima prosjek 9.12",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3542": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Koliko ima ucenika: Unesite podatke za 1. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta: Unesite podatke za 2. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta:\nUcenik Niko Nikic rodjen 17/11/1995 ima prosjek 8.5\nUcenik Neko Nekic rodjen 15/4/1996 ima prosjek 7.5",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3543": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Koliko ima ucenika: Unesite podatke za 1. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta: Unesite podatke za 2. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta: Unesite podatke za 3. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta: Unesite podatke za 4. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta: Unesite podatke za 5. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta: Unesite podatke za 6. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta:\nUcenik Niko Nikic rodjen 17/11/1995 ima prosjek 8.5\nUcenik Neno Nenic rodjen 12/8/1995 ima prosjek 8.38\nUcenik Suljo Suljic rodjen 7/10/1996 ima prosjek 8.12\nUcenik Nino Ninic rodjen 5/12/1995 ima prosjek 8\nUcenik Meho Mehic rodjen 3/11/1997 ima prosjek 7.62\nUcenik Neko Nekic rodjen 15/4/1996 ima prosjek 7.5",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3547": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "Unesite podatke za 1. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta: Unesite podatke za 2. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta: Unesite podatke za 3. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta: Unesite podatke za 4. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta: Unesite podatke za 5. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta: Unesite podatke za 6. ucenika:\n  Ime:   Prezime:   Datum rodjenja (D/M/G):   Ocjena iz 1. predmeta:   Ocjena iz 2. predmeta:   Ocjena iz 3. predmeta:   Ocjena iz 4. predmeta:   Ocjena iz 5. predmeta:   Ocjena iz 6. predmeta:   Ocjena iz 7. predmeta:   Ocjena iz 8. predmeta:",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1687369284
+}

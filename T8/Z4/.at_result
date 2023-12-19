@@ -1,0 +1,226 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9sec2",
+        "os": "Linux 5.4.0-137-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[asan]": "9.4.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3526": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "main.cpp: In function ‘int _main()’:\nmain.cpp:36:1: warning: no return statement in function returning non-void [-Wreturn-type]\n   36 | }\n      | ^",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 36,
+                            "col": "1",
+                            "message": "no return statement in function returning non-void",
+                            "code": "}"
+                        }
+                    ]
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "how   yes   no",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3527": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int _main()’:\nmain.cpp:36:1: warning: no return statement in function returning non-void [-Wreturn-type]\n   36 | }\n      | ^",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 36,
+                            "col": "1",
+                            "message": "no return statement in function returning non-void",
+                            "code": "}"
+                        }
+                    ]
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "danas je 8. ozujak a 1. svibanj je praznik rada",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3528": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int _main()’:\nmain.cpp:36:1: warning: no return statement in function returning non-void [-Wreturn-type]\n   36 | }\n      | ^",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 36,
+                            "col": "1",
+                            "message": "no return statement in function returning non-void",
+                            "code": "}"
+                        }
+                    ]
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "davor martic ima sestre maju i juliju",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3529": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int _main()’:\nmain.cpp:36:1: warning: no return statement in function returning non-void [-Wreturn-type]\n   36 | }\n      | ^",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 36,
+                            "col": "1",
+                            "message": "no return statement in function returning non-void",
+                            "code": "}"
+                        }
+                    ]
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "nan voli milovana nanan\nnan love milovana nanan",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3530": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In function ‘int _main()’:\nmain.cpp:36:1: warning: no return statement in function returning non-void [-Wreturn-type]\n   36 | }\n      | ^",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 36,
+                            "col": "1",
+                            "message": "no return statement in function returning non-void",
+                            "code": "}"
+                        }
+                    ]
+                },
+                "execute": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "radijan     hudl    kilogram hugh kmkg jackman   decilitar      kilogram     k g",
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[asan]": {
+                    "output": "",
+                    "status": 1,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1683197919
+}

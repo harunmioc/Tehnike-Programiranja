@@ -1,0 +1,179 @@
+{
+    "id": 8514,
+    "name": "Tehnike programiranja (2016\/2076), Tutorijal 1, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++11"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++11"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 3136,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: ok unosi\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "42\n28\n49\n0\n"
+                },
+                "expect": [
+                    "Unesite prirodan broj ili 0 za kraj: Broj 42 je obilan!\nUnesite prirodan broj ili 0 za kraj: Broj 28 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 49 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "42\n28\n49\n0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "42\n28\n49\n0\n"
+                }
+            }
+        },
+        {
+            "id": 3137,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: jos neki unosi + neispravan unos (negativan)\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "6\n5\n7\n8\n-1\n3\n4\n0\n"
+                },
+                "expect": [
+                    "Unesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 5 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 7 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 8 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 3 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 4 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "6\n5\n7\n8\n-1\n3\n4\n0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "6\n5\n7\n8\n-1\n3\n4\n0\n"
+                }
+            }
+        },
+        {
+            "id": 3140,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: neki unosi + neispravan unos (necijeli broj + slova)\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "6\n228\n28\n5.551\nTP\n1\n0\n"
+                },
+                "expect": [
+                    "Unesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Broj 228 je obilan!\nUnesite prirodan broj ili 0 za kraj: Broj 28 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 1 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "6\n228\n28\n5.551\nTP\n1\n0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "6\n228\n28\n5.551\nTP\n1\n0\n"
+                }
+            }
+        },
+        {
+            "id": 3141,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: sve zajedno\n_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\n2\n3\n4\n5\n6\n-3\n0.123\n.123\n-0.4\n484\nprvi tutorijal\n44\n0\n"
+                },
+                "expect": [
+                    "Unesite prirodan broj ili 0 za kraj: Broj 1 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 2 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 3 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 4 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 5 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Broj 6 je savrsen!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 484 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Niste unijeli prirodan broj!\nUnesite prirodan broj ili 0 za kraj: Broj 44 je manjkav!\nUnesite prirodan broj ili 0 za kraj: Dovidjenja!"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\n2\n3\n4\n5\n6\n-3\n0.123\n.123\n-0.4\n484\nprvi tutorijal\n44\n0\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\n2\n3\n4\n5\n6\n-3\n0.123\n.123\n-0.4\n484\nprvi tutorijal\n44\n0\n"
+                }
+            }
+        }
+    ]
+}

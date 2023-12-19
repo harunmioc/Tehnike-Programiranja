@@ -1,0 +1,153 @@
+{
+    "id": 8634,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 13, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ]
+        },
+        {
+            "id": 71234,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/polimorfizam\n  StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n  StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n  Student s1, s2;\n  s1 = sb;\t                                        \n  s2 = sm;\t\n  s1.IspisiPodatke();\n  s2.IspisiPodatke();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Student bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 5.\nStudent master studija Paja Patak, sa brojem indeksa 4312,\nzavrsio bachelor studij godine 2015,ima prosjek 5."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3811,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/registriraj ispit\n  StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n  StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n  Student s1(sb), s2(sm);\n  s1.RegistrirajIspit(6); s1.RegistrirajIspit(9);\n  s2.RegistrirajIspit(8);\n  s1.IspisiPodatke();\n  s2.IspisiPodatke();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Student bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 7.5.\nStudent master studija Paja Patak, sa brojem indeksa 4312,\nzavrsio bachelor studij godine 2015,ima prosjek 8."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3812,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\n\n  StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n  StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n  Student s1(sb), s2(sm);\n  std::cout << s1.DajIme() << \" \" << s1.DajPrezime() << \" \" << s1.DajBrojIndeksa()\n    << \" \" << s1.DajBrojPolozenih() << \" \" << s1.DajProsjek() << std::endl;\n  std::cout << s2.DajIme() << \" \" << s2.DajPrezime() << \" \" << s2.DajBrojIndeksa()\n    << \" \" << s2.DajBrojPolozenih() << \" \" << s2.DajProsjek() << std::endl;",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Dusko Dugousko 1234 0 5\nPaja Patak 4312 0 5\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3813,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ponisti ocjene\n\n  StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n  StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n  Student s1(sb);\n  s1.PonistiOcjene();\n  s1.IspisiPodatke();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Student bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 5."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3814,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/konstruktori\n\n  StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n  StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n  Student s1(sb); Student s2(sm);\n  s1 = s2;\t\t\t\t\t                \t\t\t\n  s1.IspisiPodatke();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Student master studija Paja Patak, sa brojem indeksa 4312,\nzavrsio bachelor studij godine 2015,ima prosjek 5."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3815,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/konstruktori\n\n  StudentBachelor sb(\"Dusko\", \"Dugousko\", 1234);\n  StudentMaster sm(\"Paja\", \"Patak\", 4312, 2015);\n  Student s1(sb); Student s2(sm);\n  Student s3(sb), s4(sm), s5(s1), s6(std::move(s2));    \/\/ Test konstruktora\n  s3.IspisiPodatke(); s4.IspisiPodatke();\n  s5.IspisiPodatke(); s6.IspisiPodatke();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Student bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 5.\nStudent master studija Paja Patak, sa brojem indeksa 4312,\nzavrsio bachelor studij godine 2015,ima prosjek 5.\nStudent bachelor studija Dusko Dugousko, sa brojem indeksa 1234,\nima prosjek 5.\nStudent master studija Paja Patak, sa brojem indeksa 4312,\nzavrsio bachelor studij godine 2015,ima prosjek 5."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ],
+    "version": "2"
+}

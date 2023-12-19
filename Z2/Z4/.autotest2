@@ -1,0 +1,270 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 2, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "fast": true,
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 2 - Zadatak 4\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2 5 1 6 7 *\n9 8 9 *\n3 3 2 3 *\n4 5 2 1 1 3 2 *\n*\n2 5 1 6 7 *\n"
+                },
+                "expect": [
+                    "Unesi elemente (* za kraj reda, * na pocetku reda za kraj unosa):\n\nMatrica nakon sortiranja:\n3 3 2 3\n4 5 2 1 1 3 2\n2 5 1 6 7\n9 8 9\n\nUnesite elemente sekvence koja se trazi (* za kraj reda): \nTrazena sekvenca se nalazi u 3. redu (nakon sortiranja)"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 2 - Zadatak 4\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2 1 3 #\n1 3 2 ,\n3 2 1 }\n1 2 3 *\n2 3 1 *\n3 1 2 *\n*\n2 3 1\n*\n"
+                },
+                "expect": [
+                    "Unesi elemente (* za kraj reda, * na pocetku reda za kraj unosa): \n\nMatrica nakon sortiranja: \n1 2 3\n1 3 2\n2 1 3\n2 3 1\n3 1 2\n3 2 1\n\nUnesite elemente sekvence koja se trazi (* za kraj reda): \nTrazena sekvenca se nalazi u 4. redu (nakon sortiranja)"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 2 - Zadatak 4\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "111 1 2 3 4 5 6 7*\n112 1 2 3 4 5 6 *\n113 1 2 3 4 5 *\n114 1 2 3 4 *\n115 1 2 3 *\n116 1 2 *\n*\n117 1 2 3 4 5 6 7 8 *\n"
+                },
+                "expect": [
+                    "Unesi elemente (* za kraj reda, * na pocetku reda za kraj unosa):\n\nMatrica nakon sortiranja:\n116 1 2\n115 1 2 3\n114 1 2 3 4\n113 1 2 3 4 5\n112 1 2 3 4 5 6\n111 1 2 3 4 5 6 7\n\nUnesite elemente sekvence koja se trazi (* za kraj reda): \nTrazena sekvenca se ne nalazi u matrici"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 2 - Zadatak 4\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "_main();",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1 1 1 1 2*\n1 2*\n1 1 1 2*\n1 1 2*\n*\n1*\n"
+                },
+                "expect": [
+                    "Unesi elemente (* za kraj reda, * na pocetku reda za kraj unosa): \n\nMatrica nakon sortiranja:\n1 1 1 1 2\n1 1 1 2\n1 1 2\n1 2\n\nUnesite elemente sekvence koja se trazi (* za kraj reda): \nTrazena sekvenca se ne nalazi u matrici\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 2 - Zadatak 4\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::vector<std::vector<double>> mat{{2.1,1.1,3.1}, {1.2,3.2,2.2}, {3.3,2.3,1.3}, {1.4,2.4,3.4}, {2.5,3.5,1.5}, {3.6,1.6,2.6}};\nSortirajPoProizvoduRedova(mat);\nstd::cout << \"\\nMatrica nakon sortiranja:\\n\";\nfor(auto &red : mat) {\n    for(auto &e : red) std::cout << e << \" \";\n         std::cout << std::endl;\n  }",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "\nMatrica nakon sortiranja:\n2.1 1.1 3.1\n1.2 3.2 2.2\n3.3 2.3 1.3\n1.4 2.4 3.4\n2.5 3.5 1.5\n3.6 1.6 2.6\n\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 2 - Zadatak 4\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <string>",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "std::string operator *(std::string a, std::string b) { return a + b; }\nstd::string operator *=(std::string a, std::string b) { return a + b; }",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::vector<std::vector<std::string>> mat{{\"cetrdeset\"}, {\"cetirii\"}, {\"cavke\"}, {\"cuce\"}, {\"ispod\"}, {\"camdijinog\"}, {\"mosta\"}, {\"i\"}, {\"cekaju\"}, {\"ca\", \"mac\"}, {\"z\",\"a\"}, {\"Capljinu\"}};\nSortirajPoProizvoduRedova(mat);\nstd::cout << \"\\nMatrica nakon sortiranja:\\n\";\nfor(auto &red : mat) {\n    for(auto &e : red) std::cout << e << \" \";\n         std::cout << std::endl;\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "\nMatrica nakon sortiranja:\nCapljinu\nca mac\ncamdijinog\ncavke\ncekaju\ncetirii\ncetrdeset\ncuce\ni\nispod\nmosta\nz a\n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 2 - Zadatak 4\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "class Cigla {\npublic:\n    friend std::ostream& operator<<(std::ostream& os, const Cigla cigla);\n};\nstd::ostream& operator<<(std::ostream& os, const Cigla cigla){\n    os<<\"C \";\n    return os;\n}\nCigla operator *(Cigla c1, Cigla c2) { return Cigla(); }\nCigla operator *=(Cigla &c1, Cigla c2) { return c1; }\nbool operator <(Cigla c1, Cigla c2) { return false; }\nbool operator >(Cigla c1, Cigla c2) { return false; }\nbool operator <=(Cigla c1, Cigla c2) { return true; }\nbool operator >=(Cigla c1, Cigla c2) { return true; }\nbool operator ==(Cigla c1, Cigla c2) { return false; }\nbool operator !=(Cigla c1, Cigla c2) { return true; }",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::vector<std::vector<Cigla>> vv(10);\nSortirajPoProizvoduRedova(vv);\nstd::cout << \"Matrica nakon sortiranja:\\n\";\nfor(auto &red : vv) {\n     for(auto &e : red) std::cout << e << \" \";\n     std::cout << \"* \";\n}",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Matrica nakon sortiranja:\n* * * * * * * * * *"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/---------------------------------------------------------------------------------------------------------------\n\/\/ Tehnike programiranja - Akademska 2022\/2023 godina\n\/\/ Zadaca 2 - Zadatak 4\n\/\/ Odgovorni asistent: Majda \u010curti\u0107-Hod\u017ei\u0107 - mcurtic1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.\n\/\/---------------------------------------------------------------------------------------------------------------",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "class Cigla{\npublic:\n    Cigla(int x, int y):X(x), Y(y){}\n\n    int getX() const { return X;}\n    int getY() const { return Y;}\n\n    void setX(int x) {X=x;}\n    void setY(int y) {Y=y;}\n\n    friend std::ostream& operator<<(std::ostream& os, const Cigla cigla);\nprivate:\n    int X;\n    int Y;\n};\nstd::ostream& operator<<(std::ostream& os, const Cigla cigla){\n    os<<\"(\"<<cigla.getX()<<\",\"<<cigla.getY()<<\")\";\n    return os;\n}\nCigla operator *(Cigla c1, Cigla c2) { return Cigla(c1.getX()*c2.getX(), c1.getY()*c2.getY()); }\nCigla operator *=(Cigla &c1, Cigla c2) { return Cigla(c1.getX()*c2.getX(), c1.getY()*c2.getY()); }\nbool operator <(Cigla c1, Cigla c2) { return c1.getX()<c2.getX()&&c1.getY()<c2.getY(); }\nbool operator >(Cigla c1, Cigla c2) { return c1.getX()>c2.getX()&&c1.getY()>c2.getY(); }\nbool operator <=(Cigla c1, Cigla c2) { return c1.getX()<=c2.getX()&&c1.getY()<=c2.getY();; }\nbool operator >=(Cigla c1, Cigla c2) { return c1.getX()>=c2.getX()&&c1.getY()>=c2.getY();; }\nbool operator ==(Cigla c1, Cigla c2) { return c1.getX()==c2.getX()&&c1.getY()==c2.getY();; }\nbool operator !=(Cigla c1, Cigla c2) { return c1.getX()==c2.getX()&&c1.getY()!=c2.getY();; }",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "std::vector<std::vector<Cigla>> zid;\nfor(int i=0; i<5; i++){\n    std::vector<Cigla> red;\n    for(int j=0; j<3; j++) red.push_back(Cigla(i+j, i*j));\n    zid.push_back(red);\n}\nstd::vector<Cigla> linija;\nlinija.push_back(Cigla(2,0));\nlinija.push_back(Cigla(3,2));\nlinija.push_back(Cigla(4,4));\n\nfor(auto &red:zid) std::cout<<Kriterij<Cigla>(red, linija)<<\" \";\nstd::cout<<std::endl;\n",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1 1 0 0 0 \n"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": []
+        }
+    ]
+}

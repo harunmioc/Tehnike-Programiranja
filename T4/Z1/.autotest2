@@ -1,0 +1,310 @@
+{
+    "id": 8541,
+    "name": "Tehnike programiranja (2016\/2017), Tutorijal 4, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14",
+                "asan"
+            ]
+        },
+        "execute": {
+            "require": "asan"
+        },
+        "debug": [],
+        "profile[asan]": {
+            "require": "asan",
+            "input_file": "stderr.txt"
+        }
+    },
+    "tests": [
+        {
+            "compile": [],
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3246,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT1: testiramo funkciju Cifre\n\nint mini, maxi;\nint e = Cifre(123456789, mini, maxi);\nif(e != 9) std::cout << \"Pogresan broj cifara, ocekivani je: \" << 9 << \" a vas program je izracunao: \"  << e << std::endl;\nif(mini != 1) std::cout << \"Pogresna minimalna cifra, ocekivana je: \" << 1 << \" a vas program je izracunao: \" << mini << std::endl;\nif(maxi != 9) std::cout << \"Pogresna maksimalna cifra, ocekivana je: \" << 9 << \" a vas program je izracunao \" << maxi << std::endl;\nif(e == 9 && mini == 1 && maxi == 9) std::cout << \"OK\";\nelse std::cout << \"NotOK\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define vector !zabranjeno!!\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define unsigned !zabranjeno!!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3247,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2: testiramo funkciju Cifre sa negativnim brojevima\n\nint mini, maxi;\nint e = Cifre(-123456789, mini, maxi);\nif(e != 9) std::cout << \"Pogresan broj cifara, ocekivani je: \" << 9 << \" a vas program je izracunao: \"  << e << std::endl;\nif(mini != 1) std::cout << \"Pogresna minimalna cifra, ocekivana je: \" << 1 << \" a vas program je izracunao: \" << mini << std::endl;\nif(maxi != 9) std::cout << \"Pogresna maksimalna cifra, ocekivana je: \" << 9 << \" a vas program je izracunao \" << maxi << std::endl;\nif(e == 9 && mini == 1 && maxi == 9) std::cout << \"OK\";\nelse std::cout << \"NotOK\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define vector !zabranjeno!!\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define unsigned !zabranjeno!!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3248,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT3: testiramo funkciju Cifre na broj 0\n\nint mini, maxi;\nint e = Cifre(0, mini, maxi);\nif(e != 1) std::cout << \"Pogresan broj cifara, ocekivani je: \" << 1 << \" a vas program je izracunao: \"  << e << std::endl;\nif(mini != 0) std::cout << \"Pogresna minimalna cifra, ocekivana je: \" << 0 << \" a vas program je izracunao: \" << mini << std::endl;\nif(maxi != 0) std::cout << \"Pogresna maksimalna cifra, ocekivana je: \" << 0 << \" a vas program je izracunao \" << maxi << std::endl;\nif(e == 1 && mini == 0 && maxi == 0) std::cout << \"OK\";\nelse std::cout << \"NotOK\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define vector !zabranjeno!!\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define unsigned !zabranjeno!!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3249,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT4: testiramo funkciju Cifre na velike brojeve\n\nint mini, maxi;\nint e = Cifre(85147483649, mini, maxi);\nif(e != 11) std::cout << \"Pogresan broj cifara, ocekivani je: \" << 11 << \" a vas program je izracunao: \"  << e << std::endl;\nif(mini != 1) std::cout << \"Pogresna minimalna cifra, ocekivana je: \" << 1 << \" a vas program je izracunao: \" << mini << std::endl;\nif(maxi != 9) std::cout << \"Pogresna maksimalna cifra, ocekivana je: \" << 9 << \" a vas program je izracunao \" << maxi << std::endl;\nif(e == 11 && mini == 1 && maxi == 9) std::cout << \"OK\";\nelse std::cout << \"NotOK\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define vector !zabranjeno!!\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define unsigned !zabranjeno!!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3250,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT5: testiramo funkciju Cifre na veoma male brojeve\n\nint mini, maxi;\nint e = Cifre(std::numeric_limits<long long int>::min(), mini, maxi);\nif(e != 19) std::cout << \"Pogresan broj cifara, ocekivani je: \" << 19 << \" a vas program je izracunao: \"  << e << std::endl;\nif(mini != 0) std::cout << \"Pogresna minimalna cifra, ocekivana je: \" << 0 << \" a vas program je izracunao: \" << mini << std::endl;\nif(maxi != 9) std::cout << \"Pogresna maksimalna cifra, ocekivana je: \" << 9 << \" a vas program je izracunao \" << maxi << std::endl;\nif(e == 19 && mini == 0 && maxi == 9) std::cout << \"OK\";\nelse std::cout << \"NotOK\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <limits>\n#define vector !zabranjeno!!\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define unsigned !zabranjeno!!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3272,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT6: testiramo funkciju Cifre na iste brojeve\n\nint mini, maxi;\nint e = Cifre(55555, mini, maxi);\nif(e != 5) std::cout << \"Pogresan broj cifara, ocekivani je: \" << 5 << \" a vas program je izracunao: \"  << e << std::endl;\nif(mini != 5) std::cout << \"Pogresna minimalna cifra, ocekivana je: \" << 5 << \" a vas program je izracunao: \" << mini << std::endl;\nif(maxi != 5) std::cout << \"Pogresna maksimalna cifra, ocekivana je: \" << 5 << \" a vas program je izracunao \" << maxi << std::endl;\nif(e == 5 && mini == 5 && maxi == 5) std::cout << \"OK\";\nelse std::cout << \"NotOK\";",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define vector !zabranjeno!!\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define unsigned !zabranjeno!!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK"
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3296,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT7: testiranje main-a\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define vector !zabranjeno!!\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define unsigned !zabranjeno!!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "372324412645\n"
+                },
+                "expect": [
+                    "Unesite broj: Broj 372324412645 ima 12 cifara, najveca je 7 a najmanja 1."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        },
+        {
+            "id": 3297,
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT8: testiranje main-a\n\n_main();",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define vector !zabranjeno!!\n",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "#define unsigned !zabranjeno!!!",
+                    "use_markers": true
+                }
+            ],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "-54746639\n"
+                },
+                "expect": [
+                    "Unesite broj: Broj -54746639 ima 8 cifara, najveca je 9 a najmanja 3."
+                ]
+            },
+            "debug": [],
+            "profile[asan]": {
+                "require": "asan",
+                "input_file": "stderr.txt",
+                "fast": true
+            }
+        }
+    ]
+}

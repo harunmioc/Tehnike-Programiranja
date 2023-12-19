@@ -1,0 +1,318 @@
+{
+    "buildhost_description": {
+        "id": "etf.c9prim2",
+        "os": "Linux 5.13.0-39-generic x86_64\nUbuntu 20.04.5 LTS\n"
+    },
+    "tools": {
+        "compile": "9.4.0",
+        "compile[debug]": "9.4.0",
+        "debug": "9.2",
+        "profile[memcheck]": "valgrind-3.15.0",
+        "profile[sgcheck]": "valgrind-3.15.0"
+    },
+    "status": 4,
+    "test_results": {
+        "3120": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite duzinu, sirinu i dubinu bazena u metrima: \nUnesite sirinu plocice u centimetrima: \nZa poplocavanje bazena dimenzija 5x15x3m sa plocicama dimenzija 10x10cm\npotrebno je 19500 plocica.",
+                    "duration": 0,
+                    "status": 5,
+                    "exit_code": -1,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==2888323== Memcheck, a memory error detector\n==2888323== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==2888323== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888323== Command: outputAf2rFi\n==2888323==\n====START_TEST_5620====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nZa poplocavanje bazena dimenzija 5x15x3m sa plocicama dimenzija 10x10cm\npotrebno je 19500 plocica.====END_TEST_5620======2888323==\n==2888323== HEAP SUMMARY:\n==2888323==     in use at exit: 0 bytes in 0 blocks\n==2888323==   total heap usage: 3 allocs, 3 frees, 80,896 bytes allocated\n==2888323==\n==2888323== All heap blocks were freed -- no leaks are possible\n==2888323==\n==2888323== For lists of detected and suppressed errors, rerun with: -s\n==2888323== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 5,
+                    "output": "==2888345== exp-sgcheck, a stack and global array overrun detector\n==2888345== NOTE: This is an Experimental-Class Valgrind Tool\n==2888345== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==2888345== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888345== Command: outputAf2rFi\n==2888345==\n--2888345-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888345-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888345-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888345-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888345-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888345-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888345-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888345-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_5620====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nZa poplocavanje bazena dimenzija 5x15x3m sa plocicama dimenzija 10x10cm\npotrebno je 19500 plocica.====END_TEST_5620======2888345==\n==2888345== For lists of detected and suppressed errors, rerun with: -s\n==2888345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3121": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite duzinu, sirinu i dubinu bazena u metrima: \nUnesite sirinu plocice u centimetrima: \nPoplocavanje bazena dimenzija 5x15x3m sa plocicama dimenzija 13x13cm\nnije izvodljivo bez lomljenja plocica!",
+                    "duration": 0,
+                    "status": 5,
+                    "exit_code": -1,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==2888430== Memcheck, a memory error detector\n==2888430== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==2888430== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888430== Command: outputobJxSe\n==2888430==\n====START_TEST_6941====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nPoplocavanje bazena dimenzija 5x15x3m sa plocicama dimenzija 13x13cm\nnije izvodljivo bez lomljenja plocica!====END_TEST_6941======2888430==\n==2888430== HEAP SUMMARY:\n==2888430==     in use at exit: 0 bytes in 0 blocks\n==2888430==   total heap usage: 3 allocs, 3 frees, 80,896 bytes allocated\n==2888430==\n==2888430== All heap blocks were freed -- no leaks are possible\n==2888430==\n==2888430== For lists of detected and suppressed errors, rerun with: -s\n==2888430== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 6,
+                    "output": "==2888453== exp-sgcheck, a stack and global array overrun detector\n==2888453== NOTE: This is an Experimental-Class Valgrind Tool\n==2888453== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==2888453== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888453== Command: outputobJxSe\n==2888453==\n--2888453-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888453-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888453-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888453-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888453-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888453-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888453-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888453-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_6941====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nPoplocavanje bazena dimenzija 5x15x3m sa plocicama dimenzija 13x13cm\nnije izvodljivo bez lomljenja plocica!====END_TEST_6941======2888453==\n==2888453== For lists of detected and suppressed errors, rerun with: -s\n==2888453== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3122": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite duzinu, sirinu i dubinu bazena u metrima: \nUnesite sirinu plocice u centimetrima: \nZa poplocavanje bazena dimenzija 1x1x1m sa plocicama dimenzija 100x100cm\npotrebno je 5 plocica.",
+                    "duration": 0,
+                    "status": 5,
+                    "exit_code": -1,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==2888545== Memcheck, a memory error detector\n==2888545== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==2888545== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888545== Command: outputWR1Wah\n==2888545==\n====START_TEST_2302====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nZa poplocavanje bazena dimenzija 1x1x1m sa plocicama dimenzija 100x100cm\npotrebno je 5 plocica.====END_TEST_2302======2888545==\n==2888545== HEAP SUMMARY:\n==2888545==     in use at exit: 0 bytes in 0 blocks\n==2888545==   total heap usage: 3 allocs, 3 frees, 80,896 bytes allocated\n==2888545==\n==2888545== All heap blocks were freed -- no leaks are possible\n==2888545==\n==2888545== For lists of detected and suppressed errors, rerun with: -s\n==2888545== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 6,
+                    "output": "==2888578== exp-sgcheck, a stack and global array overrun detector\n==2888578== NOTE: This is an Experimental-Class Valgrind Tool\n==2888578== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==2888578== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888578== Command: outputWR1Wah\n==2888578==\n--2888578-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888578-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888578-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888578-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888578-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888578-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888578-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888578-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_2302====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nZa poplocavanje bazena dimenzija 1x1x1m sa plocicama dimenzija 100x100cm\npotrebno je 5 plocica.====END_TEST_2302======2888578==\n==2888578== For lists of detected and suppressed errors, rerun with: -s\n==2888578== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3123": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite duzinu, sirinu i dubinu bazena u metrima: \nUnesite sirinu plocice u centimetrima: \nZa poplocavanje bazena dimenzija 7x1x14m sa plocicama dimenzija 4x4cm\npotrebno je 144375 plocica.",
+                    "duration": 0,
+                    "status": 5,
+                    "exit_code": -1,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==2888661== Memcheck, a memory error detector\n==2888661== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==2888661== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888661== Command: outputjs8R6h\n==2888661==\n====START_TEST_271====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nZa poplocavanje bazena dimenzija 7x1x14m sa plocicama dimenzija 4x4cm\npotrebno je 144375 plocica.====END_TEST_271======2888661==\n==2888661== HEAP SUMMARY:\n==2888661==     in use at exit: 0 bytes in 0 blocks\n==2888661==   total heap usage: 3 allocs, 3 frees, 80,896 bytes allocated\n==2888661==\n==2888661== All heap blocks were freed -- no leaks are possible\n==2888661==\n==2888661== For lists of detected and suppressed errors, rerun with: -s\n==2888661== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 6,
+                    "output": "==2888692== exp-sgcheck, a stack and global array overrun detector\n==2888692== NOTE: This is an Experimental-Class Valgrind Tool\n==2888692== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==2888692== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888692== Command: outputjs8R6h\n==2888692==\n--2888692-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888692-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888692-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888692-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888692-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888692-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888692-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888692-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_271====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nZa poplocavanje bazena dimenzija 7x1x14m sa plocicama dimenzija 4x4cm\npotrebno je 144375 plocica.====END_TEST_271======2888692==\n==2888692== For lists of detected and suppressed errors, rerun with: -s\n==2888692== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3124": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite duzinu, sirinu i dubinu bazena u metrima: \nUnesite sirinu plocice u centimetrima: \nPoplocavanje bazena dimenzija 3x2x6m sa plocicama dimenzija 3x3cm\nnije izvodljivo bez lomljenja plocica!",
+                    "duration": 0,
+                    "status": 5,
+                    "exit_code": -1,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==2888805== Memcheck, a memory error detector\n==2888805== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==2888805== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888805== Command: outputV9OjRe\n==2888805==\n====START_TEST_7282====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nPoplocavanje bazena dimenzija 3x2x6m sa plocicama dimenzija 3x3cm\nnije izvodljivo bez lomljenja plocica!====END_TEST_7282======2888805==\n==2888805== HEAP SUMMARY:\n==2888805==     in use at exit: 0 bytes in 0 blocks\n==2888805==   total heap usage: 3 allocs, 3 frees, 80,896 bytes allocated\n==2888805==\n==2888805== All heap blocks were freed -- no leaks are possible\n==2888805==\n==2888805== For lists of detected and suppressed errors, rerun with: -s\n==2888805== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 5,
+                    "output": "==2888822== exp-sgcheck, a stack and global array overrun detector\n==2888822== NOTE: This is an Experimental-Class Valgrind Tool\n==2888822== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==2888822== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888822== Command: outputV9OjRe\n==2888822==\n--2888822-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888822-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888822-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888822-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888822-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888822-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888822-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888822-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_7282====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nPoplocavanje bazena dimenzija 3x2x6m sa plocicama dimenzija 3x3cm\nnije izvodljivo bez lomljenja plocica!====END_TEST_7282======2888822==\n==2888822== For lists of detected and suppressed errors, rerun with: -s\n==2888822== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3125": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite duzinu, sirinu i dubinu bazena u metrima: \nUnesite sirinu plocice u centimetrima: \nPoplocavanje bazena dimenzija 2x2x3m sa plocicama dimenzija 200x200cm\nnije izvodljivo bez lomljenja plocica!",
+                    "duration": 0,
+                    "status": 5,
+                    "exit_code": -1,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==2888901== Memcheck, a memory error detector\n==2888901== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==2888901== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888901== Command: outputXoJoHe\n==2888901==\n====START_TEST_7667====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nPoplocavanje bazena dimenzija 2x2x3m sa plocicama dimenzija 200x200cm\nnije izvodljivo bez lomljenja plocica!====END_TEST_7667======2888901==\n==2888901== HEAP SUMMARY:\n==2888901==     in use at exit: 0 bytes in 0 blocks\n==2888901==   total heap usage: 3 allocs, 3 frees, 80,896 bytes allocated\n==2888901==\n==2888901== All heap blocks were freed -- no leaks are possible\n==2888901==\n==2888901== For lists of detected and suppressed errors, rerun with: -s\n==2888901== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 6,
+                    "output": "==2888924== exp-sgcheck, a stack and global array overrun detector\n==2888924== NOTE: This is an Experimental-Class Valgrind Tool\n==2888924== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==2888924== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2888924== Command: outputXoJoHe\n==2888924==\n--2888924-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888924-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888924-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888924-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888924-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888924-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888924-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2888924-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_7667====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nPoplocavanje bazena dimenzija 2x2x3m sa plocicama dimenzija 200x200cm\nnije izvodljivo bez lomljenja plocica!====END_TEST_7667======2888924==\n==2888924== For lists of detected and suppressed errors, rerun with: -s\n==2888924== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3126": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite duzinu, sirinu i dubinu bazena u metrima: \nUnesite sirinu plocice u centimetrima: \nPoplocavanje bazena dimenzija 54x27x3m sa plocicama dimenzija 9x9cm\nnije izvodljivo bez lomljenja plocica!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==2889036== Memcheck, a memory error detector\n==2889036== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==2889036== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2889036== Command: outputYajO1h\n==2889036==\n====START_TEST_6867====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nPoplocavanje bazena dimenzija 54x27x3m sa plocicama dimenzija 9x9cm\nnije izvodljivo bez lomljenja plocica!====END_TEST_6867======2889036==\n==2889036== HEAP SUMMARY:\n==2889036==     in use at exit: 0 bytes in 0 blocks\n==2889036==   total heap usage: 3 allocs, 3 frees, 80,896 bytes allocated\n==2889036==\n==2889036== All heap blocks were freed -- no leaks are possible\n==2889036==\n==2889036== For lists of detected and suppressed errors, rerun with: -s\n==2889036== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 6,
+                    "output": "==2889060== exp-sgcheck, a stack and global array overrun detector\n==2889060== NOTE: This is an Experimental-Class Valgrind Tool\n==2889060== Copyright (C) 2003-2017, and GNU GPL'd, by OpenWorks Ltd et al.\n==2889060== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==2889060== Command: outputYajO1h\n==2889060==\n--2889060-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2889060-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2889060-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2889060-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2889060-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2889060-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2889060-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n--2889060-- warning: evaluate_Dwarf3_Expr: unhandled DW_OP_ 0x93\n====START_TEST_6867====Unesite duzinu, sirinu i dubinu bazena u metrima:\nUnesite sirinu plocice u centimetrima:\nPoplocavanje bazena dimenzija 54x27x3m sa plocicama dimenzija 9x9cm\nnije izvodljivo bez lomljenja plocica!====END_TEST_6867======2889060==\n==2889060== For lists of detected and suppressed errors, rerun with: -s\n==2889060== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1678232707
+}
